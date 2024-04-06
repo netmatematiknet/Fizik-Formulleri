@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	tools:context=".FormulGoster">
+	<!-- ExtendedViewPager is a custom view and must be referred to by its full package name in XML -->
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<com.google.android.gms.ads.AdView
+			xmlns:ads="http://schemas.android.com/apk/res-auto"
+			android:id="@+id/adView1"
+			ads:adSize="BANNER"
+			ads:adUnitId="@string/banner_gecerli_id"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="40dp"
+			android:layout_centerHorizontal="true"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+		</com.google.android.gms.ads.AdView>
+
+		<TextView
+			android:id="@+id/textView3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="10dp"
+			android:layout_marginTop="10dp"
+			android:autoText="false"
+			android:text="Sayfa Sayısı"
+			android:textAlignment="viewStart"
+			android:textColor="#168a16"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			tools:ignore="Deprecated,HardcodedText,TextViewEdits" />
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fabuyari"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_marginEnd="50dp"
+			android:src="@android:drawable/ic_dialog_info"
+			app:fabSize="mini"
+			android:contentDescription="@string/todo1" />
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fabgeri"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_gravity="bottom|end"
+			android:src="?attr/homeAsUpIndicator"
+			app:backgroundTint="#009688"
+			app:icon="@android:drawable/ic_input_add"
+			app:fabSize="mini"
+			android:contentDescription="@string/todo2" />
+
+	</RelativeLayout>
+
+	<com.mobilprogramlar.FizikFormullerim.ExtendedViewPager
+		android:id="@+id/view_pager"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+
+</LinearLayout>
+

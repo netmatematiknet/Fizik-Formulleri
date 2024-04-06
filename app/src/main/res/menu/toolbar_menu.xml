@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_kapat1"
+        android:icon="@drawable/ic_kapat"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_kapat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_paylas"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/toolbar_paylas"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_anasayfa"
+        android:icon="@drawable/ic_anasayfa"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_anasayfa"
+        app:showAsAction="ifRoom" />     <!-- Altmenü için never yap -->
+
+
+    <!--
+
+    <item
+        android:id="@+id/toolbar_kapat1"
+        android:icon="@drawable/ic_kapat"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_kapat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_paylas"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/toolbar_paylas"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_anasayfa"
+        android:icon="@drawable/ic_anasayfa"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_anasayfa"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/altmenu"
+        android:title="@string/toolbar_altmenu">
+            <item
+                android:id="@+id/toolbar_kapat"
+                android:icon="@android:drawable/ic_menu_close_clear_cancel"
+                app:showAsAction="never"
+                android:orderInCategory="100"
+                android:title="@string/toolbar_kapat" />
+    </item>
+    -->
+
+
+</menu>

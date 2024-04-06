@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Fizik Formülleri</string>
+    <string name="kapat">Kapat</string>
+    <string name="ana_sayfa">Ana Sayfa</string>
+    <string name="paylas">Paylaş</string>
+
+    <string name="paylas_button">Paylaş</string>
+    <string name="paylas_baslik">YKS Tyt Fizik Formülleri</string>
+    <string name="paylas_mesaj_1">Tyt fiziğindeki tüm Fizik Formülleri Elinizin Altında </string>
+    <string name="paylas_mesaj_2">Yanınızda kitap taşımanıza gerek yok \n</string>
+    <string name="paylas_mesaj_3">Paylaşmak İçin Tıklayınız</string>
+    <string name="paylas_link">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+
+    <string name="reklam_izni">Evet</string>
+    <string name="app_id">ca-app-pub-6848773398638567~4316845921</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-6848773398638567/1857052168</string>
+    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_gecerli_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="interstitial_gecis_id">ca-app-pub-6848773398638567/8391822301</string>
+    <string name="interstitial_gecis_test_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="interstitial_gecis_gecerli_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="odul_video_ad_unit_id">ca-app-pub-6848773398638567/7819825284</string>
+    <string name="odul_video_ad_unit_id_test">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="odul_video_gecerli_id">ca-app-pub-3940256099942544/5224354917</string>
+
+    <string name="app_open_ad_unit_id">ca-app-pub-6848773398638567/4069433916</string>
+    <string name="app_open_ad_unit_id_test">ca-app-pub-3940256099942544/3419835294</string>
+    <string name="app_open_gecerli_id">ca-app-pub-3940256099942544/3419835294</string>
+
+
+
+
+    <string name="uygulama_link_1">http://www.ossmatematik.com</string>
+    <string name="uygulama_link_2">http://www.mobilprogramlar.com/</string>
+    <string name="uygulama_link_3">https://play.google.com/store/apps/details?id=com.mobilprogramlar.MatematikFormullerim</string>
+    <string name="uygulama_link_4">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tytaytsoruvecozumleri</string>
+    <string name="uygulama_link_5">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ygssoruvecozumleri</string>
+    <string name="uygulama_link_6">https://play.google.com/store/apps/details?id=com.mobilprogramlar.lyssoruvecozumleri</string>
+    <string name="uygulama_link_7">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tictactoe</string>
+    <string name="uygulama_link_8">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ucislemyarismasi</string>
+    <string name="uygulama_link_9">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+    <string name="uygulama_link_10">https://play.google.com/store/apps/details?id=com.mobilprogramlar.bilmecebahcesi</string>
+
+
+    <string name="uygulama_baslik_1">Matematik Üniversite Hazırlık Kaynak Sitesi</string>
+    <string name="uygulama_baslik_2">Eğitim ve Tekonoloji Sitesi</string>
+    <string name="uygulama_baslik_3">Matematik ve Goeometri Formülleri</string>
+    <string name="uygulama_baslik_4">Tyt Ayt Soru ve Çözümleri</string>
+    <string name="uygulama_baslik_5">Ygs Soru ve Çözümleri</string>
+    <string name="uygulama_baslik_6">Lys Soru ve Çözümleri</string>
+    <string name="uygulama_baslik_7">Tic Tac Toe</string>
+    <string name="uygulama_baslik_8">Üç İşlem Yarışması</string>
+    <string name="uygulama_baslik_9">Fizik Formülleri</string>
+    <string name="uygulama_baslik_10">Bilmece Bahçesi</string>
+
+    <string name="uygulama_app_name">Mobil Uygulamalarımız</string>
+    <string name="uygulama_action_settings">Ayarlar</string>
+    <string name="uygulama_action_add_favourite">Ayrıntı</string>
+    <string name="uygulama_action_play_next">Ayrıntı</string>
+    <string name="uygulama_backdrop_title">Mobil Uygulamalarımız</string>
+    <string name="uygulama_backdrop_subtitle">Hepsi Ücretsiz</string>
+
+
+    <item name="fab_label" type="id"/>
+    <string name="todo">TODO</string>
+    <string name="uygulama_menu_baslik_1">.: Fizik FORMÜLLERİ :.</string>
+    <string name="uygulama_menu_baslik_2">.: DİĞER PROGRAMLARIMIZ :. </string>
+
+
+
+
+
+    <string name="toolbar_kapat">Kapat</string>
+    <string name="toolbar_anasayfa">Anasayfa</string>
+    <string name="toolbar_paylas">Paylaş</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+
+    <string name="default_notification_channel_id">default</string>
+
+
+    <string name="toolbar_ust_baslik">OssMatematik.Com</string>
+    <string name="toolbar_alt_baslik">Bilmece Bahçesi</string>
+
+    <string name="uygulamalar_toolbar_alt_baslik">Diğer Uygulamalarımız</string>
+
+
+</resources>

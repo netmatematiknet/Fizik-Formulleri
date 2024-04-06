@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/toolbar1_arkaplan_rengi"
+    android:gravity="center_vertical|center_horizontal"
+    tools:ignore="HardcodedText">
+
+<include
+    android:id="@+id/toolbar"
+    layout="@layout/toolbar_1" />
+<View
+    android:layout_width="match_parent"
+    android:layout_height="4dp"
+    android:background="@drawable/toolbar_golge" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical">
+
+
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="MEDIUM_RECTANGLE"
+        ads:adUnitId="@string/banner_gecerli_id" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/toolbar1_extended_floataction_arkaplan_rengi"
+        android:text="@string/app_name"
+        android:textColor="#6b049e"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        tools:ignore="ButtonStyle,HardcodedText" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_gecerli_id" />
+
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_uygulamalarimiz"
+        android:text=".: DİĞER PROGRAMLARIMIZ :."
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#6b049e"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:theme="@style/AppTheme"
+        android:typeface="serif"
+        tools:ignore="HardcodedText,InefficientWeight,NestedWeights,ObsoleteLayoutParam,UnusedAttribute" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_gecerli_id" />
+</LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

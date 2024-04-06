@@ -1,0 +1,109 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <!-- UYGULAMALARIM -->
+    <!-- Base application theme. -->
+    <style name="AppTheme1" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/uygulama_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/uygulama_colorPrimaryDark</item>
+        <item name="colorAccent">@color/uygulama_colorAccent</item>
+    </style>
+
+    <style name="AppTheme1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- UYGULAMALARIM -->
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--this attribute is to change the theme of the extended FAB-->
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.ExtendedFloatingActionButton</item>
+        <!--this attribute is to change the theme of the normal FAB-->
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
+    </style>
+
+
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <!--the following attribute will changes in the appearance of the extended FAB in terms of colors-->
+        <item name="materialThemeOverlay">@style/myCustomThemeForExtendedFab</item>
+        <!--the following attribute will change in the shape appearance of the extended FAB-->
+        <item name="shapeAppearanceOverlay">@style/customExtendedFAB</item>
+    </style>
+
+    <style name="customExtendedFAB">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="cornerSizeTopRight">14dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">14dp</item>
+    </style>
+
+    <style name="myCustomThemeForExtendedFab" parent="">
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/myCustomThemeForNormalFab</item>
+        <item name="shapeAppearanceOverlay">@style/customNormalFAB</item>
+    </style>
+
+    <style name="customNormalFAB">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="myCustomThemeForNormalFab" parent="">
+        <item name="colorSecondary">@android:color/holo_green_dark</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
+
+    <style name="Toolbar_Stil_1" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">#26418f</item>        <!-- Statusbar rengi. seçilir -->
+        <item name="android:colorPrimaryDark">#26418f</item>      <!-- Statusbar rengi seçilir -->
+        <item name="colorPrimary">@color/toolbar1_rengi</item>        <!-- Toolbar rengi seçilir -->
+        <item name="android:colorPrimary">@color/toolbar1_rengi</item>      <!-- Toolbar rengi seçilir -->
+        <item name="android:windowBackground">@color/toolbar1_arkaplan_rengi</item>
+        <item name="android:textColor">#FAFAFA</item>      <!-- toolbar_uygulama_2.xml deki Toolbardaki TEXTVİEW deki Yazı Rengi ve Toolbar daki ALT MENÜDEKİ yazı rengi-->
+        <item name="extendedFloatingActionButtonStyle">@style/Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton</item>
+        <item name="floatingActionButtonStyle">@style/Toolbar_Stil_1.Widget.App.FloatingActionButton</item>
+    </style>
+
+    <!--Toolbar_Stil_1 FLOAT AYARLARI -->
+    <style name="Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="colorSecondary">@color/toolbar1_extended_floataction_arkaplan_rengi</item>
+        <item name="colorOnSecondary">@color/toolbar1_extended_floataction_metin_rengi</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopRight">104dp</item>
+        <item name="cornerSizeTopLeft">104dp</item>
+        <item name="cornerSizeBottomRight">100dp</item>
+        <item name="cornerSizeBottomLeft">100dp</item>
+    </style>
+
+    <!--Toolbar_Stil_1_Widget.App.FloatingActionButton içinde, normal FAB temasını değiştiren iki özellik vardır, bunlar materialThemeOverlay ve shapeAppearanceOverlay-->
+    <style name="Toolbar_Stil_1.Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="colorSecondary">@color/toolbar1_floataction_arkaplan_rengi</item>
+        <item name="colorOnSecondary">@color/toolbar1_floataction_metin_rengi</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopRight">104dp</item>
+        <item name="cornerSizeTopLeft">104dp</item>
+        <item name="cornerSizeBottomRight">100dp</item>
+        <item name="cornerSizeBottomLeft">100dp</item>
+    </style>
+
+    <style name="Toolbar_Stil_Uygulama" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">#26418f</item>        <!-- Statusbar rengi. seçilir -->
+        <item name="android:colorPrimaryDark">#26418f</item>      <!-- Statusbar rengi seçilir -->
+        <item name="colorPrimary">@color/toolbar_uygulama_rengi</item>        <!-- Toolbar rengi seçilir -->
+        <item name="android:colorPrimary">@color/toolbar_uygulama_rengi</item>      <!-- Toolbar rengi seçilir -->
+        <item name="android:windowBackground">@color/toolbar_uygulama_arkaplan_rengi</item>
+        <item name="android:textColor">#000</item>      <!-- toolbar_uygulama_2.xml deki Toolbardaki TEXTVİEW deki Yazı Rengi ve Toolbar daki ALT MENÜDEKİ yazı rengi-->
+    </style>
+
+</resources>

@@ -1,0 +1,222 @@
+{
+  "project_info": {
+    "project_number": "9759171474",
+    "firebase_url": "https://project-6475795082352242613.firebaseio.com",
+    "project_id": "project-6475795082352242613",
+    "storage_bucket": "project-6475795082352242613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:25fb78be6561d5007e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.FizikFormullerim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:7fba7684489200a87e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.MatematikFormullerim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-nsq9cim1lq7gp4n46n14ngds79gl2u07.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobilprogramlar.MatematikFormullerim",
+            "certificate_hash": "1c7dfa29277aeaa7bf50c76064d8a6fe0546a327"
+          }
+        },
+        {
+          "client_id": "9759171474-9t5jo3472v5oktroron7opsuk3bvlebp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobilprogramlar.MatematikFormullerim",
+            "certificate_hash": "b38673e6dfa8be8804cb7c151b6e05f9024a0bc9"
+          }
+        },
+        {
+          "client_id": "9759171474-0fbalia6qlquah069rjd9igthees4vmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobilprogramlar.MatematikFormullerim",
+            "certificate_hash": "c3e74b67a3d6eabdc1bb24cd7a57c3ce98f1cc3f"
+          }
+        },
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6848773398638567~9469156132"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:a47fe24b07c518fb7e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.kaynak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6848773398638567~6316218453"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:e44f8deca6ad95787e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.lyssoruvecozumleri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6848773398638567~2570720929"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:88d4f46c33061d7c7e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.tytaytsoruvecozumleri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-2cldrl3v2o3ec55os3bi537s1e9fibeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobilprogramlar.tytaytsoruvecozumleri",
+            "certificate_hash": "c3e74b67a3d6eabdc1bb24cd7a57c3ce98f1cc3f"
+          }
+        },
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6848773398638567~8745839932"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9759171474:android:9eedc070695acea57e574b",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.ygssoruvecozumleri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZMJRf1I73_D4HKstKMxQXSxWQA6SYd1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9759171474-bpj4o2ppp3qkspn6h7cd4rp3ms4akire.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-6848773398638567~9743699599"
+    }
+  ],
+  "configuration_version": "1"
+}

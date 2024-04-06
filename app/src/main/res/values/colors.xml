@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="snackbar_text">#000000</color>
+    <color name="snackbar_background">#4CAF50</color>
+    <color name="snackbar_button">#ffffff</color>
+
+    <color name="uygulama_colorPrimary">#F50057</color>
+    <color name="uygulama_colorPrimaryDark">#F50057</color>
+    <color name="uygulama_colorAccent">#FF4081</color>
+    <color name="uygulama_viewBg">#f1f5f8</color>
+    <color name="uygulama_album_title">#4c4c4c</color>
+
+    <color name="uyari_toast_arkaplan_rengi">#8fb6c9</color>
+    <color name="uyari_textColor_1">#6b049e</color>
+    <color name="uyari_toast_baslik_rengi">#fa0307</color>
+    <color name="uyari_toast_metin_rengi">#012787</color>
+
+    <color name="toolbar1_arkaplan_rengi">#9979D3</color>   <!-- Sayfa Arka Plan Rengi -->
+    <color name="toolbar1_rengi">#6200EE</color>            <!-- Toolbar rengi seçilir -->
+
+    <color name="toolbar1_extended_floataction_arkaplan_rengi">#6200EE</color>   <!-- Extended_Float Button Rengi -->
+    <color name="toolbar1_extended_floataction_metin_rengi">#ffffff</color>   <!-- Extended_Float Button Rengi -->
+    <color name="toolbar1_floataction_arkaplan_rengi">@color/uygulama_colorAccent</color>   <!-- Extended_Float Button Rengi -->
+    <color name="toolbar1_floataction_metin_rengi">@android:color/white</color>   <!-- Extended_Float Button Rengi -->
+
+
+    <color name="toolbar_uygulama_arkaplan_rengi">@android:color/white</color>   <!-- Sayfa Arka Plan Rengi -->
+    <color name="toolbar_uygulama_rengi">#F50057</color>            <!-- Toolbar rengi seçilir -->
+
+
+</resources>
