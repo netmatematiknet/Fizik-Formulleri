@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#81C784</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#4DB6AC</color>
+    <color name="window_background">#121412</color>
+    <color name="toolbar1_arkaplan_rengi">#1B5E20</color>
+    <color name="toolbar1_rengi">#2E7D32</color>
+    <color name="toolbar_uygulama_arkaplan_rengi">#121412</color>
+    <color name="uygulama_viewBg">#1C1F1C</color>
+    <color name="uygulama_album_title">#E0E0E0</color>
+</resources>

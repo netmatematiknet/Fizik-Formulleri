@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/kapat"
+        android:icon="@drawable/ic_kapat"
+        android:orderInCategory="100"
+        android:title="@string/kapat"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/paylas"
+        android:icon="@drawable/ic_paylas"
+        android:orderInCategory="100"
+        android:title="@string/paylas"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/anasayfa"
+        android:icon="@drawable/ic_anasayfa"
+        android:orderInCategory="100"
+        android:title="@string/ana_sayfa"
+        app:showAsAction="always" />
+</menu>

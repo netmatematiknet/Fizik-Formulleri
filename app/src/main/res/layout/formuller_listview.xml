@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/min_touch_target"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <ImageView
+        android:id="@+id/imageView_personpic"
+        android:layout_width="@dimen/list_item_image"
+        android:layout_height="@dimen/list_item_image"
+        android:contentDescription="@string/formül_gorseli"
+        android:importantForAccessibility="no" />
+
+    <ImageButton
+        android:id="@+id/btn_favorite"
+        android:layout_width="@dimen/min_touch_target"
+        android:layout_height="@dimen/min_touch_target"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/favori_ekle"
+        android:padding="12dp"
+        android:src="@drawable/ic_star_outline" />
+
+    <TextView
+        android:id="@+id/textView_personname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toStartOf="@id/btn_favorite"
+        android:layout_toEndOf="@id/imageView_personpic"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/list_item_title"
+        tools:text="Konu adı" />
+
+    <TextView
+        android:id="@+id/textView_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_personname"
+        android:layout_alignStart="@id/textView_personname"
+        android:layout_alignEnd="@id/textView_personname"
+        android:layout_marginTop="5dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/list_item_subtitle"
+        tools:text="Tyt (5 sayfa)" />
+</RelativeLayout>

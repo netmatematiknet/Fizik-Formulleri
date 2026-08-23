@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "404885634988",
+    "project_id": "fizik-formullerim",
+    "storage_bucket": "fizik-formullerim.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404885634988:android:bf2284297d417e547a0409",
+        "android_client_info": {
+          "package_name": "com.mobilprogramlar.FizikFormullerim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3uigKhoou66cpn0ZbX3Wp0igT_QzCSUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

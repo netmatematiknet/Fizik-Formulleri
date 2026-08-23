@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormullerFizik">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
+        app:navigationIcon="@drawable/uygulama_9"
+        app:subtitle="@string/toolbar_alt_baslik"
+        app:subtitleTextColor="@android:color/white"
+        app:title="@string/toolbar_ust_baslik"
+        app:titleTextColor="@android:color/white" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_topics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_touch_target"
+        android:queryHint="@string/konu_ara"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@android:color/transparent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_level_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_tyt"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:minHeight="@dimen/min_touch_target"
+            android:text="@string/filtre_tyt" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_ayt"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/min_touch_target"
+            android:text="@string/filtre_ayt" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/min_touch_target"
+            android:text="@string/filtre_tumu" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/tv_empty_topics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/ayt_yakinda"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <androidx.slidingpanelayout.widget.SlidingPaneLayout
+        android:id="@+id/sliding_pane"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/listView_persons"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:dividerHeight="6dp"
+            android:paddingLeft="@dimen/screen_padding"
+            android:paddingTop="6dp"
+            android:paddingRight="@dimen/screen_padding" />
+
+        <FrameLayout
+            android:id="@+id/detail_pane"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/colorBackground">
+
+            <TextView
+                android:id="@+id/tv_detail_placeholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="24dp"
+                android:text="@string/konu_sec_placeholder"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <include
+                android:id="@+id/detail_content"
+                layout="@layout/formulgoster_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </FrameLayout>
+    </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+
+    <FrameLayout
+        android:id="@+id/ad_banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:minHeight="@dimen/banner_min_height" />
+</LinearLayout>

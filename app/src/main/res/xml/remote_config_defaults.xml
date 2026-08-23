@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>ads_enabled</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>banner_enabled</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>interstitial_enabled</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>interstitial_home_percent</key>
+        <value>30</value>
+    </entry>
+    <entry>
+        <key>interstitial_formula_percent</key>
+        <value>20</value>
+    </entry>
+    <entry>
+        <key>banner_every_n_items</key>
+        <value>2</value>
+    </entry>
+    <entry>
+        <key>home_message</key>
+        <value></value>
+    </entry>
+    <entry>
+        <key>announcement_message</key>
+        <value></value>
+    </entry>
+</defaultsMap>

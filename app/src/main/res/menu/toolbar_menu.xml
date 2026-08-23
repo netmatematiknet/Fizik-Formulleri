@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_kapat1"
+        android:icon="@drawable/ic_kapat"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_kapat"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_paylas"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_paylas"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_anasayfa"
+        android:icon="@drawable/ic_anasayfa"
+        android:orderInCategory="100"
+        android:title="@string/toolbar_anasayfa"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_gizlilik"
+        android:orderInCategory="110"
+        android:title="@string/toolbar_gizlilik"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/toolbar_reklam_tercihleri"
+        android:orderInCategory="120"
+        android:title="@string/reklam_tercihleri"
+        app:showAsAction="never" />
+</menu>
