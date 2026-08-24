@@ -19,6 +19,7 @@ out/
 release/
 *.jks
 *.keystore
+keystore.properties
 *.rar
 *.zip
 .idea/

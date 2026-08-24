@@ -5,6 +5,12 @@ plugins {
     id 'com.google.firebase.firebase-perf'
 }
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     compileSdk 36
     namespace "com.mobilprogramlar.FizikFormullerim"
@@ -12,9 +18,22 @@ android {
         applicationId "com.mobilprogramlar.FizikFormullerim"
         minSdkVersion 29
         targetSdkVersion 36
-        versionCode 10
+        // Play'deki canlı sürüm 1.8 — yeni yükleme bunun üstünde olmalı
+        versionCode 12
         versionName "2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "tr", "en"
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+        }
     }
 
     buildTypes {
@@ -22,14 +41,18 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
             ndk {
                 debugSymbolLevel 'SYMBOL_TABLE'
+            }
+            firebaseCrashlytics {
+                mappingFileUploadEnabled true
             }
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     buildFeatures {
@@ -44,19 +67,38 @@ android {
     }
 }
 
+gradle.taskGraph.whenReady { graph ->
+    def releaseTasks = graph.allTasks.findAll {
+        it.name == 'bundleRelease' || it.name == 'assembleRelease' || it.name == 'signReleaseBundle'
+    }
+    if (!releaseTasks.isEmpty() && !keystorePropertiesFile.exists()) {
+        throw new GradleException(
+                "IMZALI AAB ICIN proje kokunde keystore.properties gerekli.\n" +
+                "1) keystore.properties.example dosyasini keystore.properties olarak kopyalayin\n" +
+                "2) FizikFormulleri.jks sifre ve alias bilgilerini doldurun\n" +
+                "   JKS: D:\\\\AndroidStudio\\\\FizikFormullerim\\\\FizikFormulleri.jks\n" +
+                "3) build_release_aab.bat calistirin\n" +
+                "Alternatif: Android Studio > Build > Generate Signed Bundle / APK")
+    }
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.activity:activity:1.11.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.1.0'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation 'androidx.preference:preference:1.2.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.3.0'
-    implementation 'androidx.slidingpanelayout:slidingpanelayout:1.2.0'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.airbnb.android:lottie:6.4.1'
+    implementation 'com.android.billingclient:billing:8.0.0'
 
     implementation platform('com.google.firebase:firebase-bom:33.12.0')
     implementation 'com.google.firebase:firebase-analytics'
@@ -66,9 +108,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-perf'
 
     implementation 'com.google.android.gms:play-services-ads:24.5.0'
-    implementation 'com.google.android.ump:user-messaging-platform:4.0.0'
-    implementation 'com.google.android.play:app-update:2.1.0'
-    implementation 'androidx.profileinstaller:profileinstaller:1.4.1'
+    implementation 'com.google.android.ump:user-messaging-platform:3.2.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.3.0'

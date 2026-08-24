@@ -1,37 +1,421 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2E7D32</color>
-    <color name="colorPrimaryDark">#1B5E20</color>
-    <color name="colorAccent">#00897B</color>
-    <color name="window_background">#F7F9F7</color>
-    <color name="transparent">@android:color/transparent</color>
 
-    <color name="snackbar_text">#000000</color>
-    <color name="snackbar_background">#4CAF50</color>
-    <color name="snackbar_button">#ffffff</color>
+    <!-- Nurullah Tema Renkleri -->
+    <color name="nurullah_primary">#7D2CF1</color>                  <!-- Parlak Mor -->
+    <color name="nurullah_primary_dark">#6200EE</color>             <!-- Koyu Mor -->
+    <color name="nurullah_accent">#9979D3</color>                   <!-- Açık Mor Vurgu -->
+    <color name="nurullah_cardBackgroundColor">#7D2CF1</color>      <!-- Card Arka Plan Rengi nurullah_primary Mavi -->
+    <color name="nurullah_cardTextColor">#ffffff</color>            <!-- Card Metin Rengi -->
+    <color name="nurullah_activityBackgroundColor">#9979D3</color>
+    <color name="nurullah_buttonBackgroundColor">#6200EE</color>
+    <color name="nurullah_button_metin_rengi_01">#ffffff</color>
+    <color name="nurullah_toolbar_rengi">#6200EE</color>
+    <color name="nurullah_metin_rengi_01">#ffffff</color>
+    <color name="nurullah_metin_rengi_02">#000000</color>
+    <color name="nurullah_metin_rengi_03">#c85d5d</color>
+    <color name="nurullah_metin_rengi_04">#4caf50</color>
+    <color name="nurullah_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="nurullah_uygulama_metin_rengi_02">#000000</color>
 
-    <color name="uygulama_colorPrimary">#F50057</color>
-    <color name="uygulama_colorPrimaryDark">#F50057</color>
-    <color name="uygulama_colorAccent">#FF4081</color>
-    <color name="uygulama_viewBg">#f1f5f8</color>
-    <color name="uygulama_album_title">#4c4c4c</color>
+    <!-- Nadiye Tema Renkleri -->
+    <color name="nadiye_primary">#d32f2f</color>                    <!-- Parlak Kırmızı -->
+    <color name="nadiye_primary_dark">#d32f2f</color>               <!-- Koyu Kırmızı -->
+    <color name="nadiye_accent">#c85d5d</color>                     <!-- Açık Kırmızı Vurgu -->
+    <color name="nadiye_cardBackgroundColor">#d32f2f</color>        <!-- Card Arka Plan Rengi - Kardinal, Nar, Falu, KoyuKırmızı -->
+    <color name="nadiye_cardTextColor">#000000</color>              <!-- Card Metin Rengi -->
+    <color name="nadiye_text_primary">#ffffff</color>
+    <color name="nadiye_activityBackgroundColor">#c85d5d</color>
+    <color name="nadiye_buttonBackgroundColor">#b71c1c</color>
+    <color name="nadiye_button_metin_rengi_01">#ffffff</color>
+    <color name="nadiye_toolbar_rengi">#b71c1c</color>
+    <color name="nadiye_metin_rengi_01">#ffffff</color>
+    <color name="nadiye_metin_rengi_02">#000000</color>
+    <color name="nadiye_metin_rengi_03">#4caf50</color>
+    <color name="nadiye_metin_rengi_04">#6200EE</color>
+    <color name="nadiye_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="nadiye_uygulama_metin_rengi_02">#000000</color>
 
-    <color name="uyari_toast_arkaplan_rengi">#8fb6c9</color>
-    <color name="uyari_textColor_1">#6b049e</color>
-    <color name="uyari_toast_baslik_rengi">#fa0307</color>
-    <color name="uyari_toast_metin_rengi">#012787</color>
+    <!-- Sude Tema Renkleri -->
+    <color name="sude_primary">#388e3c</color>                      <!-- Parlak Yeşil -->
+    <color name="sude_primary_dark">#006400</color>                 <!-- Koyu Yeşil -->
+    <color name="sude_accent">#4caf50</color>                       <!-- Açık Yeşil Vurgu -->
+    <color name="sude_cardBackgroundColor">#388e3c</color>          <!-- Card Arka Plan Rengi  Yeşil  -->
+    <color name="sude_cardTextColor">#ffffff</color>               <!-- Card Metin Rengi -->
+    <color name="sude_text_primary">#ffffff</color>
+    <color name="sude_activityBackgroundColor">#4caf50</color>
+    <color name="sude_buttonBackgroundColor">#006400</color>
+    <color name="sude_button_metin_rengi_01">#ffffff</color>
+    <color name="sude_toolbar_rengi">#006400</color>
+    <color name="sude_metin_rengi_01">#ffffff</color>
+    <color name="sude_metin_rengi_02">#000000</color>
+    <color name="sude_metin_rengi_03">#9979D3</color>
+    <color name="sude_metin_rengi_04">#c85d5d</color>
+    <color name="sude_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="sude_uygulama_metin_rengi_02">#000000</color>
 
-    <color name="toolbar1_arkaplan_rengi">#9979D3</color>   <!-- Sayfa Arka Plan Rengi -->
-    <color name="toolbar1_rengi">#6200EE</color>            <!-- Toolbar rengi seçilir -->
+    <!-- Kubra Tema Renkleri -->
+    <color name="kubra_primary">#8a2be2</color>                     <!-- Parlak Mor -->
+    <color name="kubra_primary_dark">#6821b2</color>                <!-- Koyu Mor -->
+    <color name="kubra_accent">#c5a3eb</color>                      <!-- Açık Mor Vurgu -->
+    <color name="kubra_cardBackgroundColor">#8a2be2</color>         <!-- Card Arka Plan Rengi  Çivit - Menekşe  -->
+    <color name="kubra_cardTextColor">#ffffff</color>               <!-- Card Metin Rengi -->
+    <color name="kubra_text_primary">#ffffff</color>
+    <color name="kubra_activityBackgroundColor">#c5a3eb</color>
+    <color name="kubra_buttonBackgroundColor">#6821b2</color>
+    <color name="kubra_button_metin_rengi_01">#ffffff</color>
+    <color name="kubra_toolbar_rengi">#6821b2</color>
+    <color name="kubra_metin_rengi_01">#ffffff</color>
+    <color name="kubra_metin_rengi_02">#000000</color>
+    <color name="kubra_metin_rengi_03">#006400</color>
+    <color name="kubra_metin_rengi_04">#c85d5d</color>
+    <color name="kubra_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="kubra_uygulama_metin_rengi_02">#000000</color>
 
-    <color name="toolbar1_extended_floataction_arkaplan_rengi">#6200EE</color>   <!-- Extended_Float Button Rengi -->
-    <color name="toolbar1_extended_floataction_metin_rengi">#ffffff</color>   <!-- Extended_Float Button Rengi -->
-    <color name="toolbar1_floataction_arkaplan_rengi">@color/uygulama_colorAccent</color>   <!-- Extended_Float Button Rengi -->
-    <color name="toolbar1_floataction_metin_rengi">@android:color/white</color>   <!-- Extended_Float Button Rengi -->
+    <!-- Zeynep Tema Renkleri -->
+    <color name="zeynep_primary">#b9561e</color>                    <!-- Parlak Kahverengi -->
+    <color name="zeynep_primary_dark">#9f431e</color>               <!-- Koyu Kahverengi -->
+    <color name="zeynep_accent">#e9967a</color>                     <!-- Açık Kahverengi Vurgu -->
+    <color name="zeynep_cardBackgroundColor">#b9561e</color>        <!-- Card Arka Plan Rengi  Çikolata  -->
+    <color name="zeynep_cardTextColor">#ffffff</color>              <!-- Card Metin Rengi -->
+    <color name="zeynep_text_primary">#ffffff</color>
+    <color name="zeynep_activityBackgroundColor">#e9967a</color>
+    <color name="zeynep_buttonBackgroundColor">#9f431e</color>
+    <color name="zeynep_button_metin_rengi_01">#ffffff</color>
+    <color name="zeynep_toolbar_rengi">#9f431e</color>
+    <color name="zeynep_metin_rengi_01">#ffffff</color>
+    <color name="zeynep_metin_rengi_02">#000000</color>
+    <color name="zeynep_metin_rengi_03">#6821b2</color>
+    <color name="zeynep_metin_rengi_04">#4caf50</color>
+    <color name="zeynep_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="zeynep_uygulama_metin_rengi_02">#000000</color>
 
 
-    <color name="toolbar_uygulama_arkaplan_rengi">@android:color/white</color>   <!-- Sayfa Arka Plan Rengi -->
-    <color name="toolbar_uygulama_rengi">#F50057</color>            <!-- Toolbar rengi seçilir -->
+    <!-- İrem Tema Renkleri -->
+    <color name="irem_primary">#7096d1</color>                    <!-- Parlak Kahverengi -->
+    <color name="irem_primary_dark">#081f5c</color>               <!-- Koyu Kahverengi -->
+    <color name="irem_accent">#edf1f6</color>                     <!-- Açık Kahverengi Vurgu -->
+    <color name="irem_cardBackgroundColor">#7096d1</color>        <!-- Card Arka Plan Rengi  Çikolata  -->
+    <color name="irem_cardTextColor">#ffffff</color>              <!-- Card Metin Rengi -->
+    <color name="irem_text_primary">#ffffff</color>
+    <color name="irem_activityBackgroundColor">#edf1f6</color>
+    <color name="irem_buttonBackgroundColor">#081f5c</color>
+    <color name="irem_button_metin_rengi_01">#ffffff</color>
+    <color name="irem_toolbar_rengi">#081f5c</color>
+    <color name="irem_metin_rengi_01">#ffffff</color>
+    <color name="irem_metin_rengi_02">#000000</color>
+    <color name="irem_metin_rengi_03">#9f431e</color>
+    <color name="irem_metin_rengi_04">#6821b2</color>
+    <color name="irem_uygulama_metin_rengi_01">#000000</color>
+    <color name="irem_uygulama_metin_rengi_02">#ffffff</color>
+
+
+    <!-- İlknur Tema Renkleri -->
+    <color name="ilknur_primary">#a987a8</color>                    <!-- Parlak Kahverengi -->
+    <color name="ilknur_primary_dark">#693b69</color>               <!-- Koyu Kahverengi -->
+    <color name="ilknur_accent">#ecd4ea</color>                     <!-- Açık Kahverengi Vurgu -->
+    <color name="ilknur_cardBackgroundColor">#a987a8</color>        <!-- Card Arka Plan Rengi  Çikolata  -->
+    <color name="ilknur_cardTextColor">#ffffff</color>              <!-- Card Metin Rengi -->
+    <color name="ilknur_text_primary">#ffffff</color>
+    <color name="ilknur_activityBackgroundColor">#ecd4ea</color>
+    <color name="ilknur_buttonBackgroundColor">#693b69</color>
+    <color name="ilknur_button_metin_rengi_01">#ffffff</color>
+    <color name="ilknur_toolbar_rengi">#693b69</color>
+    <color name="ilknur_metin_rengi_01">#ffffff</color>
+    <color name="ilknur_metin_rengi_02">#000000</color>
+    <color name="ilknur_metin_rengi_03">#9f431e</color>
+    <color name="ilknur_metin_rengi_04">#6200EE</color>
+    <color name="ilknur_uygulama_metin_rengi_01">#000000</color>
+    <color name="ilknur_uygulama_metin_rengi_02">#ffffff</color>
+
+
+    <!-- Rukiye Tema Renkleri -->
+    <color name="rukiye_primary">#253745</color>                    <!-- Parlak Kahverengi -->
+    <color name="rukiye_primary_dark">#11212d</color>               <!-- Koyu Kahverengi -->
+    <color name="rukiye_accent">#4a5c6a</color>                     <!-- Açık Kahverengi Vurgu -->
+    <color name="rukiye_cardBackgroundColor">#253745</color>        <!-- Card Arka Plan Rengi  Çikolata  -->
+    <color name="rukiye_cardTextColor">#ffffff</color>              <!-- Card Metin Rengi -->
+    <color name="rukiye_text_primary">#ffffff</color>
+    <color name="rukiye_activityBackgroundColor">#4a5c6a</color>
+    <color name="rukiye_buttonBackgroundColor">#11212d</color>
+    <color name="rukiye_button_metin_rengi_01">#ffffff</color>
+    <color name="rukiye_toolbar_rengi">#11212d</color>
+    <color name="rukiye_metin_rengi_01">#ffffff</color>
+    <color name="rukiye_metin_rengi_02">#000000</color>
+    <color name="rukiye_metin_rengi_03">#9f431e</color>
+    <color name="rukiye_metin_rengi_04">#7096d1</color>
+    <color name="rukiye_uygulama_metin_rengi_01">#ffffff</color>
+    <color name="rukiye_uygulama_metin_rengi_02">#ffffff</color>
+
+
+    <!-- Hilal Tema Renkleri -->
+    <color name="hilal_primary">#ffabca</color>                    <!-- Parlak Kahverengi -->
+    <color name="hilal_primary_dark">#ff8aaf</color>               <!-- Koyu Kahverengi -->
+    <color name="hilal_accent">#ffbcd3</color>                     <!-- Açık Kahverengi Vurgu -->
+    <color name="hilal_cardBackgroundColor">#ffabca</color>        <!-- Card Arka Plan Rengi  Çikolata  -->
+    <color name="hilal_cardTextColor">#ffffff</color>              <!-- Card Metin Rengi -->
+    <color name="hilal_text_primary">#ffffff</color>
+    <color name="hilal_activityBackgroundColor">#ffbcd3</color>
+    <color name="hilal_buttonBackgroundColor">#ff8aaf</color>
+    <color name="hilal_button_metin_rengi_01">#ffffff</color>
+    <color name="hilal_toolbar_rengi">#ff8aaf</color>
+    <color name="hilal_metin_rengi_01">#ffffff</color>
+    <color name="hilal_metin_rengi_02">#000000</color>
+    <color name="hilal_metin_rengi_03">#6200EE</color>
+    <color name="hilal_metin_rengi_04">#006400</color>
+    <color name="hilal_uygulama_metin_rengi_01">#7C0202</color>
+    <color name="hilal_uygulama_metin_rengi_02">#b71c1c</color>
+
+
+
+
+    <!-- Ortak Renkler -->
+    <!-- color name="text_primary">#ffffff</color> -->
+    <color name="text_secondary">#000000</color>
+    <color name="text_primary">#ffffff</color>
+
+
+
+    <color name="ozel_button_background_1">#6200EE</color>          <!-- drawable/button_background_1.xml -->
+    <color name="ozel_button_dark_background_1">#3700B3</color>     <!-- drawable/button_background_1.xml -->
+    <color name="ozel_button_background_2">#03DAC6</color>          <!-- drawable/button_background_2.xml -->
+    <color name="ozel_button_dark_background_2">#009688</color>     <!-- drawable/button_background_2.xml -->
+    <color name="ozel_button_background_3">#B39DDB</color>          <!-- drawable/button_background_3.xml -->
+    <color name="ozel_button_dark_background_3">#673AB7</color>     <!-- drawable/button_background_3.xml -->
+    <color name="ozel_button_background_4">#FF1744</color>          <!-- drawable/button_background_4.xml -->
+    <color name="ozel_button_dark_background_4">#800000</color>     <!-- drawable/button_background_4.xml -->
+
+
+
+
+
+
+
+
+
+
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************* -->
+
+    <!-- Mavi Renkler -->
+    <color name="blueLighter">#64B5F6</color> <!-- Az Açık Mavi -->
+    <color name="blueLight">#90CAF9</color> <!-- Açık Mavi -->
+    <color name="blue">#2196F3</color> <!-- Asıl Mavi -->
+    <color name="blueDarker">#1976D2</color> <!-- Az Koyu Mavi -->
+    <color name="blueDark">#0D47A1</color> <!-- Koyu Mavi -->
+
+    <!-- Lacivert Renkler -->
+    <color name="navyBlueLighter">#5472d3</color> <!-- Az Açık Lacivert -->
+    <color name="navyBlueLight">#7180ac</color> <!-- Açık Lacivert -->
+    <color name="navyBlue">#000080</color> <!-- Asıl Lacivert -->
+    <color name="navyBlueDarker">#00004d</color> <!-- Az Koyu Lacivert -->
+    <color name="navyBlueDark">#000033</color> <!-- Koyu Lacivert -->
+
+    <!-- Gece Mavisi -->
+    <color name="midnightBlueLighter">#47476b</color> <!-- Az Açık Gece Mavisi -->
+    <color name="midnightBlueLight">#363654</color> <!-- Açık Gece Mavisi -->
+    <color name="midnightBlue">#191970</color> <!-- Asıl Gece Mavisi -->
+    <color name="midnightBlueDarker">#161661</color> <!-- Az Koyu Gece Mavisi -->
+    <color name="midnightBlueDark">#131353</color> <!-- Koyu Gece Mavisi -->
+
+    <!-- ************************************************************************* -->
+
+    <!-- Kırmızı Renkler -->
+    <color name="redLighter">#e57373</color> <!-- Az Açık Kırmızı -->
+    <color name="redLight">#ef9a9a</color> <!-- Açık Kırmızı -->
+    <color name="red">#f44336</color> <!-- Asıl Kırmızı -->
+    <color name="redDarker">#c62828</color> <!-- Az Koyu Kırmızı -->
+    <color name="redDark">#b71c1c</color> <!-- Koyu Kırmızı -->
+
+    <!-- Pas Rengi -->
+    <color name="rustLighter">#de8a56</color> <!-- Az Açık Pas -->
+    <color name="rustLight">#d17b4d</color> <!-- Açık Pas -->
+    <color name="rust">#b7410e</color> <!-- Asıl Pas -->
+    <color name="rustDarker">#a2360d</color> <!-- Az Koyu Pas -->
+    <color name="rustDark">#8d2b0b</color> <!-- Koyu Pas -->
+
+    <!-- Nar Rengi -->
+    <color name="pomegranateLighter">#ff6666</color> <!-- Az Açık Nar -->
+    <color name="pomegranateLight">#ff4d4d</color> <!-- Açık Nar -->
+    <color name="pomegranate">#f44336</color> <!-- Asıl Nar -->
+    <color name="pomegranateDarker">#e53935</color> <!-- Az Koyu Nar -->
+    <color name="pomegranateDark">#d32f2f</color> <!-- Koyu Nar -->
+
+    <!-- Kardinal Renkler -->
+    <color name="cardinalLighter">#ef5350</color> <!-- Az Açık Kardinal -->
+    <color name="cardinalLight">#e57373</color> <!-- Açık Kardinal -->
+    <color name="cardinal">#d32f2f</color> <!-- Asıl Kardinal -->
+    <color name="cardinalDarker">#c62828</color> <!-- Az Koyu Kardinal -->
+    <color name="cardinalDark">#b71c1c</color> <!-- Koyu Kardinal -->
+
+    <!-- Falu Kırmızısı -->
+    <color name="faluRedLighter">#c85d5d</color> <!-- Az Açık Falu Kırmızısı -->
+    <color name="faluRedLight">#b84e4e</color> <!-- Açık Falu Kırmızısı -->
+    <color name="faluRed">#801818</color> <!-- Asıl Falu Kırmızısı -->
+    <color name="faluRedDarker">#701414</color> <!-- Az Koyu Falu Kırmızısı -->
+    <color name="faluRedDark">#601010</color> <!-- Koyu Falu Kırmızısı -->
+
+    <!-- Fransız Gül Renkleri -->
+    <color name="frenchRoseLighter">#ff5a76</color> <!-- Az Açık Fransız Gül -->
+    <color name="frenchRoseLight">#ff4370</color> <!-- Açık Fransız Gül -->
+    <color name="frenchRose">#f64a8a</color> <!-- Asıl Fransız Gül -->
+    <color name="frenchRoseDarker">#d63872</color> <!-- Az Koyu Fransız Gül -->
+    <color name="frenchRoseDark">#b6305f</color> <!-- Koyu Fransız Gül -->
+
+    <!-- ************************************************************************* -->
+
+    <!-- Yeşil Renkler -->
+    <color name="greenLighter">#81c784</color> <!-- Az Açık Yeşil -->
+    <color name="greenLight">#a5d6a7</color> <!-- Açık Yeşil -->
+    <color name="green">#4caf50</color> <!-- Asıl Yeşil -->
+    <color name="greenDarker">#388e3c</color> <!-- Az Koyu Yeşil -->
+    <color name="greenDark">#1b5e20</color> <!-- Koyu Yeşil -->
+
+    <!-- İslam Yeşili -->
+    <color name="islamicGreenLighter">#00a300</color> <!-- Az Açık İslam Yeşili -->
+    <color name="islamicGreenLight">#008c00</color> <!-- Açık İslam Yeşili -->
+    <color name="islamicGreen">#006400</color> <!-- Asıl İslam Yeşili -->
+    <color name="islamicGreenDarker">#005700</color> <!-- Az Koyu İslam Yeşili -->
+    <color name="islamicGreenDark">#004900</color> <!-- Koyu İslam Yeşili -->
+
+    <!-- Çam Yeşili Renkler -->
+    <color name="pineGreenLighter">#4c9c85</color> <!-- Az Açık Çam Yeşili -->
+    <color name="pineGreenLight">#3b8b6f</color> <!-- Açık Çam Yeşili -->
+    <color name="pineGreen">#228b22</color> <!-- Asıl Çam Yeşili -->
+    <color name="pineGreenDarker">#1c7743</color> <!-- Az Koyu Çam Yeşili -->
+    <color name="pineGreenDark">#166336</color> <!-- Koyu Çam Yeşili -->
+
+    <!-- Turkuaz Renkler -->
+    <color name="turquoiseLighter">#66e0ff</color> <!-- Az Açık Turkuaz -->
+    <color name="turquoiseLight">#33d1ff</color> <!-- Açık Turkuaz -->
+    <color name="turquoise">#00c8d7</color> <!-- Asıl Turkuaz -->
+    <color name="turquoiseDarker">#00a7b8</color> <!-- Az Koyu Turkuaz -->
+    <color name="turquoiseDark">#008999</color> <!-- Koyu Turkuaz -->
+
+    <!-- ************************************************************************* -->
+
+    <!-- Mor Renkler -->
+    <color name="purpleLighter">#ba68c8</color> <!-- Az Açık Mor -->
+    <color name="purpleLight">#ce93d8</color> <!-- Açık Mor -->
+    <color name="purple">#9c27b0</color> <!-- Asıl Mor -->
+    <color name="purpleDarker">#7b1fa2</color> <!-- Az Koyu Mor -->
+    <color name="purpleDark">#6a1b9a</color> <!-- Koyu Mor -->
+
+    <!-- Lila Renkler -->
+    <color name="lilacLighter">#d1c4e9</color> <!-- Az Açık Lila -->
+    <color name="lilacLight">#b39ddb</color> <!-- Açık Lila -->
+    <color name="lilac">#9575cd</color> <!-- Asıl Lila -->
+    <color name="lilacDarker">#7e57c2</color> <!-- Az Koyu Lila -->
+    <color name="lilacDark">#673ab7</color> <!-- Koyu Lila -->
+
+    <!-- Elektrik Çivit Rengi -->
+    <color name="electricIndigoLighter">#8a2be2</color> <!-- Az Açık Elektrik Çivit -->
+    <color name="electricIndigoLight">#7b68ee</color> <!-- Açık Elektrik Çivit -->
+    <color name="electricIndigo">#6f00ff</color> <!-- Asıl Elektrik Çivit -->
+    <color name="electricIndigoDarker">#5e00cc</color> <!-- Az Koyu Elektrik Çivit -->
+    <color name="electricIndigoDark">#4d0099</color> <!-- Koyu Elektrik Çivit -->
+
+    <!-- Elektrik Mor Renkler -->
+    <color name="electricPurpleLighter">#d896ff</color> <!-- Az Açık Elektrik Mor -->
+    <color name="electricPurpleLight">#be66cc</color> <!-- Açık Elektrik Mor -->
+    <color name="electricPurple">#bf00ff</color> <!-- Asıl Elektrik Mor -->
+    <color name="electricPurpleDarker">#8c00cc</color> <!-- Az Koyu Elektrik Mor -->
+    <color name="electricPurpleDark">#5a0099</color> <!-- Koyu Elektrik Mor -->
+
+    <!-- Menekşe Rengi -->
+    <color name="violetLighter">#dabcf6</color> <!-- Az Açık Menekşe -->
+    <color name="violetLight">#c5a3eb</color> <!-- Açık Menekşe -->
+    <color name="violet">#8a2be2</color> <!-- Asıl Menekşe -->
+    <color name="violetDarker">#7925ca</color> <!-- Az Koyu Menekşe -->
+    <color name="violetDark">#6821b2</color> <!-- Koyu Menekşe -->
+
+    <!-- ************************************************************************* -->
+
+    <!-- Gri Renkler -->
+    <color name="grayLighter">#e0e0e0</color> <!-- Az Açık Gri -->
+    <color name="grayLight">#eeeeee</color> <!-- Açık Gri -->
+    <color name="gray">#bdbdbd</color> <!-- Asıl Gri -->
+    <color name="grayDarker">#9e9e9e</color> <!-- Az Koyu Gri -->
+    <color name="grayDark">#757575</color> <!-- Koyu Gri -->
+
+    <!-- Kahverengi Renkler -->
+    <color name="brownLighter">#a1887f</color> <!-- Az Açık Kahverengi -->
+    <color name="brownLight">#bcaaa4</color> <!-- Açık Kahverengi -->
+    <color name="brown">#795548</color> <!-- Asıl Kahverengi -->
+    <color name="brownDarker">#6d4c41</color> <!-- Az Koyu Kahverengi -->
+    <color name="brownDark">#5d4037</color> <!-- Koyu Kahverengi -->
+
+    <!-- Turuncu Renkler -->
+    <color name="orangeLighter">#ffb74d</color> <!-- Az Açık Turuncu -->
+    <color name="orangeLight">#ffcc80</color> <!-- Açık Turuncu -->
+    <color name="orange">#ff9800</color> <!-- Asıl Turuncu -->
+    <color name="orangeDarker">#f57c00</color> <!-- Az Koyu Turuncu -->
+    <color name="orangeDark">#e65100</color> <!-- Koyu Turuncu -->
+
+    <!-- Eflatun Renkler -->
+    <color name="periwinkleLighter">#dcc7ff</color> <!-- Az Açık Eflatun -->
+    <color name="periwinkleLight">#c7a7ff</color> <!-- Açık Eflatun -->
+    <color name="periwinkle">#ccccff</color> <!-- Asıl Eflatun -->
+    <color name="periwinkleDarker">#b397ff</color> <!-- Az Koyu Eflatun -->
+    <color name="periwinkleDark">#a087ff</color> <!-- Koyu Eflatun -->
+
+    <!-- Portakal Renkler -->
+    <color name="tangerineLighter">#ffd699</color> <!-- Az Açık Portakal -->
+    <color name="tangerineLight">#ffc966</color> <!-- Açık Portakal -->
+    <color name="tangerine">#f28500</color> <!-- Asıl Portakal -->
+    <color name="tangerineDarker">#e67f00</color> <!-- Az Koyu Portakal -->
+    <color name="tangerineDark">#cc6600</color> <!-- Koyu Portakal -->
+
+    <!-- Gümüş Renkler -->
+    <color name="silverLighter">#e5e5e5</color> <!-- Az Açık Gümüş -->
+    <color name="silverLight">#cccccc</color> <!-- Açık Gümüş -->
+    <color name="silver">#c0c0c0</color> <!-- Asıl Gümüş -->
+    <color name="silverDarker">#a6a6a6</color> <!-- Az Koyu Gümüş -->
+    <color name="silverDark">#8c8c8c</color> <!-- Koyu Gümüş -->
+
+    <!-- Altın Renkler -->
+    <color name="goldLighter">#fff2cc</color> <!-- Az Açık Altın -->
+    <color name="goldLight">#ffe699</color> <!-- Açık Altın -->
+    <color name="gold">#ffd700</color> <!-- Asıl Altın -->
+    <color name="goldDarker">#e6c300</color> <!-- Az Koyu Altın -->
+    <color name="goldDark">#ccad00</color> <!-- Koyu Altın -->
+
+    <!-- Bronz Renkler -->
+    <color name="bronzeLighter">#e1ba9e</color> <!-- Az Açık Bronz -->
+    <color name="bronzeLight">#d2a582</color> <!-- Açık Bronz -->
+    <color name="bronze">#cd7f32</color> <!-- Asıl Bronz -->
+    <color name="bronzeDarker">#b36b2b</color> <!-- Az Koyu Bronz -->
+    <color name="bronzeDark">#996024</color> <!-- Koyu Bronz -->
+
+    <!-- Çikolata Renkler -->
+    <color name="chocolateLighter">#f4a460</color> <!-- Az Açık Çikolata -->
+    <color name="chocolateLight">#e9967a</color> <!-- Açık Çikolata -->
+    <color name="chocolate">#d2691e</color> <!-- Asıl Çikolata -->
+    <color name="chocolateDarker">#b9561e</color> <!-- Az Koyu Çikolata -->
+    <color name="chocolateDark">#9f431e</color> <!-- Koyu Çikolata -->
+
+    <!-- Siyah Renkler -->
+    <color name="blackLighter">#424242</color> <!-- Az Açık Siyah -->
+    <color name="blackLight">#616161</color> <!-- Açık Siyah -->
+    <color name="black">#000000</color> <!-- Asıl Siyah -->
+    <color name="blackDarker">#212121</color> <!-- Az Koyu Siyah -->
+    <color name="blackDark">#0d0d0d</color> <!-- Koyu Siyah -->
+
+    <!-- Lavanta Rengi -->
+    <color name="lavenderLighter">#e6e6fa</color> <!-- Az Açık Lavanta -->
+    <color name="lavenderLight">#d8d8f0</color> <!-- Açık Lavanta -->
+    <color name="lavender">#ccccff</color> <!-- Asıl Lavanta -->
+    <color name="lavenderDarker">#b8b8e0</color> <!-- Az Koyu Lavanta -->
+    <color name="lavenderDark">#a4a4c0</color> <!-- Koyu Lavanta -->
+
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************* -->
+    <!-- ************************************************************************* -->
+
+
+
+
 
 
 </resources>

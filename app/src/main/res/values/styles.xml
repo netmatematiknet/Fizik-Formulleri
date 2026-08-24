@@ -1,121 +1,196 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- <item name="android:background"> Uygulamanın arka plan rengini veya resmini tanımlar. -->
+    <!-- <item name="android:fontFamily">: Uygulamada kullanılacak yazı tipi ailesini belirler. -->
+    <!-- <item name="android:statusBarColor"> Durum çubuğunun rengini değiştirebilirsiniz.. -->
+    <!-- <item name="android:windowNoTitle">true</item> Pencere başlığının görünüp görünmeyeceğini belirler. true veya false değeri alabilir. -->
+    <!-- <item name="android:windowActionBar">true</item>: ActionBar'ın görünüp görünmeyeceğini kontrol eder. true veya false değeri alabilir.-->
+    <!-- <item name="android:windowActionModeOverlay">true</item>: Bu ögeyi true olarak ayarlayarak, uygulamada bir bağlam menüsü görüntülendiğinde pencerenin üst kısmında bir örtü oluşturabilirsiniz..-->
+    <!-- <item name="android:windowContentOverlay">: İçerik ve ActionBar arasında görünen görsel ayrımı tanımlar. -->
+    <!-- <item name="android:itemTextAppearance">: Liste öğeleri gibi spesifik elementler için metin görünümünü belirler. -->
+    <!-- <style name="Theme.Nadiye" parent="Theme.MaterialComponents.DayNight.NoActionBar"> -->
 
-    <style name="PopupMenu" parent="ThemeOverlay.AppCompat.Dark" />
-
-    <!-- UYGULAMALARIM -->
-    <!-- Base application theme. -->
-    <style name="AppTheme1" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/uygulama_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/uygulama_colorPrimaryDark</item>
-        <item name="colorAccent">@color/uygulama_colorAccent</item>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fall_down</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
     </style>
 
-    <style name="AppTheme1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <!-- UYGULAMALARIM -->
+    <!-- Bridge: AppCompat widget'ları Material temada doğru attr çözer -->
+    <style name="Theme.MatematikBase" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Matematik.Body1</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Matematik.Caption</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Matematik.Subtitle1</item>
+    </style>
 
+    <style name="TextAppearance.Matematik.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
 
-    <!-- Base application theme (Material 3, DayNight). -->
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorSecondary">@color/colorAccent</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/window_background</item>
-        <item name="colorSurface">@color/window_background</item>
+    <style name="TextAppearance.Matematik.Caption" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.Matematik.Subtitle1" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+        <style name="Theme.Nurullah" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/nurullah_primary</item>
+            <item name="colorPrimaryDark">@color/nurullah_primary_dark</item>
+            <item name="colorAccent">@color/nurullah_accent</item>
+        </style>
+
+    <!-- Açılış: KenBurns yüzen splash; API 31+ ikon gizleme values-v31'de -->
+    <style name="Theme.Giris" parent="Theme.Nurullah">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
-        <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
-        <item name="toolbarStyle">@style/Widget.App.MaterialToolbar</item>
-        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.ExtendedFloatingActionButton</item>
-        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
     </style>
 
-    <style name="Widget.App.MaterialToolbar" parent="Widget.Material3.Toolbar">
-        <item name="titleTextColor">@android:color/white</item>
-        <item name="subtitleTextColor">@android:color/white</item>
+        <style name="Theme.Nadiye" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/nadiye_primary</item>
+            <item name="colorPrimaryDark">@color/nadiye_primary_dark</item>
+            <item name="colorAccent">@color/nadiye_accent</item>
+        </style>
+
+        <style name="Theme.Sude" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/sude_primary</item>
+            <item name="colorPrimaryDark">@color/sude_primary_dark</item>
+            <item name="colorAccent">@color/sude_accent</item>
+        </style>
+
+        <style name="Theme.Kubra" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/kubra_primary</item>
+            <item name="colorPrimaryDark">@color/kubra_primary_dark</item>
+            <item name="colorAccent">@color/kubra_accent</item>
+        </style>
+
+        <style name="Theme.Zeynep" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/zeynep_primary</item>
+            <item name="colorPrimaryDark">@color/zeynep_primary_dark</item>
+            <item name="colorAccent">@color/zeynep_accent</item>
+        </style>
+
+    <style name="Theme.Irem" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/irem_primary</item>
+        <item name="colorPrimaryDark">@color/irem_primary_dark</item>
+        <item name="colorAccent">@color/irem_accent</item>
+    </style>
+
+    <style name="Theme.Ilknur" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/ilknur_primary</item>
+        <item name="colorPrimaryDark">@color/ilknur_primary_dark</item>
+        <item name="colorAccent">@color/ilknur_accent</item>
     </style>
 
 
-    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
-        <!--the following attribute will changes in the appearance of the extended FAB in terms of colors-->
-        <item name="materialThemeOverlay">@style/myCustomThemeForExtendedFab</item>
-        <!--the following attribute will change in the shape appearance of the extended FAB-->
-        <item name="shapeAppearanceOverlay">@style/customExtendedFAB</item>
+    <style name="Theme.Rukiye" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/rukiye_primary</item>
+        <item name="colorPrimaryDark">@color/rukiye_primary_dark</item>
+        <item name="colorAccent">@color/rukiye_accent</item>
     </style>
 
-    <style name="customExtendedFAB">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10dp</item>
-        <item name="cornerSizeTopRight">14dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerSizeBottomLeft">14dp</item>
+    <style name="Theme.Hilal" parent="Theme.MatematikBase">
+        <item name="colorPrimary">@color/hilal_primary</item>
+        <item name="colorPrimaryDark">@color/hilal_primary_dark</item>
+        <item name="colorAccent">@color/hilal_accent</item>
     </style>
 
-    <style name="myCustomThemeForExtendedFab" parent="">
-        <item name="colorSecondary">@color/colorPrimary</item>
-        <item name="colorOnSecondary">@android:color/white</item>
+
+
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/holo_blue_light</item> <!-- Arka plan rengi -->
+        <item name="android:textColorPrimary">@android:color/white</item> <!-- Metin rengi -->
+        <item name="android:textColorSecondary">@android:color/white</item> <!-- İkincil metin rengi -->
+        <item name="android:buttonBarButtonStyle">@style/DialogButton</item> <!-- Buton stili -->
     </style>
 
-    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="materialThemeOverlay">@style/myCustomThemeForNormalFab</item>
-        <item name="shapeAppearanceOverlay">@style/customNormalFAB</item>
+    <style name="DialogButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item> <!-- Buton metin rengi -->
+        <item name="android:shadowColor">@android:color/darker_gray</item> <!-- Gölge rengi -->
+        <item name="android:shadowDx">1</item> <!-- Gölge x ekseni -->
+        <item name="android:shadowDy">1</item> <!-- Gölge y ekseni -->
+        <item name="android:shadowRadius">1.5</item> <!-- Gölge yarıçapı -->
     </style>
 
-    <style name="customNormalFAB">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20dp</item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+
+    <style name="Theme.Mavi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mavi_primary1</item>
+        <item name="colorPrimaryDark">@color/mavi_primary_dark1</item>
+        <item name="colorAccent">@color/mavi_accent1</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.Yesil" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/yesil_accent</item>
+        <item name="colorPrimaryDark">@color/softGreenAccent</item>
+        <item name="colorAccent">@color/yesil_accent1</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.Turuncu" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/turuncu_primary1</item>
+        <item name="colorPrimaryDark">@color/turuncu_primary_dark1</item>
+        <item name="colorAccent">@color/turuncu_accent1</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.Mor" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mor_primary1</item>
+        <item name="colorPrimaryDark">@color/mor_primary_dark1</item>
+        <item name="colorAccent">@color/mor_accent2</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="myCustomThemeForNormalFab" parent="">
-        <item name="colorSecondary">@android:color/holo_green_dark</item>
-        <item name="colorOnSecondary">@android:color/white</item>
+
+    <style name="Theme.EducationBlue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/vibrantBluePrimary</item>
+        <item name="colorPrimaryDark">@color/vibrantBluePrimaryDark</item>
+        <item name="colorAccent">@color/vibrantBlueAccent</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Theme.EducationGreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/yesil_accent</item>
+        <item name="colorPrimaryDark">@color/softGreenAccent</item>
+        <item name="colorAccent">@color/yesil_accent1</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="Toolbar_Stil_1" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimaryDark">#26418f</item>        <!-- Statusbar rengi. seçilir -->
-        <item name="android:colorPrimaryDark">#26418f</item>      <!-- Statusbar rengi seçilir -->
-        <item name="colorPrimary">@color/toolbar1_rengi</item>        <!-- Toolbar rengi seçilir -->
-        <item name="android:colorPrimary">@color/toolbar1_rengi</item>      <!-- Toolbar rengi seçilir -->
-        <item name="android:windowBackground">@color/toolbar1_arkaplan_rengi</item>
-        <item name="android:textColor">#FAFAFA</item>      <!-- toolbar_uygulama_2.xml deki Toolbardaki TEXTVİEW deki Yazı Rengi ve Toolbar daki ALT MENÜDEKİ yazı rengi-->
-        <item name="extendedFloatingActionButtonStyle">@style/Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton</item>
-        <item name="floatingActionButtonStyle">@style/Toolbar_Stil_1.Widget.App.FloatingActionButton</item>
+    <style name="Theme.EducationOrange" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/turuncu_primary1</item>
+        <item name="colorPrimaryDark">@color/turuncu_primary_dark1</item>
+        <item name="colorAccent">@color/turuncu_accent1</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
     </style>
+ -->
 
-    <!--Toolbar_Stil_1 FLOAT AYARLARI -->
-    <style name="Toolbar_Stil_1.Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
-        <item name="colorSecondary">@color/toolbar1_extended_floataction_arkaplan_rengi</item>
-        <item name="colorOnSecondary">@color/toolbar1_extended_floataction_metin_rengi</item>
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSizeTopRight">104dp</item>
-        <item name="cornerSizeTopLeft">104dp</item>
-        <item name="cornerSizeBottomRight">100dp</item>
-        <item name="cornerSizeBottomLeft">100dp</item>
-    </style>
 
-    <!--Toolbar_Stil_1_Widget.App.FloatingActionButton içinde, normal FAB temasını değiştiren iki özellik vardır, bunlar materialThemeOverlay ve shapeAppearanceOverlay-->
-    <style name="Toolbar_Stil_1.Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
-        <item name="colorSecondary">@color/toolbar1_floataction_arkaplan_rengi</item>
-        <item name="colorOnSecondary">@color/toolbar1_floataction_metin_rengi</item>
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSizeTopRight">104dp</item>
-        <item name="cornerSizeTopLeft">104dp</item>
-        <item name="cornerSizeBottomRight">100dp</item>
-        <item name="cornerSizeBottomLeft">100dp</item>
-    </style>
 
-    <style name="Toolbar_Stil_Uygulama" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimaryDark">#26418f</item>        <!-- Statusbar rengi. seçilir -->
-        <item name="android:colorPrimaryDark">#26418f</item>      <!-- Statusbar rengi seçilir -->
-        <item name="colorPrimary">@color/toolbar_uygulama_rengi</item>        <!-- Toolbar rengi seçilir -->
-        <item name="android:colorPrimary">@color/toolbar_uygulama_rengi</item>      <!-- Toolbar rengi seçilir -->
-        <item name="android:windowBackground">@color/toolbar_uygulama_arkaplan_rengi</item>
-        <item name="android:textColor">#000</item>      <!-- toolbar_uygulama_2.xml deki Toolbardaki TEXTVİEW deki Yazı Rengi ve Toolbar daki ALT MENÜDEKİ yazı rengi-->
-    </style>
 
 </resources>

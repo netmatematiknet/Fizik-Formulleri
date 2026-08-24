@@ -1,8 +1,0 @@
-HSPLcom/mobilprogramlar/FizikFormullerim/App;
-HSPLcom/mobilprogramlar/FizikFormullerim/Giris;
-HSPLcom/mobilprogramlar/FizikFormullerim/UygulamaAnaSayfa;
-HSPLcom/mobilprogramlar/FizikFormullerim/FormullerFizik;
-HSPLcom/mobilprogramlar/FizikFormullerim/FormulGoster;
-HSPLcom/mobilprogramlar/FizikFormullerim/TopicCatalog;
-HSPLcom/mobilprogramlar/FizikFormullerim/AdManager;
-HSPLcom/mobilprogramlar/FizikFormullerim/AppRemoteConfig;

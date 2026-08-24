@@ -1,12 +1,13 @@
 <resources>
-    <dimen name="content_max_width">640dp</dimen>
-    <dimen name="home_button_text">26sp</dimen>
-    <dimen name="home_button_padding">22dp</dimen>
-    <dimen name="screen_padding">24dp</dimen>
-    <dimen name="list_item_title">18sp</dimen>
-    <dimen name="list_item_subtitle">16sp</dimen>
-    <dimen name="list_item_image">64dp</dimen>
-    <dimen name="banner_min_height">90dp</dimen>
-    <dimen name="uygulama_album_cover_height">200dp</dimen>
-    <dimen name="uygulama_detail_backdrop_height">320dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="toolbar_height">64dp</dimen>
+
+    <dimen name="list_item_image_size">140dp</dimen>
+    <dimen name="list_item_title_text">22sp</dimen>
+    <dimen name="list_item_body_text">16sp</dimen>
+    <dimen name="list_item_padding">14dp</dimen>
+    <dimen name="list_horizontal_padding">24dp</dimen>
+    <dimen name="content_max_width">720dp</dimen>
+    <dimen name="splash_logo_size">280dp</dimen>
+    <dimen name="formula_page_padding">32dp</dimen>
 </resources>

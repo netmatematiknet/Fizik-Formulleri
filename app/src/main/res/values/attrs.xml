@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Ozel text stil attribute'ları -->
+    <attr name="ozel_toolbarTitleStyle" format="reference"/>
+    <attr name="ozel_toolbarSubtitleStyle" format="reference"/>
+    <attr name="ozel_normalTextStyle" format="reference"/>
+    <attr name="ozel_buttonTextStyle" format="reference"/>
+    <attr name="ozel_cardViewTextStyle" format="reference"/>
+
+
+
+
+
+
+    <!-- Toolbar stilleri için özel attribute'lar -->
+    <attr name="toolbarStyleA" format="reference"/>
+    <attr name="toolbarStyleB" format="reference"/>
+
+    <!-- Bütün Temalar için recyclerView ayarı -->
+    <attr name="recyclerViewStyleNT" format="reference" />
+
+
+
+
+
+    <attr name="toolbarBackgroundColor" format="color" />
+    <attr name="toolbarTitleTextColor" format="color" />
+    <attr name="toolbarHeight" format="dimension" />
+
+
+
+</resources>

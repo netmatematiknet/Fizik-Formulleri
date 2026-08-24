@@ -6,7 +6,6 @@ import java.util.List;
 public final class TopicCatalog {
 
     private static List<Topic> cachedAll;
-    private static List<Topic> cachedAyt;
 
     private TopicCatalog() {
     }
@@ -233,31 +232,8 @@ public final class TopicCatalog {
                 R.drawable.f08_dalgalar_ses_deprem_15, R.drawable.f08_dalgalar_ses_deprem_16,
                 R.drawable.f08_dalgalar_ses_deprem_17
         }));
-        topics.addAll(ayt());
         cachedAll = topics;
         return cachedAll;
-    }
-
-    public static List<Topic> tyt() {
-        List<Topic> out = new ArrayList<>();
-        for (Topic t : all()) {
-            if ("Tyt".equalsIgnoreCase(t.level)) {
-                out.add(t);
-            }
-        }
-        return out;
-    }
-
-    /**
-     * AYT konuları. Görseller hazır olunca buraya Topic satırları eklenir.
-     * Boşsa UI “AYT yakında” boş durumunu gösterir.
-     */
-    public static List<Topic> ayt() {
-        if (cachedAyt != null) {
-            return cachedAyt;
-        }
-        cachedAyt = new ArrayList<>();
-        return cachedAyt;
     }
 
     public static Topic getById(int id) {

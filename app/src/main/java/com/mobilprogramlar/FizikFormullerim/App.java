@@ -11,24 +11,31 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.perf.FirebasePerformance;
 
 /**
- * Firebase Analytics, Crashlytics, Performance, Messaging ve Remote Config
- * uygulama açılışında bir kez başlatılır. AdMob, UMP izninden sonra açılır.
+ * Tek seferlik başlatma: Firebase, Crashlytics, Performance, Messaging, Remote Config, Billing.
+ * AdMob, UMP consent sonrası MainActivity'de başlatılır.
  */
 public class App extends Application {
+
+    private BillingManager billingManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        if (FirebaseApp.getApps(this).isEmpty()) {
-            FirebaseApp.initializeApp(this);
-        }
+        FirebaseApp.initializeApp(this);
         FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true);
         FirebasePerformance.getInstance().setPerformanceCollectionEnabled(true);
         AppRemoteConfig.getInstance(this).fetchAndActivate();
         createFcmChannel();
         FirebaseMessaging.getInstance().subscribeToTopic("all_users");
         FirebaseMessaging.getInstance().subscribeToTopic("fizik_formulleri");
+        PremiumManager.getInstance(this);
         CrashlyticsKeys.refresh(this);
+        billingManager = new BillingManager(this);
+        billingManager.connectAndSync();
+    }
+
+    public BillingManager getBillingManager() {
+        return billingManager;
     }
 
     private void createFcmChannel() {
@@ -48,3 +55,4 @@ public class App extends Application {
         manager.createNotificationChannel(channel);
     }
 }
+

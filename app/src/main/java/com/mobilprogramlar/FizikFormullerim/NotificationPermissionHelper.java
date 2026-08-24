@@ -14,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 
+/**
+ * Android 13+ (API 33) bildirim izni. Bir kez sorar; reddedilirse tekrar zorlamaz.
+ */
 public final class NotificationPermissionHelper {
 
     private static final String PREFS = "notification_permission_prefs";
@@ -30,8 +33,13 @@ public final class NotificationPermissionHelper {
                 == PackageManager.PERMISSION_GRANTED;
     }
 
+    /**
+     * Activity onCreate içinde, setContentView sonrası çağrılır.
+     * Launcher Activity alanında tutulmalıdır.
+     */
     @NonNull
-    public static ActivityResultLauncher<String> register(@NonNull ComponentActivity activity) {
+    public static ActivityResultLauncher<String> register(
+            @NonNull ComponentActivity activity) {
         return activity.registerForActivityResult(
                 new ActivityResultContracts.RequestPermission(),
                 granted -> prefs(activity).edit().putBoolean(KEY_ASKED, true).apply());

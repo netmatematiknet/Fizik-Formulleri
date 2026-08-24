@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_notification_channel_id" translatable="false">default</string>
+    <string name="notification_channel_name">Announcements</string>
+    <string name="notification_channel_desc">App announcements and updates</string>
+    <string name="notification_permission_title">Notification permission</string>
+    <string name="notification_permission_message">We need notification permission to send announcements and updates.</string>
+    <string name="notification_permission_allow">Allow</string>
+    <string name="notification_permission_deny">Not now</string>
+
+    <!-- =====================================================================
+         AdMob Kimlikleri — Seçim BuildConfig.DEBUG ile AdHelper.java'da yapılır
+         DEBUG build  → test ID'ler otomatik kullanılır
+         RELEASE build → gerçek ID'ler otomatik kullanılır
+         ===================================================================== -->
+    <string name="admob_app_id">ca-app-pub-6848773398638567~9469156132</string>
+
+    <!-- Gerçek (Production) Ad Unit ID'leri -->
+    <string name="admob_banner_id">ca-app-pub-6848773398638567/8821115411</string>
+    <string name="admob_interstitial_id">ca-app-pub-6848773398638567/7827646959</string>
+
+    <!-- Google'ın resmi Test Ad Unit ID'leri (değiştirme) -->
+    <string name="admob_banner_test_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_test_id">ca-app-pub-3940256099942544/1033173712</string>
+
+    <string name="manifest_activity_splash_app_name">Physics Formulas</string>
+    <string name="toolbar_ayarlar">Settings</string>
+    <string name="toolbar_paylas">Share</string>
+    <string name="toolbar_anasayfa">Home</string>
+    <string name="toolbar_baslik_default">Formulas Application</string>
+    <string name="toolbar_baslik_uygulamalarimiz">Our Applications</string>
+    <string name="toolbar_altbaslik_default">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_1">Math Formulas</string>
+    <string name="toolbar_altbaslik_1">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_2">Geometry Formulas</string>
+    <string name="toolbar_altbaslik_2">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_3">Our Other Applications</string>
+    <string name="toolbar_altbaslik_3">www.OssMatematik.Com</string>
+    <string name="paylas_button">Share</string>
+    <string name="paylas_baslik"><b>Math &amp; Geometry Formulas</b>\n\n</string>
+    <string name="paylas_mesaj">No More Carrying Books.\nAll Math-Geometry Formulas in Middle and High School at Your Fingertips,\n\nClick to <b>Share</b>\n\n</string>
+    <string name="paylas_button_mesaj">Click to Share</string>
+    <string name="paylas_link">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+
+    <string name="oylama_soru">Do you like our app?</string>
+    <string name="oylama_lutfen">Please rate our app on Google Play!</string>
+    <string name="oylama_oyla">Rate</string>
+    <string name="oylama_vazgec">Cancel</string>
+    <string name="oylama_sonra">Later</string>
+
+    <string name="thank_you_message">Thank you for installing our app!</string>
+    <string name="welcome_message_0">Today</string>
+    <string name="welcome_message_1">Welcome! Today is a great day!</string>
+    <string name="welcome_message_2">Welcome to the world of mathematics!</string>
+    <string name="welcome_message_3">Are you ready to learn math today?</string>
+    <string name="welcome_message_4">Have a day full of math formulas!</string>
+    <string name="welcome_message_5">Today is a perfect day to learn new things!</string>
+    <string name="welcome_message_6">Get ready to discover math formulas!</string>
+    <string name="welcome_message_7">We wish you a great day full of math!</string>
+    <string name="welcome_message_8">Have a day filled with formulas!</string>
+    <string name="welcome_message_9">Reach new heights in math today!</string>
+    <string name="welcome_message_10">We wish you a day full of math!</string>
+    <string name="welcome_message_11">Today is your day! Empower yourself with math!</string>
+    <string name="welcome_message_12">It is time to discover new math formulas!</string>
+    <string name="welcome_message_13">A beautiful day full of math!</string>
+    <string name="welcome_message_14">You will succeed in math today!</string>
+    <string name="welcome_message_15">A great day to learn formulas!</string>
+    <string name="welcome_message_16">Make new math discoveries today!</string>
+    <string name="welcome_message_17">Step into the world of mathematics!</string>
+    <string name="welcome_message_18">Be open to learning and discovering today!</string>
+    <string name="welcome_message_19">A bright day full of math!</string>
+    <string name="welcome_message_20">Learn new things about math today!</string>
+    <string name="welcome_message_21">Welcome! Today is a great day to learn!</string>
+    <string name="welcome_message_22">Get ready for new discoveries in math!</string>
+    <string name="welcome_message_23">We wish you a fun day full of math!</string>
+    <string name="welcome_message_24">Discover new things about math today!</string>
+    <string name="welcome_message_25">A creative day full of math!</string>
+    <string name="welcome_message_26">Reach new heights in math today!</string>
+    <string name="welcome_message_27">Write a success story full of math!</string>
+    <string name="welcome_message_28">Discover new math formulas today!</string>
+    <string name="welcome_message_29">Have a great day full of math!</string>
+    <string name="welcome_message_30">Today is a great day to learn new things about math!</string>
+
+
+
+
+    <string name="hata_mesaji_1">Icon view is empty!!</string>
+    <string name="hata_mesaji_2">Category information is missing!!</string>
+    <string name="hata_mesaji_3">Category is empty!!</string>
+    <string name="hata_mesaji_4">Unknown category!!</string>
+    <string name="hata_mesaji_5">Invalid category!!</string>
+    <string name="konudaki_resim_sayisi">Page Count: %1$d</string>
+    <string name="uygulama_tema_1">Theme 1</string>
+    <string name="uygulama_tema_2">Theme 2</string>
+    <string name="image_todo_1">Description</string>
+    <string name="image_todo_2">Logo</string>
+    <string name="image_todo_3">Settings</string>
+    <string name="image_todo_4">Share</string>
+    <string name="image_todo_5">Home</string>
+    <string name="rcylerview_baslik">Title</string>
+    <string name="rcylerview_alt_baslik">Subtitle</string>
+    <string name="rcylerview_aciklama">Detail: %1$s</string>
+    <string name="app_name">Math Formulas</string>
+    <string name="uygulama_image">App Image</string>
+    <string name="uygulama_left_image">Left Image</string>
+    <string name="uygulama_top_image">Top Image</string>
+    <string name="uygulama_bottom_image">Bottom Image</string>
+    <string name="uygulama_right_image">Right Image</string>
+    <string name="change_language">Change Language</string>
+    <string name="language_option">Language</string>
+    <string name="language_english">English</string>
+    <string name="language_turkish">Turkish</string>
+    <string name="category_missing">Category information not found!</string>
+    <string name="invalid_category">Invalid category or topic array ID:</string>
+    <string name="full_description">Full Description</string>
+    <string name="ucretsiz">FREE</string>
+
+    <string name="premium_remove_ads_product_id" translatable="false">premium_remove_ads</string>
+    <string name="premium_section_title">Ad-free Premium</string>
+    <string name="premium_status_active">Active: Ads are off. Thank you!</string>
+    <string name="premium_status_inactive">Remove all ads with a one-time purchase.</string>
+    <string name="premium_buy_button">Buy ad-free version</string>
+    <string name="premium_restore_button">Restore purchases</string>
+    <string name="premium_billing_not_ready">Billing is not ready yet. Please try again shortly.</string>
+    <string name="premium_product_unavailable">Product unavailable. Please update from Play Store.</string>
+    <string name="premium_purchase_failed">Purchase could not be completed.</string>
+    <string name="premium_purchase_cancelled">Purchase cancelled.</string>
+    <string name="premium_restored">Purchases checked.</string>
+    <string name="main_premium_entry_button">Ad-free version</string>
+    <string name="premium_page_title">Ad-free Premium</string>
+    <string name="premium_page_headline">Ad-free experience</string>
+    <string name="premium_page_intro">Remove all ads in the app with a one-time purchase and focus on formulas only.</string>
+    <string name="premium_benefit_1">• No banner or interstitial ads on the home and list screens.</string>
+    <string name="premium_benefit_2">• Restore on a new device with the same Google account via \"Restore purchases\".</string>
+    <string name="premium_benefit_3">• Payment is processed securely through Google Play.</string>
+    <string name="premium_page_thanks">Your ad-free version is active. Thank you!</string>
+
+    <!-- Category names -->
+    <string-array name="main_topics">
+        <item>Physics Formulas</item>
+        <item>Our Applications</item>
+    </string-array>
+
+
+    <!-- Topics for Mathematics category -->
+    <string-array name="topics_math">
+        <item>Basic Concepts</item>
+        <item>Number Systems</item>
+        <item>Division and Divisibility</item>
+        <item>Prime Factors</item>
+        <item>GCD - LCM</item>
+        <item>Rational Numbers</item>
+        <item>Simple Inequalities</item>
+        <item>Absolute Value</item>
+        <item>Exponents</item>
+        <item>Radicals</item>
+        <item>Factoring</item>
+        <item>Ratio and Proportion</item>
+        <item>First Degree Equation</item>
+        <item>Problems: Numbers</item>
+        <item>Problems: Fractions</item>
+        <item>Problems: Age</item>
+        <item>Problems: Work</item>
+        <item>Problems: Percent</item>
+        <item>Problems: Mixtures</item>
+        <item>Problems: Motion</item>
+        <item>Problems: Graphs</item>
+        <item>Sets</item>
+        <item>Cartesian Product</item>
+        <item>Logic</item>
+        <item>Statistics</item>
+        <item>Counting and Probability</item>
+        <item>Binomial Theorem</item>
+        <item>Functions</item>
+        <item>Polynomials</item>
+        <item>Second Degree Equation</item>
+        <item>Complex Numbers</item>
+        <item>Parabolas (Summary)</item>
+        <item>Inequalities</item>
+        <item>Special Functions (Summary)</item>
+        <item>Trigonometry (Summary)</item>
+        <item>Trigonometry (Detailed)</item>
+        <item>Logarithms (Summary)</item>
+        <item>Logarithms (Detailed)</item>
+        <item>Sequences (Summary)</item>
+        <item>Sequences (Detailed)</item>
+        <item>Limits (Summary)</item>
+        <item>Limits (Detailed)</item>
+        <item>Derivatives (Summary)</item>
+        <item>Derivatives (Detailed)</item>
+        <item>Integrals (Summary)</item>
+        <item>Integrals (Detailed)</item>
+    </string-array>
+
+    <!-- Topics for Geometry category -->
+    <string-array name="topics_geometry">
+        <item>Angles in Line</item>
+        <item>Triangles (Summary)</item>
+        <item>Triangles (Detailed)</item>
+        <item>Similarity</item>
+        <item>Polygons (Summary)</item>
+        <item>Polygons (Detailed)</item>
+        <item>Circle &amp; Disk (Summary)</item>
+        <item>Circle &amp; Disk (Detailed)</item>
+        <item>Analytic Geometry (Summary)</item>
+        <item>Analytic Geometry (Detailed)</item>
+        <item>Solid Figures (Summary)</item>
+        <item>Solid Figures (Detailed)</item>
+    </string-array>
+
+    <!-- Topics for the applications category -->
+    <string-array name="topics_applications">
+        <item>University Prep Math Resource Site</item>
+        <item>Education and Technology Site</item>
+        <item>Math and Geometry Formulas</item>
+        <item>Physics Formulas</item>
+        <item>I\'m Not Afraid of Derivatives</item>
+        <item>Riddle Garden</item>
+        <item>Three Operation Competition</item>
+        <item>Tic Tac Toe</item>
+    </string-array>
+
+    <!-- Subcategories -->
+    <string name="subcategory1_name">www.OSSMATEMATIK.COM \n Education and Technology Site</string>
+    <string name="subcategory1_desc_1">Math and Technology Site.</string>
+    <string name="subcategory1_desc_2">Subcategory 1 Description</string>
+    <string name="subcategory1_desc_3">Subcategory 1 Description</string>
+
+    <string name="subcategory2_name">WWW.MOBILPROGRAMLAR.COM \n Education and Technology Site</string>
+    <string name="subcategory2_desc_1">Subcategory 2 Description</string>
+    <string name="subcategory2_desc_2">Subcategory 2 Description</string>
+    <string name="subcategory2_desc_3">Subcategory 2 Description</string>
+
+    <string name="subcategory3_name">Math and Geometry Formulas\n (Free)</string>
+    <string name="subcategory3_desc_1">An AMAZING APPLICATION that you will always have with you, preventing you from getting lost among formulas in books.</string>
+    <string name="subcategory3_desc_2">This application contains ALL Math and Geometry Formulas taught in high school and middle school. \n
+        Unlike other formula applications,\n
+        ALL Math and Geometry formulas are shown on full pages.\n
+        You can also ZOOM in on the formulas with two fingers.
+    </string>
+    <string name="subcategory3_desc_3">The application includes Math and Geometry Formulas.\n
+        First, you choose the subject: Math or Geometry?\n
+        Then all the topics taught in middle and high school related to the chosen subject are listed.\n
+        When you select the topic, all formulas related to that topic appear.\n
+        You can swipe between formulas and enlarge the page with two fingers.\n
+    </string>
+
+    <string name="subcategory4_name">Physics Formulas\n (Free)</string>
+    <string name="subcategory4_desc_1">An AMAZING APPLICATION that you will always have with you, preventing you from getting lost among formulas in books.</string>
+    <string name="subcategory4_desc_2">This application contains ALL PHYSICS Formulas taught in high school and middle school. \n
+        Unlike other formula applications,\n
+        ALL Physics formulas are shown on full pages.\n
+        You can also ZOOM in on the formulas with two fingers.</string>
+    <string name="subcategory4_desc_3">The application includes Physics Formulas and Topic Summaries.\n
+        When you open the application, all the topics related to Physics taught in middle and high school are listed.\n
+        When you select the topic, all formulas related to that topic appear.\n
+        You can swipe between formulas and enlarge the page with two fingers.\n</string>
+
+    <string name="subcategory5_name">I\'m Not Afraid of Derivatives \n (Free)</string>
+    <string name="subcategory5_desc_1"><b>YOU NO LONGER NEED TO BE AFRAID OF DERIVATIVES</b>\n
+        With the hierarchical learning method, you can now easily LEARN derivatives.</string>
+    <string name="subcategory5_desc_2">To facilitate learning, Derivatives were first divided into Units. Each Unit was then subdivided into smaller goals by breaking down the subheadings,\n
+        The step-by-step learning method was applied with Subject Explanation, Solved Problems, One ME One YOU, Mini Quizzes, Homework Tests, and more TEST sections in each Unit.\n
+        </string>
+    <string name="subcategory5_desc_3">For complete and SOLID learning from the basics, it was required to complete the previous Units before starting each new Unit.</string>
+
+    <string name="subcategory6_name">Riddle Garden \n (Free)</string>
+    <string name="subcategory6_desc_1">2000 Riddles and Brain Teasers in 5 categories at your fingertips. No need to search the internet.</string>
+    <string name="subcategory6_desc_2">All riddles are always at your fingertips without requiring an internet connection.\n
+        Riddles suitable for all levels from easy to hard, from elementary school to university.
+    </string>
+    <string name="subcategory6_desc_3">Looking for entertaining riddles to ask your friends, family, and loved ones?\n
+        Here are 2000 special and selected riddles and brain teasers.\n
+        <b>Application Features:</b>\n
+        # Does not require internet.\n
+        # You can save the riddles you like as favorite riddles.\n
+        # You can continue from where you left off in each category.\n
+        # You can share with all social messaging apps.\n\n
+
+        <b>Application Content:</b>\n
+        # Children\'s Riddles\n
+        # Silly Riddles\n
+        # Riddles with Punchlines\n
+        # Brain Teasers\n
+        # Hard Riddles</string>
+
+    <string name="subcategory7_name">Three Operation Competition \n (Free)</string>
+    <string name="subcategory7_desc_1">You answer the mathematical operations (addition, subtraction, and multiplication) asked within 60 seconds.\n
+    In this game where you also race against time, the game ends when you give a wrong answer or the 60-second time limit is over.</string>
+    <string name="subcategory7_desc_2">The remaining time is seen at the top of the screen. Each correct answer earns you points.
+        Play 3 operations to improve your quick thinking and decision-making skills. Play the 3 operations game and learn math perfectly.
+        Those who wish can choose and play the three operations according to their level: beginner, intermediate, or expert.\n
+        The unlimited number of operations allows students to constantly develop themselves with different problems.</string>
+    <string name="subcategory7_desc_3">The three-operation math application has an unlimited number of operations.
+        This allows students to have the opportunity to solve different questions each time.
+        Even if they know the three operations, they can continuously practice to increase their operation speed.\n \n
+        <b>The game consists of 3 levels. </b>\n
+        In the first level, numbers from 1 to 10 are used. This program is very suitable and enjoyable for children who want to learn the multiplication table.
+        It also offers the opportunity to break their own records for adults since it is a race against time.
+        This game will increase your operational ability, attention, and concentration, and develop Brain-Hand coordination.\n
+        In the second level, numbers from 1 to 15 are used,\n
+        In the third level, numbers from 1 to 20 are used.\n \n
+        An enjoyable and math and intelligence-enhancing game for your free time.
+    </string>
+
+    <string name="subcategory8_name">Tic-Tac-Toe (Three Stones) \n (Free)</string>
+    <string name="subcategory8_desc_1">The Tic-Tac-Toe game, which we call three-in-a-row or three stones in Turkish.\n
+        Play Tic Tac Toe on your Android phone. No need for paper to play puzzle games anymore!
+        You can now play Tic Tac Toe for free on your Android device.
+</string>
+    <string name="subcategory8_desc_2">The Tic-Tac-Toe game is also known as Noughts and Crosses,
+        also called three-in-a-row in Turkish.\n
+        Tic-tac-toe (American English), noughts and crosses (British English).
+        This game was first found on a dam tile dating back to 1300 BC.
+        In Roman history, an early variation of tic-tac-toe was played around the first century BC.
+</string>
+    <string name="subcategory8_desc_3">The Tic Tac Toe game is also known as Cross and O\'s or simply X\'s and O\'s.
+        In the free Tic Tac Toe application, you can play against artificial intelligence or your friends.
+        One player plays X, the other player plays O, and they take turns marking the spaces in the 3×3 grid.
+        The player who manages to place three of their marks in a horizontal, vertical, or diagonal row wins the game.
+        In the next game, the winner of the previous game is the player who starts the game. If no one wins, the game ends in a draw.\n
+        Playing Tic Tac Toe helps improve your problem-solving and strategic thinking skills.
+        Start playing free Tic Tac Toe on your mobile device now.
+        Download the free Tic Tac Toe app now and let the fun begin!
+</string>
+
+    <string name="language">Language</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="theme">Theme</string>
+    <string name="title_activity_a">Activity A</string>
+    <string name="title_activity_b">Activity B</string>
+
+    <string name="tema_nurullah">Purple Majesty</string>
+    <string name="tema_nadiye">Red Passion</string>
+    <string name="tema_sude">Emerald Forest</string>
+    <string name="tema_kubra">Lavender Dream</string>
+    <string name="tema_zeynep">Terracotta Fire</string>
+    <string name="tema_irem">Ice and Sky Blue</string>
+    <string name="tema_ilknur">Lavender Smoke, Violet Waltz</string>
+    <string name="tema_rukiye">Midnight Blue</string>
+    <string name="tema_hilal">Pink Candy</string>
+
+    <string name="tema_nurullah_altmetin">Especially purple tones like Royal purple and Lavender</string>
+    <string name="tema_nadiye_altmetin">Bright red tones that are lively and passionate</string>
+    <string name="tema_sude_altmetin">Calm and vibrant green tones of nature</string>
+    <string name="tema_kubra_altmetin">Purple tones with the mysterious and enchanting hues of Amethyst stone</string>
+    <string name="tema_zeynep_altmetin">Warm and vibrant tones of the earth like Salmon pink</string>
+    <string name="tema_irem_altmetin">Calm and cool blue tones of the sky</string>
+    <string name="tema_ilknur_altmetin">Soft pink and romantic tones of the Lavender flower</string>
+    <string name="tema_rukiye_altmetin">Deep blue and grey tones like Navy and Slate grey</string>
+    <string name="tema_hilal_altmetin">Sweet, cheerful, light, and different tones</string>
+
+    <string name="uygulama_oyver">Rate the App</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_open">Open</string>
+    <string name="privacy_policy_url">https://www.mobilprogramlar.com/</string>
+    <string name="uygulama_oyver_butonu">Rate</string>
+    <string name="uygulama_tema_sec">Choose Theme</string>
+    <string name="dil_sec">Choose Language</string>
+    <string name="dil_sec_tr">Turkish</string>
+    <string name="dil_sec_en">English</string>
+
+    <string name="choose_theme">Choose Theme</string>
+    <string name="material_theme">Material Theme</string>
+    <string name="choose_material_theme">Choose Material Theme</string>
+
+    <string name="uygulama_link_01">http://www.ossmatematik.com</string>
+    <string name="uygulama_link_02">http://www.mobilprogramlar.com/</string>
+    <string name="uygulama_link_03">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+    <string name="uygulama_link_04">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+    <string name="uygulama_link_05">https://play.google.com/store/apps/details?id=com.mobilprogramlar.benkorkmamturev</string>
+    <string name="uygulama_link_06">https://play.google.com/store/apps/details?id=com.mobilprogramlar.bilmecebahcesi</string>
+    <string name="uygulama_link_07">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ucislemyarismasi</string>
+    <string name="uygulama_link_08">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tictactoe</string>
+
+    <string name="uygulama_baslik_01">University Prep Math Resource Site</string>
+    <string name="uygulama_baslik_02">Education and Technology Site</string>
+    <string name="uygulama_baslik_03">Math and Geometry Formulas</string>
+    <string name="uygulama_baslik_04">Physics Formulas</string>
+    <string name="uygulama_baslik_05">I\'m Not Afraid of Derivatives</string>
+    <string name="uygulama_baslik_06">Riddle Garden</string>
+    <string name="uygulama_baslik_07">Three Operation Competition</string>
+    <string name="uygulama_baslik_08">Tic Tac Toe</string>
+</resources>

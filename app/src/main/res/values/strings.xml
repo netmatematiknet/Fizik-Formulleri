@@ -1,116 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fizik Formülleri</string>
-    <string name="kapat">Kapat</string>
-    <string name="ana_sayfa">Ana Sayfa</string>
-    <string name="paylas">Paylaş</string>
-
-    <string name="paylas_button">Paylaş</string>
-    <string name="paylas_baslik">YKS TYT Fizik Formülleri</string>
-    <string name="paylas_mesaj_1">TYT fiziğindeki tüm Fizik Formülleri elinizin altında.</string>
-    <string name="paylas_mesaj_2">Yanınızda kitap taşımanıza gerek yok.</string>
-    <string name="paylas_mesaj_3">Paylaşmak İçin Tıklayınız</string>
-    <string name="paylas_link">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
-    <string name="paylas_mesaj_tam">TYT fiziğindeki tüm Fizik Formülleri elinizin altında.\nYanınızda kitap taşımanıza gerek yok.\nhttps://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
-
-    <string name="reklam_izni">Evet</string>
-    <!-- Manifest APPLICATION_ID ile aynı olmalı -->
-    <string name="app_id">ca-app-pub-6848773398638567~9469156132</string>
-    <string name="admob_app_gecerli_id">ca-app-pub-6848773398638567~9469156132</string>
-    <string name="admob_app_test_id">ca-app-pub-3940256099942544~3347511713</string>
-
-    <string name="banner_ad_unit_id">ca-app-pub-6848773398638567/1857052168</string>
-    <string name="banner_gecerli_id">ca-app-pub-6848773398638567/1857052168</string>
-    <string name="banner_ad_unit_test_id">ca-app-pub-3940256099942544/6300978111</string>
-
-    <string name="interstitial_gecis_id">ca-app-pub-6848773398638567/8391822301</string>
-    <string name="interstitial_gecis_gecerli_id">ca-app-pub-6848773398638567/8391822301</string>
-    <string name="interstitial_ad_unit_test_id">ca-app-pub-3940256099942544/1033173712</string>
-
-    <string name="odul_video_ad_unit_id">ca-app-pub-6848773398638567/7819825284</string>
-    <string name="odul_video_gecerli_id">ca-app-pub-6848773398638567/7819825284</string>
-
-    <string name="app_open_ad_unit_id">ca-app-pub-6848773398638567/4069433916</string>
-    <string name="app_open_gecerli_id">ca-app-pub-6848773398638567/4069433916</string>
-
-    <!-- Play Console Veri güvenliği / mağaza listesi için public URL.
-         assets/gizlilik-politikasi.html dosyasını sitenize yükleyin. -->
-    <string name="privacy_policy_url">https://www.mobilprogramlar.com/gizlilik-politikasi-fizik-formulleri.html</string>
-    <string name="gizlilik_politikasi">Gizlilik Politikası</string>
-    <string name="reklam_tercihleri">Reklam tercihleri</string>
-    <string name="cikis_baslik">Çık</string>
-    <string name="cikis_mesaj">Uygulamadan çıkmak istiyor musunuz?</string>
-    <string name="evet">Evet</string>
-    <string name="hayir">Hayır</string>
-    <string name="diger_programlar">.: DİĞER PROGRAMLARIMIZ :.</string>
-    <string name="notification_channel_name">Genel bildirimler</string>
+    <string name="default_notification_channel_id" translatable="false">default</string>
+    <string name="notification_channel_name">Duyurular</string>
     <string name="notification_channel_desc">Uygulama duyuruları ve güncellemeler</string>
     <string name="notification_permission_title">Bildirim izni</string>
     <string name="notification_permission_message">Duyuru ve güncellemeleri alabilmek için bildirim iznine ihtiyacımız var.</string>
     <string name="notification_permission_allow">İzin ver</string>
     <string name="notification_permission_deny">Şimdi değil</string>
-    <string name="formül_gorseli">Formül görseli</string>
-    <string name="sayfa_sayisi">Sayfa Sayısı</string>
-    <string name="konu_ara">Konu ara…</string>
-    <string name="sadece_favoriler">Sadece favoriler</string>
-    <string name="tum_konular">Tüm konular</string>
-    <string name="favori_ekle">Favorilere ekle</string>
-    <string name="favori_kaldir">Favorilerden çıkar</string>
-    <string name="konu_sec_placeholder">Soldan bir konu seçin</string>
-    <string name="sayfa_gostergesi">Sayfa göstergesi</string>
-    <string name="sayfa_gostergesi_a11y">Sayfa %1$d / %2$d</string>
-    <string name="formul_gorseli_a11y">Formül görseli, sayfa %1$d / %2$d</string>
-    <string name="formul_sayfalari">Formül sayfaları</string>
-    <string name="formul_bilgi">Formül kullanımı bilgisi</string>
-    <string name="formul_bilgi_mesaj">Resimleri kaydırarak sayfa değiştirebilir, iki parmakla büyütebilirsiniz.</string>
-    <string name="geri">Geri</string>
-    <string name="filtre_tyt">TYT</string>
-    <string name="filtre_ayt">AYT</string>
-    <string name="filtre_tumu">Tümü</string>
-    <string name="ayt_yakinda">AYT fizik formülleri yakında eklenecek. TYT konularını incelemeye devam edebilirsiniz.</string>
-    <string name="guncelleme_hazir">Güncelleme indirildi</string>
-    <string name="guncelle_yeniden_baslat">Yeniden başlat</string>
 
-    <string name="uygulama_link_1">https://www.ossmatematik.com</string>
-    <string name="uygulama_link_2">https://www.mobilprogramlar.com/</string>
-    <string name="uygulama_link_3">https://play.google.com/store/apps/details?id=com.mobilprogramlar.MatematikFormullerim</string>
-    <string name="uygulama_link_4">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tytaytsoruvecozumleri</string>
-    <string name="uygulama_link_5">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ygssoruvecozumleri</string>
-    <string name="uygulama_link_6">https://play.google.com/store/apps/details?id=com.mobilprogramlar.lyssoruvecozumleri</string>
-    <string name="uygulama_link_7">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tictactoe</string>
-    <string name="uygulama_link_8">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ucislemyarismasi</string>
-    <string name="uygulama_link_9">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
-    <string name="uygulama_link_10">https://play.google.com/store/apps/details?id=com.mobilprogramlar.bilmecebahcesi</string>
+    <!-- =====================================================================
+         AdMob Kimlikleri — Seçim BuildConfig.DEBUG ile AdHelper.java'da yapılır
+         DEBUG build  → test ID'ler otomatik kullanılır
+         RELEASE build → gerçek ID'ler otomatik kullanılır
+         ===================================================================== -->
+    <string name="admob_app_id">ca-app-pub-6848773398638567~9469156132</string>
 
-    <string name="uygulama_baslik_1">Matematik Üniversite Hazırlık Kaynak Sitesi</string>
-    <string name="uygulama_baslik_2">Eğitim ve Teknoloji Sitesi</string>
-    <string name="uygulama_baslik_3">Matematik ve Geometri Formülleri</string>
-    <string name="uygulama_baslik_4">TYT AYT Soru ve Çözümleri</string>
-    <string name="uygulama_baslik_5">YGS Soru ve Çözümleri</string>
-    <string name="uygulama_baslik_6">LYS Soru ve Çözümleri</string>
-    <string name="uygulama_baslik_7">Tic Tac Toe</string>
-    <string name="uygulama_baslik_8">Üç İşlem Yarışması</string>
-    <string name="uygulama_baslik_9">Fizik Formülleri</string>
-    <string name="uygulama_baslik_10">Bilmece Bahçesi</string>
+    <!-- Gerçek (Production) Ad Unit ID'leri -->
+    <string name="admob_banner_id">ca-app-pub-6848773398638567/1857052168</string>
+    <string name="admob_interstitial_id">ca-app-pub-6848773398638567/8391822301</string>
 
-    <string name="uygulama_app_name">Mobil Uygulamalarımız</string>
-    <string name="uygulama_action_settings">Ayarlar</string>
-    <string name="uygulama_action_add_favourite">Ayrıntı</string>
-    <string name="uygulama_action_play_next">Ayrıntı</string>
-    <string name="uygulama_backdrop_title">Mobil Uygulamalarımız</string>
-    <string name="uygulama_backdrop_subtitle">Hepsi Ücretsiz</string>
+    <!-- Google'ın resmi Test Ad Unit ID'leri (değiştirme) -->
+    <string name="admob_banner_test_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_test_id">ca-app-pub-3940256099942544/1033173712</string>
 
-    <item name="fab_label" type="id"/>
-    <string name="uygulama_menu_baslik_1">.: Fizik FORMÜLLERİ :.</string>
-    <string name="uygulama_menu_baslik_2">.: DİĞER PROGRAMLARIMIZ :. </string>
-
-    <string name="toolbar_kapat">Kapat</string>
-    <string name="toolbar_anasayfa">Anasayfa</string>
+    <string name="manifest_activity_splash_app_name">Fizik Formülleri</string>
+    <string name="toolbar_geri">Geri</string>
+    <string name="toolbar_ayarlar">Ayarlar</string>
     <string name="toolbar_paylas">Paylaş</string>
-    <string name="toolbar_gizlilik">Gizlilik</string>
+    <string name="toolbar_anasayfa">Ana Sayfa</string>
+    <string name="toolbar_baslik_default">Fizik Formülleri</string>
+    <string name="toolbar_baslik_uygulamalarimiz">Uygulamalarımız</string>
+    <string name="toolbar_altbaslik_default">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_1">YKS TYT Fizik Formülleri</string>
+    <string name="toolbar_altbaslik_1">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_2">Fizik Formülleri</string>
+    <string name="toolbar_altbaslik_2">www.OssMatematik.Com</string>
+    <string name="toolbar_baslik_3">Diğer Uygulamalarımız</string>
+    <string name="toolbar_altbaslik_3">www.OssMatematik.Com</string>
+    <string name="paylas_button">Paylaş</string>
+    <string name="paylas_baslik"><b>Fizik Formülleri</b>\n\n</string>
+    <string name="paylas_mesaj">TYT fiziğindeki tüm Fizik Formülleri elinizin altında.\nYanınızda kitap taşımanıza gerek yok.\n\n</string>
+    <string name="paylas_button_mesaj">Paylaşmak İçin Tıklayınız</string>
+    <string name="paylas_link">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
 
-    <string name="default_notification_channel_id">default</string>
+    <string name="oylama_soru">Uygulamamızı Beğendiniz mi?</string>
+    <string name="oylama_lutfen">Lütfen uygulamamızı Google Play\'de değerlendirin!</string>
+    <string name="oylama_oyla">Oyla</string>
+    <string name="oylama_vazgec">Vazgeç</string>
+    <string name="oylama_sonra">Sonra</string>
 
-    <string name="toolbar_ust_baslik">OssMatematik.Com</string>
-    <string name="toolbar_alt_baslik">YKS TYT Fizik Formülleri</string>
-    <string name="uygulamalar_toolbar_alt_baslik">Diğer Uygulamalarımız</string>
+    <string name="thank_you_message">Uygulamamızı yüklediğiniz için teşekkür ederiz!</string>
+    <string name="welcome_message_0">Bugün</string>
+    <string name="welcome_message_1">Hoşgeldiniz! Bugün harika bir gün!</string>
+    <string name="welcome_message_2">Fizik dünyasına hoşgeldiniz!</string>
+    <string name="welcome_message_3">Bugün fizik öğrenmeye hazır mısınız?</string>
+    <string name="welcome_message_4">Fizik formülleriyle dolu bir gün olsun!</string>
+    <string name="welcome_message_5">Bugün yeni şeyler öğrenmek için mükemmel bir gün!</string>
+    <string name="welcome_message_6">Fizik formüllerini keşfetmeye hazır olun!</string>
+    <string name="welcome_message_7">Fizikle dolu harika bir gün dileriz!</string>
+    <string name="welcome_message_8">Formüllerle dolu bir gün olsun!</string>
+    <string name="welcome_message_9">Bugün fizikte yeni zirvelere ulaşın!</string>
+    <string name="welcome_message_10">Fizikle dolu bir gün diliyoruz!</string>
+    <string name="welcome_message_11">Bugün sizin gününüz! Fizikle güçlenin!</string>
+    <string name="welcome_message_12">Yeni fizik formüllerini keşfetme zamanı!</string>
+    <string name="welcome_message_13">Fizikle dolu güzel bir gün!</string>
+    <string name="welcome_message_14">Bugün fizikte başarılı olacaksınız!</string>
+    <string name="welcome_message_15">Formülleri öğrenmek için harika bir gün!</string>
+    <string name="welcome_message_16">Bugün yeni fizik keşifleri yapın!</string>
+    <string name="welcome_message_17">Fizik dünyasına adım atın!</string>
+    <string name="welcome_message_18">Bugün öğrenmeye ve keşfetmeye açık olun!</string>
+    <string name="welcome_message_19">Fizikle dolu parlak bir gün!</string>
+    <string name="welcome_message_20">Bugün fizikle ilgili yeni şeyler öğrenin!</string>
+    <string name="welcome_message_21">Hoşgeldiniz! Bugün öğrenmek için harika bir gün!</string>
+    <string name="welcome_message_22">Fizikle yeni keşiflere hazır olun!</string>
+    <string name="welcome_message_23">Fizikle dolu eğlenceli bir gün dileriz!</string>
+    <string name="welcome_message_24">Bugün fizikle ilgili yeni şeyler keşfedin!</string>
+    <string name="welcome_message_25">Fizikle dolu yaratıcı bir gün!</string>
+    <string name="welcome_message_26">Bugün fizikle ilgili yeni zirvelere çıkın!</string>
+    <string name="welcome_message_27">Fizikle dolu bir başarı hikayesi yazın!</string>
+    <string name="welcome_message_28">Bugün yeni fizik formülleri keşfedin!</string>
+    <string name="welcome_message_29">Fizikle dolu harika bir gün!</string>
+    <string name="welcome_message_30">Bugün fizikle ilgili yeni şeyler öğrenmek için harika bir gün!</string>
+
+
+    <string name="hata_mesaji_1">Simge görünümü boş!!</string>
+    <string name="hata_mesaji_2">Kategori bilgisi eksik!!</string>
+    <string name="hata_mesaji_3">Kategori boş!!</string>
+    <string name="hata_mesaji_4">Bilinmeyen kategori!!</string>
+    <string name="hata_mesaji_5">Geçersiz kategori!!</string>
+    <string name="konudaki_resim_sayisi">Sayfa Sayısı: %1$d</string>
+    <string name="uygulama_tema_1">Tema 1</string>
+    <string name="uygulama_tema_2">Tema 2</string>
+    <string name="image_todo_1">Açıklama</string>
+    <string name="image_todo_2">Logo</string>
+    <string name="image_todo_3">Ayarlar</string>
+    <string name="image_todo_4">Paylaş</string>
+    <string name="image_todo_5">Ana Sayfa</string>
+    <string name="rcylerview_baslik">Başlık</string>
+    <string name="rcylerview_alt_baslik">Alt Başlık</string>
+    <string name="rcylerview_aciklama">Ayrıntı: %1$s</string>
+    <string name="app_name">Fizik Formülleri</string>
+    <string name="uygulama_image">Uygulama Resmi</string>
+    <string name="uygulama_left_image">Sol Resim</string>
+    <string name="uygulama_top_image">Üst Resim</string>
+    <string name="uygulama_bottom_image">Alt Resim</string>
+    <string name="uygulama_right_image">Sağ Resim</string>
+    <string name="change_language">Dili Değiştir</string>
+    <string name="language_option">Dil</string>
+    <string name="language_english">English</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="category_missing">Kategori bilgisi bulunamadı!</string>
+    <string name="invalid_category">Geçersiz kategori veya konu dizi ID\'si:</string>
+    <string name="full_description">Tam Açıklama</string>
+    <string name="ucretsiz">ÜCRETSİZ</string>
+
+    <!-- Google Play: Yönetilen ürün kimliği (Play Console ile birebir aynı olmalı, çeviri yok) -->
+    <string name="premium_remove_ads_product_id" translatable="false">premium_remove_ads</string>
+    <string name="premium_section_title">Reklamsız Premium</string>
+    <string name="premium_status_active">Aktif: Reklamlar kapalı. Teşekkürler!</string>
+    <string name="premium_status_inactive">Tek seferlik satın alma ile tüm reklamları kaldırın.</string>
+    <string name="premium_buy_button">Reklamsız sürümü satın al</string>
+    <string name="premium_restore_button">Satın alımları geri yükle</string>
+    <string name="premium_billing_not_ready">Ödeme sistemi hazırlanıyor, lütfen biraz sonra tekrar deneyin.</string>
+    <string name="premium_product_unavailable">Ürün şu an kullanılamıyor. Play Store\'dan güncellediğinizden emin olun.</string>
+    <string name="premium_purchase_failed">Satın alma tamamlanamadı.</string>
+    <string name="premium_purchase_cancelled">Satın alma iptal edildi.</string>
+    <string name="premium_restored">Satın alımlar kontrol edildi.</string>
+    <string name="main_premium_entry_button">Reklamsız sürüm</string>
+    <string name="premium_page_title">Reklamsız Premium</string>
+    <string name="premium_page_headline">Reklamsız deneyim</string>
+    <string name="premium_page_intro">Tek seferlik satın alma ile uygulamadaki tüm reklamları kaldırın; sadece formüllere odaklanın.</string>
+    <string name="premium_benefit_1">• Ana sayfa ve liste ekranlarında banner ve geçiş reklamları gösterilmez.</string>
+    <string name="premium_benefit_2">• Aynı Google hesabıyla yeni telefonda \"Satın alımları geri yükle\" kullanılabilir.</string>
+    <string name="premium_benefit_3">• Ödeme Google Play üzerinden güvenle işlenir.</string>
+    <string name="premium_page_thanks">Reklamsız sürümünüz aktif. Teşekkürler!</string>
+
+
+    <!-- Kategori isimleri -->
+        <string-array name="main_topics">
+        <item>Fizik Formülleri</item>
+        <item>Uygulamalarımız</item>
+    </string-array>
+
+    <!-- Matematik kategorisine ait konular -->
+    <string-array name="topics_math">
+        <item>Fizik Bilimine Giriş</item>
+        <item>Madde ve Özellikleri: Kütle ve Özkütle</item>
+        <item>Madde ve Özellikleri: Dayanıklılık ve Kılcallık</item>
+        <item>Kuvvet ve Hareket: Tek Boyutta Hareket</item>
+        <item>Kuvvet ve Hareket: Newton Yasaları</item>
+        <item>Kuvvet ve Hareket: İş, Güç ve Enerji</item>
+        <item>Isı, Sicaklık, Hal Değişimi, Genleşme</item>
+        <item>Basınç ve Kaldırma Kuvveti: Basınç</item>
+        <item>Basınç ve Kaldırma Kuvveti: Kaldırma Kuvveti</item>
+        <item>Elektrik ve Manyetizma: Elektrostatik</item>
+        <item>Elektrik ve Manyetizma: Elektrik Akımı</item>
+        <item>Elektrik ve Manyetizma: Mıknatıslar ve Manyetik Alan</item>
+        <item>Optik: Aydınlanma ve Gölge</item>
+        <item>Optik: Işığın Yansıması ve Düzlem Ayna</item>
+        <item>Optik: Küresel Aynalar</item>
+        <item>Optik: Işığın Kırılması ve Renk</item>
+        <item>Optik: Mercekler ve Optik Araçlar</item>
+        <item>Dalgalar: Dalgaların Genel Özellikleri</item>
+        <item>Dalgalar: Yay Dalgaları</item>
+        <item>Dalgalar: Su Dalgaları</item>
+        <item>Dalgalar: Ses ve Deprem Dalgaları</item>
+    </string-array>
+
+    <!-- Geometri kategorisine ait konular -->
+    <string-array name="topics_geometry">
+        <item>Doğruda Açı</item>
+        <item>Üçgenler (Özet)</item>
+        <item>Üçgenler (Ayrıntılı)</item>
+        <item>Benzerlik</item>
+        <item>Çokgenler (Özet)</item>
+        <item>Çokgenler (Ayrıntılı)</item>
+        <item>Çember &amp; Daire (Özet)</item>
+        <item>Çember &amp; Daire (Ayrıntılı)</item>
+        <item>Analitik (Özet)</item>
+        <item>Analitik (Ayrıntılı)</item>
+        <item>Katı Cisimler (Özet)</item>
+        <item>Katı Cisimler (Ayrıntılı)</item>
+    </string-array>
+
+    <!-- Uygulamalar kategorisine ait konular -->
+    <string-array name="topics_applications">
+        <item>Üniversite Hazırlık Matematik Kaynak Sitesi</item>
+        <item>Eğitim ve Teknoloji Sitesi</item>
+        <item>Matematik ve Geometri Formülleri</item>
+        <item>Fizik Formülleri</item>
+        <item>Ben Türevden Korkmam</item>
+        <item>Bilmece Bahçesi</item>
+        <item>Üç İşlem Yarışması</item>
+        <item>Tic Tac Toe</item>
+    </string-array>
+
+    <!-- Alt Kategoriler -->
+    <string name="subcategory1_name">www.OSSMATEMATIK.COM \n Eğitim ve Teknoloji Sitesi</string>
+    <string name="subcategory1_desc_1">Matematik ve Teknoloji Sitesi.</string>
+    <string name="subcategory1_desc_2">Alt Kategori 1 Açıklaması</string>
+    <string name="subcategory1_desc_3">Alt Kategori 1 Açıklaması</string>
+
+    <string name="subcategory2_name">WWW.MOBILPROGRAMLAR.COM \n Eğitim ve Teknoloji Sitesi</string>
+    <string name="subcategory2_desc_1">Alt Kategori 2 Açıklaması</string>
+    <string name="subcategory2_desc_2">Alt Kategori 2 Açıklaması</string>
+    <string name="subcategory2_desc_3">Alt Kategori 2 Açıklaması</string>
+
+    <string name="subcategory3_name">Matematik ve Geometri Formülleri\n (Ücretsiz)</string>
+    <string name="subcategory3_desc_1">Devamlı yannızda bulunduracağınız, sizin kitaplar arasında formüller içerisinde kaybolmamanızı sağlayacak HARIKA BIR UYGULAMA</string>
+    <string name="subcategory3_desc_2">Bu uygulamada, lise ve ortaokuldaki TUM Matematik ve Geometri Formüllerini içermektedir. \n
+        Diğer Formül uygulamalarından farklı olarak\n
+        TUM Matematik ve Geometri formülleri tam sayfa olarak gösterilmektedir.\n
+        Ayrıca formülleri iki parmakla ZOOM yapabilirsiniz.</string>
+    <string name="subcategory3_desc_3">Uygulama Matematik ve Geometri Formüllerini içermektedir.\n
+        Önce dersi seçiyorsunuz Matematik mi Geometri mi?\n
+        Sonra seçtiğiniz dersle ilgili ortaokul ve lisede anlatılan tüm konu başlıkları listeleniyor.\n
+        Konuyu seçtiğinizde o konu ile ilgili tüm formüller karşınıza çıkıyor.\n
+        Formüller arasında kaydırarak geçiş yapabilir, sayfayı iki parmağınızla büyültebilirsiniz.\n
+    </string>
+
+    <string name="subcategory4_name">Fizik Formülleri\n (Ücretsiz)</string>
+    <string name="subcategory4_desc_1">Devamlı yannızda bulunduracağınız, sizin kitaplar arasında formüller içerisinde kaybolmamanızı sağlayacak HARIKA BIR UYGULAMA</string>
+    <string name="subcategory4_desc_2">Bu uygulamada, lise ve ortaokuldaki TUM FIZIK Formüllerini içermektedir. \n
+        Diğer Formül uygulamalarından farklı olarak\n
+        TUM Fizik formülleri tam sayfa olarak gösterilmektedir.\n
+        Ayrıca formülleri iki parmakla ZOOM yapabilirsiniz.</string>
+    <string name="subcategory4_desc_3">Uygulama Fizik Formüllerini ve Konu Özetini içermektedir.\n
+        Uygulamayı açtığınızda Fizikle ilgili ortaokul ve lisede anlatılan tüm konu başlıkları listeleniyor.\n
+        Konuyu seçtiğinizde o konu ile ilgili tüm formüller karşınıza çıkıyor.\n
+        Formüller arasında kaydırarak geçiş yapabilir, sayfayı iki parmağınızla büyültebilirsiniz.\n</string>
+
+    <string name="subcategory5_name">Ben Korkmam TUREVDEN \n (Ücretsiz)</string>
+    <string name="subcategory5_desc_1"><b>TUREVDEN ARTIK KORKMANIZA GEREK YOK</b>\n
+        Hiyerarşik öğrenme metodu ile artık Türevi rahatça OGRENEBILIRSINIZ</string>
+    <string name="subcategory5_desc_2">Kolay öğrenme amacıyla Türev önce Ünitelere ayrıldı. Sonra her Ünite  alt başlıklara ayrılarak küçük hedeflere bölündü,\n
+        Her Ünite Konu Anlatım, Çözümlü Sorular, Bir BEN Bir SEN, Mini Quizler, Ödev Testleri ve Daha fazla TEST bölümleri ile adım-adım öğrenme metodu uygulandı.\n
+        </string>
+    <string name="subcategory5_desc_3">Temelden EKSIKSIZ ve SAGLAM öğrenme amacıyla her bir Üniteye başlamak için,
+        önceki Üniteleri Bitirme Şartı getirildi.</string>
+
+    <string name="subcategory6_name">Bilmece Bahçesi \n (Ücretsiz)</string>
+    <string name="subcategory6_desc_1">5 kategoride tam 2000 Bilmece ve Zeka Sorusu Elinizin Altında. İnternetten araştırmanıza gerek yok.</string>
+    <string name="subcategory6_desc_2">Tüm bilmeceler internet gerektirmeden her zaman elinizin altında.\n
+Kolaydan zora, ilkokuldan üniversiteye her seviyeye uygun bilmeceler.</string>
+    <string name="subcategory6_desc_3">Arkadaşınıza, ailenize, sevdiklerinize soracak eğlendirici\n
+        kolay - zor - komik - manili - zekice - düşündürücü - zorlayıcı bilmeceler mi arıyorsunuz. \n
+        Buyurun tam 2000 tane özel ve seçmece bilmece ve zeka soruları.\n
+        <b>Uygulama Özellikleri:</b>\n
+        # İnternet gerektirmez.\n
+        # Beğendiğiniz bilmeceleri favori bilmece olarak kaydedebilirsiniz.\n
+        # Her bir kategoride kaldığınız yerden devam edebilirsiniz\n
+        # Tüm Sosyal Mesajlaşma programları ile paylaşabilirsiniz.\n\n
+
+        <b>Uygulama İçeriği:</b>\n
+        # Çocuk Bilmeceleri\n
+        # Saçma Bilmeceler\n
+        # Manili Bilmeceler\n
+        # Zeka Bilmeceleri\n
+        # Zor Bilmeceler</string>
+
+    <string name="subcategory7_name">Üç İşlem Yarışması \n (Ücretsiz)</string>
+    <string name="subcategory7_desc_1">60 saniye içerisinde size sorulan fiziksel işlemlere (toplama, çıkarma ve çarpma) cevap veriyorsunuz.\n
+    Zamanla da yarıştığınız bu oyunda yanlış cevap verdiğinizde ya da 60 saniyelik süre bittiğinde oyun bitiyor.</string>
+    <string name="subcategory7_desc_2">Kalan süre ekranın üst tarafında görüyor. Her doğru cevap ile puan kazanıyoruz.
+        Hızlı düşünme ve çabuk karar verme yeteneğini arttırmak için 3 işlem oyna. 3 işlem oyunu oyna ve matematiği mükemmel bir şekilde öğren.
+        İsteyenler üç  işlemi seviyelerine göre başlangıç, orta veya  uzman olarak seçebilir ve oynayabilir. \n
+        Sınırsız sayıda işlem yeteneği sayesinde öğrencilerin sürekli olarak farklı problemlerle kendisini geliştirmesini sağlar. </string>
+    <string name="subcategory7_desc_3">Üç işlem fizik uygulaması Sınırsız sayıda işlem mevcuttur.
+        Bu sayede öğrenciler her defasında farklı bir soru çözme olanağına sahip olurlar.
+        Üç işlemi biliyor olsalar bile sürekli antrenman yaparak işlem hızlarını yükseltebilirler.\n \n
+        <b>Oyun 3 seviyeden oluşmakta. </b>\n
+        1.seviyede 1 den 10 a kadar olan sayılar kullanılıyor. Yani çarpım tablosunu öğrenmek isteyen çocuklar için çok uygun zevkli bir program. Sadece çocuklar için mi zamanla yarış olduğu için büyükler için de kendi rekorlarını kırma fırsatı veriyor.
+            Bu haliyle bu oyun hem işlem yeteneğinizi artıracak, hem dikkat ve konsantrasyon yeteneğinizi, hem de Beyin-El uyumunu geliştirecek.\n
+        2. seviye de 1 den 15 e kadar sayılar, \n
+        3. seviyede ise 1 den 20 ye kadar sayılar kullanılmakta.\n \n
+        Boş zamanlarınız için hem eğlenceli hem de fizik ve zekanızı geliştirici bir oyun.
+    </string>
+
+    <string name="subcategory8_name">Tic-Tac-Toe (Üç Taş) \n (Ücretsiz)</string>
+    <string name="subcategory8_desc_1">Tic-Tac-Toe oyunu, Türkçede üçleme ya da üç taş olarak adlandırdığımız oyundur.\n
+        Android telefonunuzda Tic Tac Toe oynayın. Bulmaca oyunları oynamak için artık kağıda gerek yok!
+        Şimdi Android cihazınızda Tic Tac Toe ücretsiz oynayabilirsiniz.
+</string>
+    <string name="subcategory8_desc_2">Tic-Tac-Toe oyunu aynı zamanda Noughts and Crosses olarak da bilinen,
+        Türkçede de üçleme ya da olarak adlandırdığımız oyundur. \n
+        Tic-tac-toe (American İngilizcesi), noughts and crosses (İngiliz İngilizcesi) dir.
+        Bu oyun ilk defa M.Ö. 1300 den kalma dam fayansı üzerinde bulunmuştur.
+        Roma tarihinde, M.Ö. birinci yüzyıl civarında tic-tac-toe nin erken bir varyasyonu oynandı.
+</string>
+    <string name="subcategory8_desc_3">Tic Tac Toe oyunu, Çarpı ve O\'lar veya sadece X\'ler ve O\'lar olarak da bilinir.
+        Tic Tac Toe ücretsiz uygulamasında yapay zeka veya arkadaşlarınıza karşı oynayabilirsiniz.
+        Bir oyuncu X\'i, diğer oyuncu O\'yu oynar ve sırayla 3×3 tahtada boşlukları işaretler.
+        Yatay, dikey veya çapraz bir sırada ilgili üç işareti yerleştirmeyi başaran oyunu kazanır.
+        Bir sonraki oyunda, önceki oyunun galibi oyuna başlayan oyuncudur. Kimse kazanamazsa, oyun berabere biter.\n
+        Tic Tac Toe oyunu oynamak, problem çözme ve stratejik düşünme becerilerinizi geliştirmenize yardımcı olur.
+        Mobil cihazınızda ücretsiz Tic Tac Toe oynamaya başlayın.
+        Ücretsiz Tic Tac Toe uygulamasını şimdi indirin ve eğlence başlasın!
+</string>
+
+    <string name="language">Dil</string>
+    <string name="choose_language">Dil Seç</string>
+    <string name="theme">Tema</string>
+    <string name="title_activity_a">Etkinlik A</string>
+    <string name="title_activity_b">Etkinlik B</string>
+
+    <string name="tema_nurullah">Mor Majesteleri</string>
+    <string name="tema_nadiye">Kızıl Tutku</string>
+    <string name="tema_sude">Zümrüt Ormanı</string>
+    <string name="tema_kubra">Lavanta Rüyası</string>
+    <string name="tema_zeynep">Terrakota Ateşi</string>
+    <string name="tema_irem">Buz ve Gökyüzü Mavisi</string>
+    <string name="tema_ilknur">Lavanta Dumanı, Menekşe Valsi</string>
+    <string name="tema_rukiye">Gece Mavisi</string>
+    <string name="tema_hilal">Pembe Şekerleme</string>
+
+    <string name="tema_nurullah_altmetin">Özellikle Kraliyet moru ve Lavanta gibi Mor tonları</string>
+    <string name="tema_nadiye_altmetin">Canlı ve tutkulu Parlak kırmızı tonları</string>
+    <string name="tema_sude_altmetin">Doğanın sakin ve canlı Yeşil tonları</string>
+    <string name="tema_kubra_altmetin">Ametist taşının gizemli ve büyüleyici tonlarıyla Mor tonları</string>
+    <string name="tema_zeynep_altmetin">Somon pembe gibi Toprağın sıcak ve canlı tonları</string>
+    <string name="tema_irem_altmetin">Gökyüzünün sakin ve Serin Mavi tonları</string>
+    <string name="tema_ilknur_altmetin">Lavanta çiçeğinin yumuşak pembesi ve Romantik tonları</string>
+    <string name="tema_rukiye_altmetin">Lacivert ve Arduvaz grisi gibi Derin mavi ve Gri tonlar</string>
+    <string name="tema_hilal_altmetin">Tatlı, Neşeli, Açık ve Farklı tonlar</string>
+
+    <string name="uygulama_oyver">Uygulamaya Oy Ver</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="privacy_policy_open">Görüntüle</string>
+    <string name="privacy_policy_url">https://www.mobilprogramlar.com/</string>
+    <string name="uygulama_oyver_butonu">Oy Ver</string>
+    <string name="uygulama_tema_sec">Tema Seç</string>
+    <string name="dil_sec">Dil Seç</string>
+    <string name="dil_sec_tr">Türkçe</string>
+    <string name="dil_sec_en">İngilizce</string>
+
+    <string name="choose_theme">Tema Seç</string>
+    <string name="material_theme">Materyal Tema</string>
+    <string name="choose_material_theme">Materyal Tema Seç</string>
+
+    <string name="uygulama_link_01">http://www.ossfizik.com</string>
+    <string name="uygulama_link_02">http://www.mobilprogramlar.com/</string>
+    <string name="uygulama_link_03">https://play.google.com/store/apps/details?id=com.mobilprogramlar.MatematikFormullerim</string>
+    <string name="uygulama_link_04">https://play.google.com/store/apps/details?id=com.mobilprogramlar.FizikFormullerim</string>
+    <string name="uygulama_link_05">https://play.google.com/store/apps/details?id=com.mobilprogramlar.benkorkmamturev</string>
+    <string name="uygulama_link_06">https://play.google.com/store/apps/details?id=com.mobilprogramlar.bilmecebahcesi</string>
+    <string name="uygulama_link_07">https://play.google.com/store/apps/details?id=com.mobilprogramlar.ucislemyarismasi</string>
+    <string name="uygulama_link_08">https://play.google.com/store/apps/details?id=com.mobilprogramlar.tictactoe</string>
+
+    <string name="uygulama_baslik_01">Üniversite Hazırlık Matematik Kaynak Sitesi</string>
+    <string name="uygulama_baslik_02">Eğitim ve Teknoloji Sitesi</string>
+    <string name="uygulama_baslik_03">Matematik ve Geometri Formülleri</string>
+    <string name="uygulama_baslik_04">Fizik Formülleri</string>
+    <string name="uygulama_baslik_05">Ben Türevden Korkmam</string>
+    <string name="uygulama_baslik_06">Bilmece Bahçesi</string>
+    <string name="uygulama_baslik_07">Üç İşlem Yarışması</string>
+    <string name="uygulama_baslik_08">Tic Tac Toe</string>
 </resources>

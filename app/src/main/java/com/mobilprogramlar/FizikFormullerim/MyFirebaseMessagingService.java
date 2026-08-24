@@ -14,6 +14,9 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
+/**
+ * Firebase Console → Messaging ile gönderilen bildirimler.
+ */
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
@@ -37,7 +40,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             return;
         }
         if (title == null || title.isEmpty()) {
-            title = getString(R.string.app_name);
+            title = getString(R.string.manifest_activity_splash_app_name);
         }
         showNotification(title, body);
     }
@@ -50,7 +53,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
         ensureChannel(this, manager, channelId);
 
-        Intent intent = new Intent(this, UygulamaAnaSayfa.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, flags);
