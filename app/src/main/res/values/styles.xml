@@ -14,12 +14,17 @@
         <item name="android:windowExitAnimation">@anim/fade_out</item>
     </style>
 
-    <!-- Bridge: AppCompat widget'ları Material temada doğru attr çözer -->
+    <!-- Bridge: AppCompat widget'ları Material temada doğru attr çözer.
+         statusBarColor / navigationBarColor / windowFullscreen YOK —
+         Play edge-to-edge uyarıları; çubuklar EdgeToEdge.enable ile yönetilir. -->
     <style name="Theme.MatematikBase" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_primary</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
         <item name="textAppearanceBody1">@style/TextAppearance.Matematik.Body1</item>
         <item name="textAppearanceCaption">@style/TextAppearance.Matematik.Caption</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.Matematik.Subtitle1</item>
@@ -43,12 +48,9 @@
             <item name="colorAccent">@color/nurullah_accent</item>
         </style>
 
-    <!-- Açılış: KenBurns yüzen splash; API 31+ ikon gizleme values-v31'de -->
+    <!-- Açılış: KenBurns splash; sistem çubuğu WindowInsetsController ile gizlenir -->
     <style name="Theme.Giris" parent="Theme.Nurullah">
         <item name="android:windowBackground">@drawable/splash_bg</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
         <style name="Theme.Nadiye" parent="Theme.MatematikBase">

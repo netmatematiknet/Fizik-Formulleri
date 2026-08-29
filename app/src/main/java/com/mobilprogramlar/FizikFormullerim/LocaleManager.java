@@ -3,6 +3,7 @@ package com.mobilprogramlar.FizikFormullerim;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.LocaleList;
 import android.util.Log;
 
 import java.util.Locale;
@@ -29,14 +30,15 @@ public class LocaleManager {
     }
 
     Context updateResources(Context context, String language) {
-        Locale locale = new Locale(language);
+        String tag = (language == null || language.isEmpty()) ? "tr" : language;
+        Locale locale = Locale.forLanguageTag(tag);
         Locale.setDefault(locale);
 
-        Configuration config = context.getResources().getConfiguration();
-        config.setLocale(locale);
+        Configuration config = new Configuration(context.getResources().getConfiguration());
+        config.setLocales(new LocaleList(locale));
 
         Context updatedContext = context.createConfigurationContext(config);
-        Log.d("LocaleManager", "Yerel ayar şu şekilde güncellendi: " + language);
+        Log.d("LocaleManager", "Yerel ayar şu şekilde güncellendi: " + tag);
         return updatedContext;
     }
 }

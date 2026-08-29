@@ -62,11 +62,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Formula_List" android:theme="@style/Theme.Nurullah"/>
-        <activity android:name=".Formula_Detail" />
-        <activity android:name=".Ayarlar" />
-        <activity android:name=".PremiumActivity" android:theme="@style/Theme.Nurullah" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".Formula_List" android:exported="false" android:theme="@style/Theme.Nurullah"/>
+        <activity android:name=".Formula_Detail" android:exported="false" />
+        <activity android:name=".Ayarlar" android:exported="false" />
+        <activity android:name=".PremiumActivity" android:exported="false" android:theme="@style/Theme.Nurullah" />
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -79,7 +79,7 @@
             android:value="@string/default_notification_channel_id" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/ic_launcher" />
+            android:resource="@drawable/ic_notification" />
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"

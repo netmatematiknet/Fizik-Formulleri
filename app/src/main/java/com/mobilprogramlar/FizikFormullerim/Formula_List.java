@@ -35,16 +35,15 @@ public class Formula_List extends AppCompatActivity {
         LocaleManager localeManager = new LocaleManager(newBase);
         Context context = localeManager.setLocale(newBase);
         super.attachBaseContext(context);
-        Log.d("Formula_List", "Base context updated with locale: " + context.getResources().getConfiguration().locale.getLanguage());
+        String lang = context.getResources().getConfiguration().getLocales().get(0).getLanguage();
+        Log.d("Formula_List", "Base context updated with locale: " + lang);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        // Tema yöneticisini başlat ve kaydedilen temayı uygula
         themeManager = new ThemeManager(this);
         themeManager.applyTheme(this);
+        super.onCreate(savedInstanceState);
 
         NtHelper.enableEdgeToEdge(this);
         setContentView(R.layout.activity_formula_list);

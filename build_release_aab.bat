@@ -55,7 +55,7 @@ if %ERR% NEQ 0 (
 
 echo [4/4] AAB kopyalaniyor...
 set SRC=app\build\outputs\bundle\release\app-release.aab
-set DST=..\FizikFormulleri_v2.0_12.aab
+set DST=..\FizikFormulleri_v2.1_13.aab
 if exist "%SRC%" (
     copy /Y "%SRC%" "%DST%" >nul
     echo BASARILI: %DST%

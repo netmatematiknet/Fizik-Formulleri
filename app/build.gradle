@@ -18,9 +18,9 @@ android {
         applicationId "com.mobilprogramlar.FizikFormullerim"
         minSdkVersion 29
         targetSdkVersion 36
-        // Play'deki canlı sürüm 1.8 — yeni yükleme bunun üstünde olmalı
-        versionCode 12
-        versionName "2.0"
+        // Play canlı 2.0 (12) — 2.1 edge-to-edge + Firebase sağlamlaştırma
+        versionCode 13
+        versionName "2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resConfigs "tr", "en"
     }
@@ -100,7 +100,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:6.4.1'
     implementation 'com.android.billingclient:billing:8.0.0'
 
-    implementation platform('com.google.firebase:firebase-bom:33.12.0')
+    implementation platform('com.google.firebase:firebase-bom:33.16.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-config'

@@ -5,6 +5,7 @@ import android.content.pm.ApplicationInfo;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -69,7 +70,15 @@ public final class AppRemoteConfig {
 
     /** Uygulama açılışında bir kez çağrılır. */
     public void fetchAndActivate() {
-        remoteConfig.fetchAndActivate();
+        remoteConfig.fetchAndActivate()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Exception e = task.getException();
+                        if (e != null) {
+                            FirebaseCrashlytics.getInstance().log("RemoteConfig fetch failed: " + e.getMessage());
+                        }
+                    }
+                });
     }
 
     public boolean areAdsEnabled() {

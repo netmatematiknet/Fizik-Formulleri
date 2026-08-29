@@ -46,11 +46,9 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        // Tema yöneticisini başlat ve kaydedilen temayı uygula
         themeManager = new ThemeManager(this);
         themeManager.applyTheme(this);
+        super.onCreate(savedInstanceState);
 
         NtHelper.enableEdgeToEdge(this);
         setContentView(R.layout.activity_ayarlar);

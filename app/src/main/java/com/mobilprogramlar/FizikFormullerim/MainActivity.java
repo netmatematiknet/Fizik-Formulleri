@@ -50,11 +50,9 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        // Tema yöneticisini başlat ve kaydedilen temayı uygula
         themeManager = new ThemeManager(this);
         themeManager.applyTheme(this);
+        super.onCreate(savedInstanceState);
 
         localeManager = new LocaleManager(this);
         Context context = localeManager.updateResources(this, localeManager.getLanguage());

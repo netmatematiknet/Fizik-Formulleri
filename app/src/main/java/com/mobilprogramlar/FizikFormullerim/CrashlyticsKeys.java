@@ -25,6 +25,8 @@ public final class CrashlyticsKeys {
         crashlytics.setCustomKey("theme_id", themeId);
         crashlytics.setCustomKey("theme_name", themeName(themeId));
         crashlytics.setCustomKey("premium_ad_free", adFree);
+        crashlytics.setCustomKey("app_version_name", BuildConfig.VERSION_NAME);
+        crashlytics.setCustomKey("app_version_code", BuildConfig.VERSION_CODE);
     }
 
     @NonNull

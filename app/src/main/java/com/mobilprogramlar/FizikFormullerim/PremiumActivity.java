@@ -26,6 +26,12 @@ public class PremiumActivity extends AppCompatActivity implements BillingManager
     private TextView tvActiveNote;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        LocaleManager lm = new LocaleManager(newBase);
+        super.attachBaseContext(lm.setLocale(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         themeManager = new ThemeManager(this);
         themeManager.applyTheme(this);

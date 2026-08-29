@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
-import com.mobilprogramlar.FizikFormullerim.SafeViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class Formula_Detail extends AppCompatActivity {
@@ -24,12 +23,16 @@ public class Formula_Detail extends AppCompatActivity {
     ThemeManager themeManager;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        LocaleManager lm = new LocaleManager(newBase);
+        super.attachBaseContext(lm.setLocale(newBase));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         themeManager = new ThemeManager(this);
-        themeManager.applyTheme(this);  // Temayı burada uygulayın
+        themeManager.applyTheme(this);
         super.onCreate(savedInstanceState);
-        //themeManager = new ThemeManager(this);
-        //themeManager.applyTheme(this);
 
         localeManager = new LocaleManager(this);
         Context context = localeManager.updateResources(this, localeManager.getLanguage());

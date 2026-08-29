@@ -33,6 +33,7 @@ import android.widget.Toast;
 import androidx.activity.ComponentActivity;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
+import androidx.activity.SystemBarStyle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -143,11 +144,14 @@ public class NtHelper {
 
 
     /**
-     * setContentView öncesi çağrılır. Android 15 öncesi cihazlarda da edge-to-edge açar
-     * (Play Console önerisi: EdgeToEdge.enable).
+     * setContentView öncesi çağrılır. Android 15+ edge-to-edge; şeffaf sistem çubukları
+     * (Play: enableEdgeToEdge — setStatusBarColor / setNavigationBarColor kullanılmaz).
      */
     public static void enableEdgeToEdge(@NonNull ComponentActivity activity) {
-        EdgeToEdge.enable(activity);
+        EdgeToEdge.enable(
+                activity,
+                SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT),
+                SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT));
     }
 
     /** setContentView sonrası: sistem çubuğu + çentik için padding. */
