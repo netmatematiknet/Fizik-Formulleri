@@ -24,4 +24,20 @@
         <key>banner_every_n_items</key>
         <value>2</value>
     </entry>
+    <entry>
+        <key>guncelleme_min_version</key>
+        <value>0</value>
+    </entry>
+    <entry>
+        <key>guncelleme_zorunlu</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>guncelleme_baslik</key>
+        <value>Fizik Formülleri yenilendi!</value>
+    </entry>
+    <entry>
+        <key>guncelleme_mesaji</key>
+        <value>Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.</value>
+    </entry>
 </defaultsMap>

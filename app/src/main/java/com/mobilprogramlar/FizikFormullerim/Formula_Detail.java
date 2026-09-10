@@ -59,6 +59,8 @@ public class Formula_Detail extends AppCompatActivity {
         } else {
             Log.e("MediaPlayer", "Ses dosyası yüklenemedi");
         }
+
+        InAppReviewHelper.onFormulaDetailOpened(this);
     }
 
     // Toolbar ayarları. Toolbarı belirler ve başlık, alt başlık ayarlamalarını yapar.

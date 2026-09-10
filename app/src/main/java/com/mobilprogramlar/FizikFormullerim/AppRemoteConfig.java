@@ -2,9 +2,12 @@ package com.mobilprogramlar.FizikFormullerim;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
@@ -13,15 +16,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Reklam anahtarları Firebase Remote Config'den okunur; konsolda aynı isimlerle tanımlanmalıdır.
- * <ul>
- *   <li>{@link #KEY_ADS_ENABLED} — tüm reklamlar (true/false)</li>
- *   <li>{@link #KEY_BANNER_ENABLED} — banner açık/kapalı</li>
- *   <li>{@link #KEY_INTERSTITIAL_ENABLED} — geçiş reklamı açık/kapalı</li>
- *   <li>{@link #KEY_INTERSTITIAL_MAIN_PERCENT} — ana sayfa geçiş olasılığı 0–100</li>
- *   <li>{@link #KEY_INTERSTITIAL_FORMULA_PERCENT} — formül listesi geçiş olasılığı 0–100</li>
- *   <li>{@link #KEY_BANNER_EVERY_N_ITEMS} — her N kategori kartından sonra 1 banner</li>
- * </ul>
+ * Firebase Remote Config: reklam + uygulama içi güncelleme metinleri.
+ * Konsolda Publish edilmesi gereken güncelleme anahtarları:
+ * guncelleme_min_version, guncelleme_zorunlu, guncelleme_baslik, guncelleme_mesaji
  */
 public final class AppRemoteConfig {
 
@@ -31,6 +28,11 @@ public final class AppRemoteConfig {
     public static final String KEY_INTERSTITIAL_MAIN_PERCENT = "interstitial_main_percent";
     public static final String KEY_INTERSTITIAL_FORMULA_PERCENT = "interstitial_formula_percent";
     public static final String KEY_BANNER_EVERY_N_ITEMS = "banner_every_n_items";
+
+    public static final String KEY_UPDATE_MIN_VERSION = "guncelleme_min_version";
+    public static final String KEY_UPDATE_FORCE = "guncelleme_zorunlu";
+    public static final String KEY_UPDATE_TITLE = "guncelleme_baslik";
+    public static final String KEY_UPDATE_MESSAGE = "guncelleme_mesaji";
 
     private static final long DEFAULT_MAIN = 10L;
     private static final long DEFAULT_FORMULA = 30L;
@@ -54,6 +56,10 @@ public final class AppRemoteConfig {
         defaults.put(KEY_INTERSTITIAL_MAIN_PERCENT, DEFAULT_MAIN);
         defaults.put(KEY_INTERSTITIAL_FORMULA_PERCENT, DEFAULT_FORMULA);
         defaults.put(KEY_BANNER_EVERY_N_ITEMS, DEFAULT_BANNER_EVERY_N);
+        defaults.put(KEY_UPDATE_MIN_VERSION, 0L);
+        defaults.put(KEY_UPDATE_FORCE, false);
+        defaults.put(KEY_UPDATE_TITLE, "Fizik Formülleri yenilendi!");
+        defaults.put(KEY_UPDATE_MESSAGE, "Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.");
         remoteConfig.setDefaultsAsync(defaults);
     }
 
@@ -70,13 +76,20 @@ public final class AppRemoteConfig {
 
     /** Uygulama açılışında bir kez çağrılır. */
     public void fetchAndActivate() {
+        fetchAndActivate(null);
+    }
+
+    public void fetchAndActivate(@Nullable Runnable onComplete) {
         remoteConfig.fetchAndActivate()
-                .addOnCompleteListener(task -> {
+                .addOnCompleteListener((OnCompleteListener<Boolean>) task -> {
                     if (!task.isSuccessful()) {
                         Exception e = task.getException();
                         if (e != null) {
                             FirebaseCrashlytics.getInstance().log("RemoteConfig fetch failed: " + e.getMessage());
                         }
+                    }
+                    if (onComplete != null) {
+                        onComplete.run();
                     }
                 });
     }
@@ -114,6 +127,40 @@ public final class AppRemoteConfig {
             return 20;
         }
         return (int) n;
+    }
+
+    /** 0 = Remote Config eşiği kapalı. */
+    public int getUpdateMinVersionCode() {
+        long v = remoteConfig.getLong(KEY_UPDATE_MIN_VERSION);
+        if (v < 0L) {
+            return 0;
+        }
+        if (v > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        }
+        return (int) v;
+    }
+
+    public boolean isUpdateForced() {
+        return remoteConfig.getBoolean(KEY_UPDATE_FORCE);
+    }
+
+    @NonNull
+    public String getUpdateTitle(@NonNull Context context) {
+        String title = remoteConfig.getString(KEY_UPDATE_TITLE);
+        if (TextUtils.isEmpty(title)) {
+            return context.getString(R.string.update_default_title);
+        }
+        return title;
+    }
+
+    @NonNull
+    public String getUpdateMessage(@NonNull Context context) {
+        String message = remoteConfig.getString(KEY_UPDATE_MESSAGE);
+        if (TextUtils.isEmpty(message)) {
+            return context.getString(R.string.update_default_message);
+        }
+        return message;
     }
 
     private static int clampPercent(int value) {

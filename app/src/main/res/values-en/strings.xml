@@ -135,6 +135,29 @@
     <string name="premium_benefit_3">• Payment is processed securely through Google Play.</string>
     <string name="premium_page_thanks">Your ad-free version is active. Thank you!</string>
 
+    <string name="update_info_label">Information</string>
+    <string name="update_default_title">Physics Formulas updated!</string>
+    <string name="update_default_message">A new version is ready. Update now for a better experience.</string>
+    <string name="update_now">Update now</string>
+    <string name="update_later">OK</string>
+    <string name="update_close">Close</string>
+
+    <string name="notifications_section_title">Notifications</string>
+    <string name="pref_announcements">Announcements (FCM)</string>
+    <string name="pref_study_reminder">Study reminder</string>
+    <string name="pref_study_reminder_hint">A short reminder around 18:00 every day</string>
+    <string name="pref_study_reminder_on">Study reminder turned on</string>
+    <string name="pref_study_reminder_off">Study reminder turned off</string>
+    <string name="study_reminder_channel_name">Study reminder</string>
+    <string name="study_reminder_channel_desc">Daily TYT Physics study reminders</string>
+    <string name="study_reminder_title">Physics study time</string>
+    <string name="study_reminder_body_generic">How about reviewing a formula today?</string>
+    <string name="study_reminder_body_topic">Today\'s topic: %1$s</string>
+    <string name="formula_of_day_label">FORMULA OF THE DAY</string>
+    <string name="formula_of_day_hint">Tap to open</string>
+    <string name="widget_formula_label">Formula of the Day</string>
+    <string name="widget_formula_description">Shows today\'s physics topic on the home screen</string>
+
     <!-- Category names -->
     <string-array name="main_topics">
         <item>Physics Formulas</item>

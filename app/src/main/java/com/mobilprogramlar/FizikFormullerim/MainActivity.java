@@ -3,6 +3,7 @@ package com.mobilprogramlar.FizikFormullerim;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -13,6 +14,7 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
@@ -39,8 +41,13 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private TextToSpeech tts;
     private String selectedLanguage;
     private boolean previousAdFree;
+    private UpdatePromptCoordinator updatePromptCoordinator;
     private final ActivityResultLauncher<String> notificationPermissionLauncher =
             NotificationPermissionHelper.register(this);
+    private final ActivityResultLauncher<androidx.activity.result.IntentSenderRequest> appUpdateLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), result -> {
+                // Play UI kapandı; zorunlu güncellemede resumeIfNeeded devam ettirir.
+            });
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -61,6 +68,10 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         NtHelper.enableEdgeToEdge(this);
         setContentView(R.layout.activity_main);
         NtHelper.applySystemBarInsets(this);
+
+        InAppUpdateHelper updateHelper = new InAppUpdateHelper(this, appUpdateLauncher);
+        updatePromptCoordinator = new UpdatePromptCoordinator(this, updateHelper);
+
         AdConsentHelper.gatherConsentAndInitAds(this, () -> {
             AdHelper.loadInterstitialAd(this);
             AdHelper.showAdWithProbability(
@@ -78,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
         setupButtons(context);
         updateUIComponents(themeManager.getTheme());
+        setupFormulaOfTheDay();
 
         NtHelper.setOnBackPressed(this, MainActivity.class);
 
@@ -86,8 +98,13 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         // Initialize TextToSpeech
         tts = new TextToSpeech(this, this); // TextToSpeech başlatıldı.
 
-        // Rastgele metni ve tarihi seçip okuma
-        //readRandomTextAndDate(); // Başlatma onInit'den sonra yapılacak
+        // Remote Config sonrası soft/zorunlu güncelleme kontrolü
+        AppRemoteConfig.getInstance(this).fetchAndActivate(
+                () -> runOnUiThread(() -> {
+                    if (!isFinishing() && updatePromptCoordinator != null) {
+                        updatePromptCoordinator.checkAfterRemoteConfig();
+                    }
+                }));
     }
 
     @Override
@@ -204,6 +221,9 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     @Override
     protected void onResume() {
         super.onResume();
+        if (updatePromptCoordinator != null) {
+            updatePromptCoordinator.resumeIfNeeded();
+        }
         if (mFirebaseAnalytics != null) {
             mFirebaseAnalytics.logEvent("onResume", null);
         }
@@ -219,6 +239,10 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
     @Override
     protected void onDestroy() {
+        if (updatePromptCoordinator != null) {
+            updatePromptCoordinator.destroy();
+            updatePromptCoordinator = null;
+        }
         if (tts != null) {
             tts.stop();
             tts.shutdown(); // TextToSpeech durduruldu ve kapatıldı.
@@ -287,6 +311,48 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         tvToolbarSubtitle.setTextColor(themeColor.toolbarSubtitleTextColor);
         constraintLayout3.setBackgroundColor(themeColor.activityBackgroundColor);
         refreshMainPremiumEntry();
+        applyFormulaOfDayTheme(themeColor);
+    }
+
+    private void setupFormulaOfTheDay() {
+        View card = findViewById(R.id.card_formula_of_day);
+        TextView titleView = findViewById(R.id.tv_formula_of_day_title);
+        if (card == null || titleView == null) {
+            return;
+        }
+        TopicCatalog.Topic topic = FormulaOfTheDayHelper.today(this);
+        if (topic == null) {
+            card.setVisibility(View.GONE);
+            return;
+        }
+        card.setVisibility(View.VISIBLE);
+        titleView.setText(topic.title);
+        card.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Formula_Detail.class);
+            intent.putExtra("formula_category", getString(R.string.toolbar_baslik_1));
+            intent.putExtra("formula_title", topic.title);
+            startActivity(intent);
+        });
+        applyFormulaOfDayTheme(themeManager.getThemeColors());
+    }
+
+    private void applyFormulaOfDayTheme(ThemeColors themeColor) {
+        View card = findViewById(R.id.card_formula_of_day);
+        TextView label = findViewById(R.id.tv_formula_of_day_label);
+        TextView title = findViewById(R.id.tv_formula_of_day_title);
+        TextView hint = findViewById(R.id.tv_formula_of_day_hint);
+        if (card instanceof androidx.cardview.widget.CardView) {
+            ((androidx.cardview.widget.CardView) card).setCardBackgroundColor(themeColor.cardBackgroundColor);
+        }
+        if (label != null) {
+            label.setTextColor(themeColor.activityTextColor);
+        }
+        if (title != null) {
+            title.setTextColor(themeColor.cardTextColor);
+        }
+        if (hint != null) {
+            hint.setTextColor(themeColor.activityTextColor);
+        }
     }
 
     /** Ana sayfa altındaki reklamsız / premium bilgi sayfası girişi. */

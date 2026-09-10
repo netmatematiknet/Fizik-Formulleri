@@ -45,14 +45,18 @@ public class App extends Application {
         AppRemoteConfig.getInstance(this).fetchAndActivate();
         createFcmChannel();
 
-        FirebaseMessaging.getInstance().subscribeToTopic("all_users")
-                .addOnCompleteListener(task -> Log.d(TAG, "topic all_users ok=" + task.isSuccessful()));
-        FirebaseMessaging.getInstance().subscribeToTopic("fizik_formulleri")
-                .addOnCompleteListener(task -> Log.d(TAG, "topic fizik_formulleri ok=" + task.isSuccessful()));
+        if (NotificationPrefs.areAnnouncementsEnabled(this)) {
+            FirebaseMessaging.getInstance().subscribeToTopic("all_users")
+                    .addOnCompleteListener(task -> Log.d(TAG, "topic all_users ok=" + task.isSuccessful()));
+            FirebaseMessaging.getInstance().subscribeToTopic("fizik_formulleri")
+                    .addOnCompleteListener(task -> Log.d(TAG, "topic fizik_formulleri ok=" + task.isSuccessful()));
+        }
 
         PremiumManager.getInstance(this);
         CrashlyticsKeys.refresh(this);
         maybeSendCrashlyticsProbe(crashlytics);
+        StudyReminderScheduler.applyFromPrefs(this);
+        FormulaOfDayWidgetProvider.refreshAll(this);
 
         billingManager = new BillingManager(this);
         billingManager.connectAndSync();
@@ -93,5 +97,6 @@ public class App extends Application {
                 NotificationManager.IMPORTANCE_DEFAULT);
         channel.setDescription(getString(R.string.notification_channel_desc));
         manager.createNotificationChannel(channel);
+        StudyReminderReceiver.ensureChannel(this, manager);
     }
 }

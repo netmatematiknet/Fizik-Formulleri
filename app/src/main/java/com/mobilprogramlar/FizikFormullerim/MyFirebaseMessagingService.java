@@ -23,7 +23,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
-        // Topic abonelikleri App.onCreate'te; token yenilenince tekrar bağlan.
+        if (!NotificationPrefs.areAnnouncementsEnabled(this)) {
+            return;
+        }
         FirebaseMessaging.getInstance().subscribeToTopic("all_users");
         FirebaseMessaging.getInstance().subscribeToTopic("fizik_formulleri");
     }
@@ -31,6 +33,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(@NonNull RemoteMessage message) {
         super.onMessageReceived(message);
+        if (!NotificationPrefs.areAnnouncementsEnabled(this)) {
+            return;
+        }
 
         RemoteMessage.Notification n = message.getNotification();
         Map<String, String> data = message.getData();

@@ -135,6 +135,29 @@
     <string name="premium_benefit_3">• Ödeme Google Play üzerinden güvenle işlenir.</string>
     <string name="premium_page_thanks">Reklamsız sürümünüz aktif. Teşekkürler!</string>
 
+    <string name="update_info_label">Bilgilendirme</string>
+    <string name="update_default_title">Fizik Formülleri yenilendi!</string>
+    <string name="update_default_message">Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.</string>
+    <string name="update_now">Şimdi Güncelle</string>
+    <string name="update_later">Tamam</string>
+    <string name="update_close">Kapat</string>
+
+    <string name="notifications_section_title">Bildirimler</string>
+    <string name="pref_announcements">Duyurular (FCM)</string>
+    <string name="pref_study_reminder">Çalışma hatırlatıcısı</string>
+    <string name="pref_study_reminder_hint">Her gün saat 18:00 civarı kısa hatırlatma</string>
+    <string name="pref_study_reminder_on">Çalışma hatırlatıcısı açıldı</string>
+    <string name="pref_study_reminder_off">Çalışma hatırlatıcısı kapatıldı</string>
+    <string name="study_reminder_channel_name">Çalışma hatırlatması</string>
+    <string name="study_reminder_channel_desc">Günlük TYT Fizik çalışma hatırlatmaları</string>
+    <string name="study_reminder_title">Fizik çalışma zamanı</string>
+    <string name="study_reminder_body_generic">Bugün biraz formül tekrar etmeye ne dersin?</string>
+    <string name="study_reminder_body_topic">Bugünün konusu: %1$s</string>
+    <string name="formula_of_day_label">GÜNÜN FORMÜLÜ</string>
+    <string name="formula_of_day_hint">Dokunarak aç</string>
+    <string name="widget_formula_label">Günün Formülü</string>
+    <string name="widget_formula_description">Ana ekranda günün fizik konusunu gösterir</string>
+
 
     <!-- Kategori isimleri -->
         <string-array name="main_topics">

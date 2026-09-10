@@ -27,6 +27,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Ayarlar extends AppCompatActivity implements BillingManager.Listener {
 
@@ -36,6 +38,8 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
     private TextView tvPremiumStatus;
     private Button btnPremiumBuy;
     private Button btnPremiumRestore;
+    private SwitchMaterial switchAnnouncements;
+    private SwitchMaterial switchStudyReminder;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -81,6 +85,7 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         selectInitialTheme();
 
         setupPremiumSection();
+        setupNotificationPrefs();
         BillingManager billing = ((App) getApplication()).getBillingManager();
         billing.setListener(this);
         billing.queryPurchasesAndApply();
@@ -98,6 +103,34 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
     protected void onDestroy() {
         ((App) getApplication()).getBillingManager().setListener(null);
         super.onDestroy();
+    }
+
+    private void setupNotificationPrefs() {
+        switchAnnouncements = findViewById(R.id.switch_announcements);
+        switchStudyReminder = findViewById(R.id.switch_study_reminder);
+        if (switchAnnouncements == null || switchStudyReminder == null) {
+            return;
+        }
+        switchAnnouncements.setChecked(NotificationPrefs.areAnnouncementsEnabled(this));
+        switchStudyReminder.setChecked(NotificationPrefs.isStudyReminderEnabled(this));
+
+        switchAnnouncements.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            NotificationPrefs.setAnnouncementsEnabled(this, isChecked);
+            if (isChecked) {
+                FirebaseMessaging.getInstance().subscribeToTopic("all_users");
+                FirebaseMessaging.getInstance().subscribeToTopic("fizik_formulleri");
+            } else {
+                FirebaseMessaging.getInstance().unsubscribeFromTopic("all_users");
+                FirebaseMessaging.getInstance().unsubscribeFromTopic("fizik_formulleri");
+            }
+        });
+        switchStudyReminder.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            NotificationPrefs.setStudyReminderEnabled(this, isChecked);
+            StudyReminderScheduler.applyFromPrefs(this);
+            Toast.makeText(this,
+                    isChecked ? R.string.pref_study_reminder_on : R.string.pref_study_reminder_off,
+                    Toast.LENGTH_SHORT).show();
+        });
     }
 
     private void setupPremiumSection() {
@@ -320,6 +353,26 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         if (btnPremiumRestore != null) {
             btnPremiumRestore.setBackgroundColor(themeColors.toolbarBackgroundColor);
             btnPremiumRestore.setTextColor(themeColors.activityTextColor);
+        }
+        TextView tvNotifTitle = findViewById(R.id.tv_notifications_title);
+        TextView tvPrefAnn = findViewById(R.id.tv_pref_announcements);
+        TextView tvPrefStudy = findViewById(R.id.tv_pref_study_reminder);
+        TextView tvPrefHint = findViewById(R.id.tv_pref_study_hint);
+        LinearLayout layoutNotif = findViewById(R.id.linearlayout_notifications);
+        if (layoutNotif != null) {
+            layoutNotif.setBackgroundColor(themeColors.cardBackgroundColor);
+        }
+        if (tvNotifTitle != null) {
+            tvNotifTitle.setTextColor(themeColors.activityTextColor);
+        }
+        if (tvPrefAnn != null) {
+            tvPrefAnn.setTextColor(themeColors.activityTextColor);
+        }
+        if (tvPrefStudy != null) {
+            tvPrefStudy.setTextColor(themeColors.activityTextColor);
+        }
+        if (tvPrefHint != null) {
+            tvPrefHint.setTextColor(themeColors.activityTextColor);
         }
         tvOyver.setTextColor(themeColors.activityTextColor);
         tvTemaSec.setTextColor(themeColors.activityTextColor);
