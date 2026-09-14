@@ -22,7 +22,8 @@
             android:layout_width="@dimen/list_item_image_size"
             android:layout_height="@dimen/list_item_image_size"
             android:contentDescription="@string/image_todo_1"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView

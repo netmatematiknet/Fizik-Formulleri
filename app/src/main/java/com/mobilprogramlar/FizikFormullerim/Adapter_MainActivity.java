@@ -30,7 +30,7 @@ public class Adapter_MainActivity extends RecyclerView.Adapter<RecyclerView.View
     public Adapter_MainActivity(Context context, String[] categories) {
         this.context = context;
         this.categories = categories;
-        this.adFree = PremiumManager.getInstance(context).isAdFree();
+        this.adFree = !AdGate.isAdEnabled(context);
         AppRemoteConfig remote = AppRemoteConfig.getInstance(context);
         this.bannersOn = !adFree && remote.areBannersEnabled() && remote.getBannerEveryNItems() > 0;
         this.bannerEveryN = Math.max(1, remote.getBannerEveryNItems());
@@ -101,6 +101,9 @@ public class Adapter_MainActivity extends RecyclerView.Adapter<RecyclerView.View
             if (CategoryHelper.isApplicationsIndex(actualPosition)
                     || CategoryHelper.isApplications(context, categories[actualPosition])) {
                 NtHelper.openDeveloperPage(context, "mobilprogramlar.com");
+            } else if (CategoryHelper.isSettingsIndex(actualPosition)
+                    || CategoryHelper.isSettings(context, categories[actualPosition])) {
+                intent = new Intent(context, Ayarlar.class);
             } else {
                 intent = new Intent(context, Formula_List.class);
                 intent.putExtra("category", categories[actualPosition]);

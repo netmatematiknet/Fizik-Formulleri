@@ -34,10 +34,12 @@ public class LocaleManager {
         Locale locale = Locale.forLanguageTag(tag);
         Locale.setDefault(locale);
 
-        Configuration config = new Configuration(context.getResources().getConfiguration());
+        Context scaled = UiScale.wrap(context);
+        Configuration config = new Configuration(scaled.getResources().getConfiguration());
         config.setLocales(new LocaleList(locale));
+        config.fontScale = 1.0f;
 
-        Context updatedContext = context.createConfigurationContext(config);
+        Context updatedContext = scaled.createConfigurationContext(config);
         Log.d("LocaleManager", "Yerel ayar şu şekilde güncellendi: " + tag);
         return updatedContext;
     }

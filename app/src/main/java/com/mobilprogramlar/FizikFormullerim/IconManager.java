@@ -68,11 +68,12 @@ public class IconManager {
         return -1;
     }
 
-    /** Ana sayfa kart görselleri — Fizik + Uygulamalarımız (Matematik mat_* değil). */
+    /** Ana sayfa kart görselleri — Fizik + Uygulamalarımız + Ayarlar. */
     public int[] getImagesForCategories() {
         return new int[]{
                 R.drawable.einstein_equation,
-                R.drawable.uygulamalarimiz
+                R.drawable.uygulamalarimiz,
+                R.mipmap.ayarlar_01
         };
     }
 

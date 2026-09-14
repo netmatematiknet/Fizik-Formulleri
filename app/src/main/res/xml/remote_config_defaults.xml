@@ -1,43 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <defaultsMap>
-    <entry>
-        <key>ads_enabled</key>
-        <value>true</value>
-    </entry>
-    <entry>
-        <key>banner_enabled</key>
-        <value>true</value>
-    </entry>
-    <entry>
-        <key>interstitial_enabled</key>
-        <value>true</value>
-    </entry>
-    <entry>
-        <key>interstitial_main_percent</key>
-        <value>10</value>
-    </entry>
-    <entry>
-        <key>interstitial_formula_percent</key>
-        <value>30</value>
-    </entry>
-    <entry>
-        <key>banner_every_n_items</key>
-        <value>2</value>
-    </entry>
-    <entry>
-        <key>guncelleme_min_version</key>
-        <value>0</value>
-    </entry>
-    <entry>
-        <key>guncelleme_zorunlu</key>
-        <value>false</value>
-    </entry>
-    <entry>
-        <key>guncelleme_baslik</key>
-        <value>Fizik Formülleri yenilendi!</value>
-    </entry>
-    <entry>
-        <key>guncelleme_mesaji</key>
-        <value>Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.</value>
-    </entry>
+    <entry><key>reklam_aktif</key><value>true</value></entry>
+    <entry><key>reklam_banner_aktif</key><value>true</value></entry>
+    <entry><key>reklam_gecis_aktif</key><value>true</value></entry>
+    <entry><key>reklam_gecis_ana_yuzde</key><value>30</value></entry>
+    <entry><key>reklam_gecis_oyun_yuzde</key><value>30</value></entry>
+    <entry><key>reklam_gecis_uygulama_yuzde</key><value>20</value></entry>
+    <entry><key>reklam_acilis_aktif</key><value>false</value></entry>
+    <entry><key>reklam_odullu_aktif</key><value>true</value></entry>
+    <entry><key>reklam_odullu_molasi_saat</key><value>12</value></entry>
+    <entry><key>reklam_banner_her_n</key><value>2</value></entry>
+    <entry><key>reklam_kaldir_aktif</key><value>true</value></entry>
+    <entry><key>tanitim_aktif</key><value>false</value></entry>
+    <entry><key>tanitim_id</key><value></value></entry>
+    <entry><key>tanitim_baslik</key><value></value></entry>
+    <entry><key>tanitim_mesaj</key><value></value></entry>
+    <entry><key>tanitim_buton</key><value></value></entry>
+    <entry><key>tanitim_url</key><value></value></entry>
+    <entry><key>tanitim_resim_url</key><value></value></entry>
+    <entry><key>tanitim_yer</key><value>ana</value></entry>
+    <entry><key>guncelleme_min_version</key><value>0</value></entry>
+    <entry><key>guncelleme_zorunlu</key><value>false</value></entry>
+    <entry><key>guncelleme_baslik</key><value>Fizik Formülleri yenilendi</value></entry>
+    <entry><key>guncelleme_mesaji</key><value>Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.</value></entry>
+    <entry><key>kutlama_aktif</key><value>false</value></entry>
+    <entry><key>kutlama_id</key><value></value></entry>
+    <entry><key>kutlama_baslik</key><value></value></entry>
+    <entry><key>kutlama_mesaji</key><value></value></entry>
+    <entry><key>kutlama_buton</key><value></value></entry>
+    <entry><key>kutlama_url</key><value></value></entry>
+    <entry><key>kutlama_resim_url</key><value></value></entry>
+    <entry><key>bilgi_aktif</key><value>false</value></entry>
+    <entry><key>bilgi_id</key><value></value></entry>
+    <entry><key>bilgi_baslik</key><value></value></entry>
+    <entry><key>bilgi_mesaj</key><value></value></entry>
+    <entry><key>bilgi_buton</key><value>Tamam</value></entry>
+    <entry><key>bilgi_url</key><value></value></entry>
+    <entry><key>bilgi_resim_url</key><value></value></entry>
+    <entry><key>bakim_aktif</key><value>false</value></entry>
+    <entry><key>bakim_baslik</key><value></value></entry>
+    <entry><key>bakim_mesaj</key><value></value></entry>
+    <entry><key>serit_aktif</key><value>false</value></entry>
+    <entry><key>serit_metin</key><value></value></entry>
+    <entry><key>serit_url</key><value></value></entry>
+    <entry><key>serit_resim_url</key><value></value></entry>
+    <entry><key>gizlilik_url</key><value>http://www.mobilprogramlar.com/sitemiz-ve-uygulamamiz-icin-gizlilik-politikasi/</value></entry>
 </defaultsMap>

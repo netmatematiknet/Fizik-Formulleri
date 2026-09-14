@@ -1,0 +1,362 @@
+{
+    "version":  {
+                    "versionNumber":  "24",
+                    "updateTime":  "2026-09-13T21:50:37.469550Z",
+                    "updateUser":  {
+                                       "email":  "sudetayipoglu@gmail.com"
+                                   },
+                    "updateOrigin":  "CONSOLE",
+                    "updateType":  "INCREMENTAL_UPDATE"
+                },
+    "parameterGroups":  {
+                            "Serit_ — Ana ekran genel haber bandı":  {
+                                                                         "description":  "Kısa genel duyuru. Ana ekranda ince haber bandı (genel duyuru)\nFark: serit_ = genel haber · \ntanitim_ = “şu uygulamamı indir” kampanyası (başlık, buton, yer, id).\n",
+                                                                         "parameters":  {
+                                                                                            "serit_aktif":  {
+                                                                                                                "defaultValue":  {
+                                                                                                                                     "value":  "false"
+                                                                                                                                 },
+                                                                                                                "description":  "Şerit açık mı",
+                                                                                                                "valueType":  "BOOLEAN"
+                                                                                                            },
+                                                                                            "serit_metin":  {
+                                                                                                                "defaultValue":  {
+                                                                                                                                     "value":  "TYT Fizik formülleri tek uygulamada — AllImageLab haber bandı da burada."
+                                                                                                                                 },
+                                                                                                                "description":  "Metin",
+                                                                                                                "valueType":  "STRING"
+                                                                                                            },
+                                                                                            "serit_url":  {
+                                                                                                              "defaultValue":  {
+                                                                                                                                   "value":  "https://allimagelab.com/"
+                                                                                                                               },
+                                                                                                              "description":  "Opsiyonel tıklama",
+                                                                                                              "valueType":  "STRING"
+                                                                                                          },
+                                                                                            "serit_resim_url":  {
+                                                                                                                    "defaultValue":  {
+                                                                                                                                         "value":  "https://play-lh.googleusercontent.com/hzUOvqdHWXbda0LlYqyamXguqMAowdzUeWWHL5GCv1wBfAGiJf1DfYTLEjQJKEHm_Pw811773Cu4M6zyTYOvlvI=s112-rw"
+                                                                                                                                     },
+                                                                                                                    "description":  "Opsiyonel küçük ikon (72–96 px)",
+                                                                                                                    "valueType":  "STRING"
+                                                                                                                }
+                                                                                        }
+                                                                     },
+                            "Tanitim_ — Kendi uygulamalarının reklamı (AdMob değil)":  {
+                                                                                           "parameters":  {
+                                                                                                              "tanitim_aktif":  {
+                                                                                                                                    "defaultValue":  {
+                                                                                                                                                         "value":  "false"
+                                                                                                                                                     },
+                                                                                                                                    "description":  "Tanıtım alanı açık mı",
+                                                                                                                                    "valueType":  "BOOLEAN"
+                                                                                                                                },
+                                                                                                              "tanitim_id":  {
+                                                                                                                                 "defaultValue":  {
+                                                                                                                                                      "value":  "tanitim_01"
+                                                                                                                                                  },
+                                                                                                                                 "description":  "Kampanya id (aynı id kapatıldıysa tekrar gösterme; isteğe bağlı)",
+                                                                                                                                 "valueType":  "STRING"
+                                                                                                                             },
+                                                                                                              "tanitim_baslik":  {
+                                                                                                                                     "defaultValue":  {
+                                                                                                                                                          "value":  "Matematik Formülleri Uygulaması"
+                                                                                                                                                      },
+                                                                                                                                     "description":  "Kısa başlık / uygulama adı",
+                                                                                                                                     "valueType":  "STRING"
+                                                                                                                                 },
+                                                                                                              "tanitim_mesaj":  {
+                                                                                                                                    "defaultValue":  {
+                                                                                                                                                         "value":  "Fizik yanında matematik/geometri formülleri de mi lazım? Matematik Formülleri uygulaması tamamen ücretsiz."
+                                                                                                                                                     },
+                                                                                                                                    "description":  "1 satır slogan",
+                                                                                                                                    "valueType":  "STRING"
+                                                                                                                                },
+                                                                                                              "tanitim_buton":  {
+                                                                                                                                    "defaultValue":  {
+                                                                                                                                                         "value":  "İncele"
+                                                                                                                                                     },
+                                                                                                                                    "description":  "Buton metni (boşsa “İncele”)",
+                                                                                                                                    "valueType":  "STRING"
+                                                                                                                                },
+                                                                                                              "tanitim_url":  {
+                                                                                                                                  "defaultValue":  {
+                                                                                                                                                       "value":  "https://play.google.com/store/apps/details?id=com.mobilprogramlar.MatematikFormullerim"
+                                                                                                                                                   },
+                                                                                                                                  "description":  "Play / web linki (zorunlu pratikte),   URL: https://... (kendi site / Storage)",
+                                                                                                                                  "valueType":  "STRING"
+                                                                                                                              },
+                                                                                                              "tanitim_resim_url":  {
+                                                                                                                                        "defaultValue":  {
+                                                                                                                                                             "value":  "https://lh3.googleusercontent.com/T41Lxl0dirp6y6ZKJaUrlXGZkeWgTxucPaRqxjWCoCBj0liyF2FV6ByQmqAdt9MeGw8"
+                                                                                                                                                         },
+                                                                                                                                        "description":  "İkon veya mini görsel HTTPS,   İkon: 96×96 PNG veya WebP, şeffaf zemin, \u003c 100 KB Mini yatay: 720×120 (6:1), \u003c 200 KB Format: PNG / WebP; GIF-video yok",
+                                                                                                                                        "valueType":  "STRING"
+                                                                                                                                    },
+                                                                                                              "tanitim_yer":  {
+                                                                                                                                  "defaultValue":  {
+                                                                                                                                                       "value":  "ana"
+                                                                                                                                                   },
+                                                                                                                                  "description":  "Nerede: ana / ayarlar / sonuc (kod buna göre yerleştirir)",
+                                                                                                                                  "valueType":  "STRING"
+                                                                                                                              }
+                                                                                                          }
+                                                                                       },
+                            "Gizlilik_ — Ayarlar linki":  {
+                                                              "parameters":  {
+                                                                                 "gizlilik_url":  {
+                                                                                                      "defaultValue":  {
+                                                                                                                           "value":  "http://www.mobilprogramlar.com/sitemiz-ve-uygulamamiz-icin-gizlilik-politikasi/"
+                                                                                                                       },
+                                                                                                      "description":  "Ayarlar gizlilik politikası URL (Bilmece)",
+                                                                                                      "valueType":  "STRING"
+                                                                                                  }
+                                                                             }
+                                                          },
+                            "Kutlama_ — Ortada duyuru kartı":  {
+                                                                   "parameters":  {
+                                                                                      "kutlama_url":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "https://play.google.com/store/apps/dev?id=7525788731933934956"
+                                                                                                                           },
+                                                                                                          "description":  "Kodda URL henüz yok → tıklanınca açılmaz,   kutlama_url doluysa tarayıcı / Play açılır; boşsa sadece kart kapanır",
+                                                                                                          "valueType":  "STRING"
+                                                                                                      },
+                                                                                      "kutlama_resim_url":  {
+                                                                                                                "defaultValue":  {
+                                                                                                                                     "value":  "https://i.pinimg.com/736x/98/fc/e6/98fce6de39e58c734360f7d0aeec4fd5.jpg"
+                                                                                                                                 },
+                                                                                                                "description":  "Opsiyonel görsel (kart içi; örn. 600×300)",
+                                                                                                                "valueType":  "STRING"
+                                                                                                            },
+                                                                                      "kutlama_mesaji":  {
+                                                                                                             "defaultValue":  {
+                                                                                                                                  "value":  "Ramazan Bayramınız Kutlu olsun. Nice yen Ramazan bayramalrında sevdiklerinizle geçirmeniz dileğiyle. Hayırlı Bayramlarınız Olsun"
+                                                                                                                              },
+                                                                                                             "description":  "Mesaj (boşsa gösterme)",
+                                                                                                             "valueType":  "STRING"
+                                                                                                         },
+                                                                                      "kutlama_id":  {
+                                                                                                         "defaultValue":  {
+                                                                                                                              "value":  "2026_ramazan01"
+                                                                                                                          },
+                                                                                                         "description":  "2026_ramazan (her kampanyada değiştir),  kutlama_id değişince kart yeniden çıkar; aynı id’ye Tamam denince bir daha gelmez. Tek seferlik id",
+                                                                                                         "valueType":  "STRING"
+                                                                                                     },
+                                                                                      "kutlama_buton":  {
+                                                                                                            "defaultValue":  {
+                                                                                                                                 "value":  "Teşekkürler"
+                                                                                                                             },
+                                                                                                            "description":  "Buton (boşsa Tamam)",
+                                                                                                            "valueType":  "STRING"
+                                                                                                        },
+                                                                                      "kutlama_baslik":  {
+                                                                                                             "defaultValue":  {
+                                                                                                                                  "value":  "Hayırlı bayramlar!"
+                                                                                                                              },
+                                                                                                             "description":  "Başlık",
+                                                                                                             "valueType":  "STRING"
+                                                                                                         },
+                                                                                      "kutlama_aktif":  {
+                                                                                                            "defaultValue":  {
+                                                                                                                                 "value":  "false"
+                                                                                                                             },
+                                                                                                            "description":  "Kart çıkar (id + mesaj dolu).  Kutlama diyaloğunu aç/kapa, Kart açık mı",
+                                                                                                            "valueType":  "BOOLEAN"
+                                                                                                        }
+                                                                                  }
+                                                               },
+                            "Guncelleme_ — Sürüm":  {
+                                                        "parameters":  {
+                                                                           "guncelleme_baslik":  {
+                                                                                                     "defaultValue":  {
+                                                                                                                          "value":  "Fizik Formülleri yenilendi"
+                                                                                                                      },
+                                                                                                     "description":  "Diyalog başlığı",
+                                                                                                     "valueType":  "STRING"
+                                                                                                 },
+                                                                           "guncelleme_mesaji":  {
+                                                                                                     "defaultValue":  {
+                                                                                                                          "value":  "Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin."
+                                                                                                                      },
+                                                                                                     "description":  "Diyalog metni",
+                                                                                                     "valueType":  "STRING"
+                                                                                                 },
+                                                                           "guncelleme_min_version":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "0"
+                                                                                                                           },
+                                                                                                          "description":  "RC eşiği kapalı — iyi,  Min versionCode (0 = kapalı),   Bu versionCode altındakilere kart. 0 = RC eşiği kapalı (Play’de güncelleme varsa soft yine çıkabilir)",
+                                                                                                          "valueType":  "NUMBER"
+                                                                                                      },
+                                                                           "guncelleme_zorunlu":  {
+                                                                                                      "defaultValue":  {
+                                                                                                                           "value":  "false"
+                                                                                                                       },
+                                                                                                      "description":  "min=0 iken etki yok; yine de false yapmak daha temiz ,   true = kapatılamaz  ,   true + min_version aşımı → kapatılamaz zorunlu update",
+                                                                                                      "valueType":  "BOOLEAN"
+                                                                                                  }
+                                                                       }
+                                                    },
+                            "Bakim_ — Bakım kilidi":  {
+                                                          "description":  "bakim_aktif=true iken oyun/menü açılmaz; \nsadece mesaj (+ isteğe çıkış). \nTanıtım ve Google reklam gösterme.\n",
+                                                          "parameters":  {
+                                                                             "bakim_aktif":  {
+                                                                                                 "defaultValue":  {
+                                                                                                                      "value":  "false"
+                                                                                                                  },
+                                                                                                 "description":  "Bakım modu",
+                                                                                                 "valueType":  "BOOLEAN"
+                                                                                             },
+                                                                             "bakim_baslik":  {
+                                                                                                  "defaultValue":  {
+                                                                                                                       "value":  ""
+                                                                                                                   },
+                                                                                                  "description":  "Başlık",
+                                                                                                  "valueType":  "STRING"
+                                                                                              },
+                                                                             "bakim_mesaj":  {
+                                                                                                 "defaultValue":  {
+                                                                                                                      "value":  "Sitemiz bakım moodunda, çok kısa süre sonra devreye girecek."
+                                                                                                                  },
+                                                                                                 "description":  "Kullanıcı mesajı",
+                                                                                                 "valueType":  "STRING"
+                                                                                             }
+                                                                         }
+                                                      },
+                            "Reklam_ — Google AdMob":  {
+                                                           "parameters":  {
+                                                                              "reklam_acilis_aktif":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "true"
+                                                                                                                           },
+                                                                                                          "description":  "App Open (uygulama açılış) reklamı anahtarı. →  App Open henüz entegre değilse Console’da true olsa bile ekranda App Open çıkmaz;",
+                                                                                                          "valueType":  "BOOLEAN"
+                                                                                                      },
+                                                                              "reklam_aktif":  {
+                                                                                                   "defaultValue":  {
+                                                                                                                        "value":  "true"
+                                                                                                                    },
+                                                                                                   "description":  "Tüm Google reklamların ana anahtarı. False olursa banner da geçiş de kapanır. Alttaki anahtarlar artık bakılmaz. ",
+                                                                                                   "valueType":  "BOOLEAN"
+                                                                                               },
+                                                                              "reklam_banner_aktif":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "true"
+                                                                                                                           },
+                                                                                                          "description":  "Alt bant reklam. false → sadece banner gizlenir. Geçiş ayrı: reklam_gecis_aktif.",
+                                                                                                          "valueType":  "BOOLEAN"
+                                                                                                      },
+                                                                              "reklam_banner_her_n":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "5"
+                                                                                                                           },
+                                                                                                          "description":  "Listede her N öğede banner.  Her N kartta bir banner içindir. Bir sayfada 1 den fazla Banner varsa çalışır.",
+                                                                                                          "valueType":  "NUMBER"
+                                                                                                      },
+                                                                              "reklam_gecis_aktif":  {
+                                                                                                         "defaultValue":  {
+                                                                                                                              "value":  "true"
+                                                                                                                          },
+                                                                                                         "description":  "Tam ekran geçiş. false → sayfalar arası geçiş reklamı çıkmaz. Banner etkilenmez (reklam_banner_aktif).",
+                                                                                                         "valueType":  "BOOLEAN"
+                                                                                                     },
+                                                                              "reklam_gecis_ana_yuzde":  {
+                                                                                                             "defaultValue":  {
+                                                                                                                                  "value":  "30"
+                                                                                                                              },
+                                                                                                             "description":  "Ana menü tıklamasında geçiş yüzdesi (0–100). 30 = her 10 tıklamanın yaklaşık 3’ünde reklam. 0 = hiç gösterme, 100 = her seferinde (yine de 60 sn bekleme var). ",
+                                                                                                             "valueType":  "NUMBER"
+                                                                                                         },
+                                                                              "reklam_gecis_oyun_yuzde":  {
+                                                                                                              "defaultValue":  {
+                                                                                                                                   "value":  "30"
+                                                                                                                               },
+                                                                                                              "description":  "Oyun/sonuç geçiş %",
+                                                                                                              "valueType":  "NUMBER"
+                                                                                                          },
+                                                                              "reklam_odullu_aktif":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "true"
+                                                                                                                           },
+                                                                                                          "description":  "Rewarded (yoksa kod yok sayar)",
+                                                                                                          "valueType":  "BOOLEAN"
+                                                                                                      },
+                                                                              "reklam_odullu_molasi_saat":  {
+                                                                                                                "defaultValue":  {
+                                                                                                                                     "value":  "12"
+                                                                                                                                 },
+                                                                                                                "description":  "Reklem izlerse ödül olarak 24 saat başka reklam çıkmaz. Kaç saat reklamsız (istersen 12/48 yaparsın)",
+                                                                                                                "valueType":  "NUMBER"
+                                                                                                            },
+                                                                              "reklam_gecis_uygulama_yuzde":  {
+                                                                                                                  "defaultValue":  {
+                                                                                                                                       "value":  "20"
+                                                                                                                                   },
+                                                                                                                  "description":  "Diğer uygulamalar ekranı geçiş reklamı yüzdesi (Bilmece)",
+                                                                                                                  "valueType":  "NUMBER"
+                                                                                                              },
+                                                                              "reklam_kaldir_aktif":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "true"
+                                                                                                                           },
+                                                                                                          "description":  "Ayarlar/FAB: kalıcı IAP Reklamları kaldır butonu gösterilsin mi",
+                                                                                                          "valueType":  "BOOLEAN"
+                                                                                                      }
+                                                                          }
+                                                       },
+                            "Bilgi_ — Linkli bilgilendirme":  {
+                                                                  "parameters":  {
+                                                                                     "bilgi_aktif":  {
+                                                                                                         "defaultValue":  {
+                                                                                                                              "value":  "false"
+                                                                                                                          },
+                                                                                                         "description":  "Kart açık mı",
+                                                                                                         "valueType":  "BOOLEAN"
+                                                                                                     },
+                                                                                     "bilgi_id":  {
+                                                                                                      "defaultValue":  {
+                                                                                                                           "value":  "bilgilendirme_2026_011"
+                                                                                                                       },
+                                                                                                      "description":  "Tek seferlik id",
+                                                                                                      "valueType":  "STRING"
+                                                                                                  },
+                                                                                     "bilgi_baslik":  {
+                                                                                                          "defaultValue":  {
+                                                                                                                               "value":  "Fizik İpucu"
+                                                                                                                           },
+                                                                                                          "description":  "Başlık",
+                                                                                                          "valueType":  "STRING"
+                                                                                                      },
+                                                                                     "bilgi_mesaj":  {
+                                                                                                         "defaultValue":  {
+                                                                                                                              "value":  "Formül görselini büyütmek için detay ekranında görsele dokunun; konular ana listeden açılır."
+                                                                                                                          },
+                                                                                                         "description":  "Bilgilendirme mesaj Metni",
+                                                                                                         "valueType":  "STRING"
+                                                                                                     },
+                                                                                     "bilgi_buton":  {
+                                                                                                         "defaultValue":  {
+                                                                                                                              "value":  "Tamam"
+                                                                                                                          },
+                                                                                                         "description":  "Buton (boşsa Tamam)",
+                                                                                                         "valueType":  "STRING"
+                                                                                                     },
+                                                                                     "bilgi_url":  {
+                                                                                                       "defaultValue":  {
+                                                                                                                            "value":  "https://allimagelab.com/"
+                                                                                                                        },
+                                                                                                       "description":  "Detay linki",
+                                                                                                       "valueType":  "STRING"
+                                                                                                   },
+                                                                                     "bilgi_resim_url":  {
+                                                                                                             "defaultValue":  {
+                                                                                                                                  "value":  "https://i.pinimg.com/736x/98/fc/e6/98fce6de39e58c734360f7d0aeec4fd5.jpg"
+                                                                                                                              },
+                                                                                                             "description":  "Opsiyonel görsel",
+                                                                                                             "valueType":  "STRING"
+                                                                                                         }
+                                                                                 }
+                                                              }
+                        }
+}

@@ -40,21 +40,36 @@ public final class InAppReviewHelper {
         if (System.currentTimeMillis() - last < COOLDOWN_MS) {
             return;
         }
-        requestReview(activity, prefs);
+        requestReview(activity, prefs, null);
     }
 
-    private static void requestReview(@NonNull Activity activity, @NonNull SharedPreferences prefs) {
+    /** Ayarlar → Oy Ver: hemen dener; başarısızsa onUnavailable (Play Store yedek). */
+    public static void requestReviewNow(@NonNull Activity activity, @NonNull Runnable onUnavailable) {
+        SharedPreferences prefs = activity.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+        requestReview(activity, prefs, onUnavailable);
+    }
+
+    private static void requestReview(@NonNull Activity activity,
+                                      @NonNull SharedPreferences prefs,
+                                      @androidx.annotation.Nullable Runnable onUnavailable) {
         ReviewManager manager = ReviewManagerFactory.create(activity);
         Task<ReviewInfo> request = manager.requestReviewFlow();
         request.addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
                 Log.w(TAG, "review flow request failed", task.getException());
+                if (onUnavailable != null) {
+                    onUnavailable.run();
+                }
                 return;
             }
             ReviewInfo info = task.getResult();
             manager.launchReviewFlow(activity, info)
-                    .addOnCompleteListener(launchTask ->
-                            prefs.edit().putLong(KEY_LAST_PROMPT_MS, System.currentTimeMillis()).apply());
+                    .addOnCompleteListener(launchTask -> {
+                        prefs.edit().putLong(KEY_LAST_PROMPT_MS, System.currentTimeMillis()).apply();
+                        if (!launchTask.isSuccessful() && onUnavailable != null) {
+                            onUnavailable.run();
+                        }
+                    });
         });
     }
 }

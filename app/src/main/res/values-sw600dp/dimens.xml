@@ -2,7 +2,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="toolbar_height">64dp</dimen>
 
-    <dimen name="list_item_image_size">140dp</dimen>
+    <dimen name="list_item_image_size">80dp</dimen>
     <dimen name="list_item_title_text">22sp</dimen>
     <dimen name="list_item_body_text">16sp</dimen>
     <dimen name="list_item_padding">14dp</dimen>

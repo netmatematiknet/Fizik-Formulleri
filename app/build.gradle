@@ -18,9 +18,9 @@ android {
         applicationId "com.mobilprogramlar.FizikFormullerim"
         minSdkVersion 29
         targetSdkVersion 36
-        // Play canlı 2.1 (13) — 2.4: update/review, bildirimler, günün formülü + widget
-        versionCode 16
-        versionName "2.4"
+        // Play canlı — 2.5.0: Remote Config JSON standart (reklam_/kutlama_/…)
+        versionCode 14
+        versionName "2.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resConfigs "tr", "en"
     }

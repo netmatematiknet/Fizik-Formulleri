@@ -24,18 +24,20 @@
     <string name="admob_interstitial_test_id">ca-app-pub-3940256099942544/1033173712</string>
 
     <string name="manifest_activity_splash_app_name">Physics Formulas</string>
+    <string name="toolbar_geri">Back</string>
     <string name="toolbar_ayarlar">Settings</string>
     <string name="toolbar_paylas">Share</string>
     <string name="toolbar_anasayfa">Home</string>
     <string name="toolbar_baslik_default">Formulas Application</string>
     <string name="toolbar_baslik_uygulamalarimiz">Our Applications</string>
-    <string name="toolbar_altbaslik_default">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_default">mobilprogramlar.com</string>
+    <string name="toolbar_altbaslik_site">mobilprogramlar.com</string>
     <string name="toolbar_baslik_1">Math Formulas</string>
-    <string name="toolbar_altbaslik_1">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_1">mobilprogramlar.com</string>
     <string name="toolbar_baslik_2">Geometry Formulas</string>
-    <string name="toolbar_altbaslik_2">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_2">mobilprogramlar.com</string>
     <string name="toolbar_baslik_3">Our Other Applications</string>
-    <string name="toolbar_altbaslik_3">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_3">mobilprogramlar.com</string>
     <string name="paylas_button">Share</string>
     <string name="paylas_baslik"><b>Math &amp; Geometry Formulas</b>\n\n</string>
     <string name="paylas_mesaj">No More Carrying Books.\nAll Math-Geometry Formulas in Middle and High School at Your Fingertips,\n\nClick to <b>Share</b>\n\n</string>
@@ -127,6 +129,9 @@
     <string name="premium_purchase_cancelled">Purchase cancelled.</string>
     <string name="premium_restored">Purchases checked.</string>
     <string name="main_premium_entry_button">Ad-free version</string>
+    <string name="home_cta_message">Add a widget; if you like it, rate on Play.</string>
+    <string name="home_cta_widget">Add widget</string>
+    <string name="home_cta_rate">Rate</string>
     <string name="premium_page_title">Ad-free Premium</string>
     <string name="premium_page_headline">Ad-free experience</string>
     <string name="premium_page_intro">Remove all ads in the app with a one-time purchase and focus on formulas only.</string>
@@ -141,6 +146,11 @@
     <string name="update_now">Update now</string>
     <string name="update_later">OK</string>
     <string name="update_close">Close</string>
+    <string name="celebration_info_label">Celebration</string>
+    <string name="celebration_default_title">Happy holidays!</string>
+    <string name="celebration_default_message">Wishing you healthy and peaceful days with your loved ones.</string>
+    <string name="celebration_default_button">Thank you</string>
+    <string name="celebration_close">Close</string>
 
     <string name="notifications_section_title">Notifications</string>
     <string name="pref_announcements">Announcements (FCM)</string>
@@ -157,11 +167,20 @@
     <string name="formula_of_day_hint">Tap to open</string>
     <string name="widget_formula_label">Formula of the Day</string>
     <string name="widget_formula_description">Shows today\'s physics topic on the home screen</string>
+    <string name="widget_section_title">Home screen widget</string>
+    <string name="widget_section_hint">Pick a widget type; after you confirm, it is added to the home screen.</string>
+    <string name="widget_add_button">Add widget</string>
+    <string name="widget_add_button_short">Widget</string>
+    <string name="widget_picker_title">Which widget?</string>
+    <string name="widget_pin_prompt">Confirm to add it to the home screen</string>
+    <string name="widget_pin_unsupported">Automatic pin is not supported. Long-press the home screen → Widgets → Physics Formulas.</string>
+    <string name="widget_pin_manual_hint">Long-press an empty home area → Widgets → Physics Formulas → Formula of the Day</string>
 
     <!-- Category names -->
     <string-array name="main_topics">
         <item>Physics Formulas</item>
         <item>Our Applications</item>
+        <item>Settings</item>
     </string-array>
 
 
@@ -404,4 +423,80 @@
     <string name="uygulama_baslik_06">Riddle Garden</string>
     <string name="uygulama_baslik_07">Three Operation Competition</string>
     <string name="uygulama_baslik_08">Tic Tac Toe</string>
+
+    <string name="guncelleme_simdi">Update now</string>
+    <string name="guncelleme_tamam">OK</string>
+    <string name="guncelleme_baslik_varsayilan">Physics Formulas updated!</string>
+    <string name="guncelleme_mesaj_varsayilan">A new version is ready. Update now for a better experience.</string>
+    <string name="kutlama_baslik_varsayilan">You have a message</string>
+    <string name="kutlama_tamam">OK</string>
+    <string name="bilgi_baslik_varsayilan">Information</string>
+    <string name="bakim_baslik_varsayilan">Maintenance</string>
+    <string name="bakim_mesaj_varsayilan">The app is briefly under maintenance. Please try again later.</string>
+    <string name="bakim_cikis">Exit</string>
+    <string name="tanitim_baslik_varsayilan">Our other app</string>
+    <string name="tanitim_incele">View</string>
+    <string name="widget_dialog_baslik">Home screen widget</string>
+    <string name="widget_dialog_aciklama">Pick a widget to add. Press ADD to open the pin screen.</string>
+    <string name="widget_ekle_kisa">ADD</string>
+    <string name="iptal">Cancel</string>
+    <string name="kapat">Close</string>
+    <string name="puan_ver">Rate</string>
+    <string name="puan_ver_kisa">RATE</string>
+    <string name="puan_ver_dialog_baslik">Rate</string>
+    <string name="puan_ver_dialog_aciklama">Support us with a Play Store rating. You can also try in-app review.</string>
+    <string name="puan_ver_play">Rate on Play Store</string>
+    <string name="puan_ver_play_alt">Leave stars on the store page</string>
+    <string name="puan_ver_inapp">In-app review</string>
+    <string name="puan_ver_inapp_alt">Play\'s in-app rating screen</string>
+    <string name="puan_ver_inceleme">In-app review</string>
+    <string name="puan_ver_inceleme_alt">Play\'s in-app rating screen</string>
+    <string name="puan_inceleme_play_gerekli">Review needs the Play build; opening the store.</string>
+    <string name="puan_inceleme_yok">Could not open review; opening Play Store.</string>
+    <string name="puan_inceleme_bilgi">Thanks! Play may not always show the rating dialog.</string>
+    <string name="reklamlari_kaldir">Remove ads</string>
+    <string name="settings_rate_title">Rate the app</string>
+    <string name="settings_rate_summary">Leave a star on Play Store and support us</string>
+    <string name="settings_widgets_title">Widgets</string>
+    <string name="settings_widgets_summary">Add today\'s formula to the home screen</string>
+    <string name="settings_remove_ads_title">Remove ads</string>
+    <string name="settings_remove_ads_summary">Pause ads by watching a video or buy permanently</string>
+    <string name="settings_more_section">More</string>
+    <string name="settings_buy_hint">One-time payment for lifetime ad-free.</string>
+    <string name="settings_watch_hint_fmt">Watch a short video to stay ad-free for %1$d hours.</string>
+    <string name="settings_watch_active_fmt">Ad-free break active. Left: %1$s</string>
+    <string name="settings_buy_button">One-time purchase</string>
+    <string name="settings_watch_button">Watch ad → temporary ad-free</string>
+    <string name="settings_restore_button">Restore purchases</string>
+    <string name="settings_ads_section">Ads &amp; support</string>
+    <string name="ads_fab_widget">Add widget</string>
+    <string name="ads_fab_rate">Rate</string>
+    <string name="reklamlar_kaldirildi">Ads removed</string>
+    <string name="reklamsiz_alindi">Ad-free is already active.</string>
+    <string name="odullu_mola_buton">Watch ad → temporary ad-free</string>
+    <string name="odullu_mola_onay_baslik">Ad-free break</string>
+    <string name="odullu_mola_onay_mesaj">Watch a short ad and you won\'t see banners/interstitials for %1$d hours. Watch?</string>
+    <string name="odullu_mola_onay_izle">Watch</string>
+    <string name="odullu_mola_aktif">Ad-free break active</string>
+    <string name="odullu_kapali">Rewarded break is off</string>
+    <string name="odullu_yukleniyor">Ad loading, try again shortly</string>
+    <string name="odullu_yuklenemedi">Could not show ad</string>
+    <string name="odullu_mola_basarili">%1$d-hour ad-free break started</string>
+    <string name="admob_rewarded_test_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_rewarded_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_app_open_test_id">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="admob_app_open_id"></string>
+
+    <string name="ads_fab_cd">Remove ads</string>
+    <string name="ads_fab_break">Remove ads</string>
+    <string name="ads_fab_break_active">On a break</string>
+    <string name="ads_fab_buy">Buy</string>
+    <string name="ads_fab_buy_owned">Purchased</string>
+    <string name="ads_fab_tip_buy_only">A one-time Play purchase removes ads for good.</string>
+    <string name="ads_fab_tip_owned">Ads are permanently off on this device.</string>
+    <string name="ads_fab_break_desc_fmt">Watch a short video to hide ads for %d hours.</string>
+    <string name="ads_fab_break_active_desc_fmt">Ads are paused. Left: %1$s</string>
+    <string name="ads_break_active_tip_fmt">Break active. Left: %1$s</string>
+    <string name="ads_break_remaining_hm_fmt">%1$d h %2$d m</string>
+    <string name="ads_break_remaining_m_fmt">%1$d m</string>
 </resources>

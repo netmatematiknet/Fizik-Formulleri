@@ -25,7 +25,7 @@ public final class AdHelper {
     }
 
     private static boolean isAdFree(Context context) {
-        return PremiumManager.getInstance(context).isAdFree();
+        return !AdGate.isAdEnabled(context);
     }
 
     /** Debug → test ID; Release → gerçek ID. */

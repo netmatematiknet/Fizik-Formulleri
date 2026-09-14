@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="false">
+
+    <View
+        android:id="@+id/adsFabScrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:focusable="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/adsFabCluster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="20dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="24dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:id="@+id/adsFabMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/adsFabTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_ads_fab_chip"
+                android:elevation="6dp"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:maxWidth="260dp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/trafiq_primary"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/adsFabBreakDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_ads_fab_chip"
+                android:elevation="4dp"
+                android:fontFamily="@font/nunito"
+                android:gravity="center"
+                android:maxWidth="260dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:textColor="@color/trafiq_primary"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adsFabWidgetBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/trafiq_primary"
+                android:elevation="8dp"
+                android:fontFamily="@font/nunito"
+                android:minWidth="200dp"
+                android:text="@string/ads_fab_widget"
+                android:textAllCaps="false"
+                android:textColor="@color/trafiq_on_primary"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_engage_plus"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adsFabRateBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/trafiq_cta_orange"
+                android:elevation="8dp"
+                android:fontFamily="@font/nunito"
+                android:minWidth="200dp"
+                android:text="@string/ads_fab_rate"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_engage_star"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@android:color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adsFabBreakBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/trafiq_primary"
+                android:elevation="8dp"
+                android:fontFamily="@font/nunito"
+                android:minWidth="200dp"
+                android:text="@string/ads_fab_break"
+                android:textAllCaps="false"
+                android:textColor="@color/trafiq_on_primary"
+                app:cornerRadius="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adsFabBuyBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/trafiq_cta_orange"
+                android:elevation="8dp"
+                android:fontFamily="@font/nunito"
+                android:minWidth="200dp"
+                android:text="@string/ads_fab_buy"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/adsFabLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_ads_fab_chip"
+            android:elevation="4dp"
+            android:fontFamily="@font/nunito"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="@string/ads_fab_cd"
+            android:textColor="@color/trafiq_cta_orange"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:clipChildren="false">
+
+            <View
+                android:id="@+id/adsFabPulse"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_ads_fab_pulse" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/adsFabMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/ads_fab_cd"
+                android:elevation="12dp"
+                app:backgroundTint="@color/trafiq_cta_orange"
+                app:borderWidth="0dp"
+                app:elevation="12dp"
+                app:fabCustomSize="56dp"
+                app:maxImageSize="28dp"
+                app:srcCompat="@drawable/ic_ads_fab"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

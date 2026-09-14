@@ -58,7 +58,7 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         setContentView(R.layout.activity_ayarlar);
         NtHelper.applySystemBarInsets(this);
 
-        tvPremiumTitle = findViewById(R.id.tv_premium_title);
+        tvPremiumTitle = null;
         tvPremiumStatus = findViewById(R.id.tv_premium_status);
         btnPremiumBuy = findViewById(R.id.btn_premium_buy);
         btnPremiumRestore = findViewById(R.id.btn_premium_restore);
@@ -134,27 +134,84 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
     }
 
     private void setupPremiumSection() {
-        tvPremiumTitle.setText(getString(R.string.premium_section_title));
-        btnPremiumBuy.setText(getString(R.string.premium_buy_button));
-        btnPremiumRestore.setText(getString(R.string.premium_restore_button));
-        btnPremiumBuy.setOnClickListener(v -> ((App) getApplication()).getBillingManager().launchPurchaseFlow(this));
-        btnPremiumRestore.setOnClickListener(v -> {
-            ((App) getApplication()).getBillingManager().queryPurchasesAndApply();
-            Toast.makeText(this, getString(R.string.premium_restored), Toast.LENGTH_SHORT).show();
-        });
+        if (btnPremiumBuy != null) {
+            btnPremiumBuy.setText(R.string.settings_buy_button);
+            btnPremiumBuy.setOnClickListener(v ->
+                    ((App) getApplication()).getBillingManager().launchPurchaseFlow(this));
+        }
+        if (btnPremiumRestore != null) {
+            btnPremiumRestore.setText(R.string.settings_restore_button);
+            btnPremiumRestore.setOnClickListener(v -> {
+                ((App) getApplication()).getBillingManager().queryPurchasesAndApply();
+                Toast.makeText(this, getString(R.string.premium_restored), Toast.LENGTH_SHORT).show();
+            });
+        }
+        Button btnOdulluMola = findViewById(R.id.btn_odullu_mola);
+        if (btnOdulluMola != null) {
+            btnOdulluMola.setText(R.string.settings_watch_button);
+            btnOdulluMola.setOnClickListener(v -> RewardedAdHelper.showForAdPause(this));
+        }
     }
 
     private void refreshPremiumUi() {
         boolean adFree = PremiumManager.getInstance(this).isAdFree();
-        tvPremiumStatus.setText(adFree ? getString(R.string.premium_status_active) : getString(R.string.premium_status_inactive));
-        String price = ((App) getApplication()).getBillingManager().getFormattedPrice();
-        if (!adFree && price != null) {
-            btnPremiumBuy.setText(getString(R.string.premium_buy_button) + " — " + price);
-        } else {
-            btnPremiumBuy.setText(getString(R.string.premium_buy_button));
+        boolean paused = AppPrefs.isAdsPaused(this);
+        boolean showRemove = AdGate.isRemoveAdsButtonEnabled(this);
+        int hours = AppRemoteConfig.getInstance(this).getRewardedPauseHours();
+
+        TextView buyHint = findViewById(R.id.tv_settings_buy_hint);
+        TextView watchHint = findViewById(R.id.tv_settings_watch_hint);
+        if (buyHint != null) {
+            buyHint.setText(R.string.settings_buy_hint);
+            buyHint.setVisibility(adFree ? View.GONE : View.VISIBLE);
         }
-        btnPremiumBuy.setEnabled(!adFree);
-        btnPremiumBuy.setVisibility(adFree ? View.GONE : View.VISIBLE);
+        if (watchHint != null) {
+            if (paused) {
+                String left = AppPrefs.formatAdsPauseRemaining(this);
+                watchHint.setText(getString(R.string.settings_watch_active_fmt, left));
+                watchHint.setVisibility(View.VISIBLE);
+            } else if (RewardedAdHelper.canOfferPause(this) || AppRemoteConfig.getInstance(this).isRewardedEnabled()) {
+                watchHint.setText(getString(R.string.settings_watch_hint_fmt, hours));
+                watchHint.setVisibility(View.VISIBLE);
+            } else {
+                watchHint.setVisibility(View.GONE);
+            }
+        }
+
+        if (tvPremiumStatus != null) {
+            if (adFree) {
+                tvPremiumStatus.setText(R.string.reklamlar_kaldirildi);
+            } else if (paused) {
+                tvPremiumStatus.setText(getString(R.string.settings_watch_active_fmt,
+                        AppPrefs.formatAdsPauseRemaining(this)));
+            } else {
+                tvPremiumStatus.setText("");
+            }
+        }
+
+        if (btnPremiumBuy != null) {
+            String price = ((App) getApplication()).getBillingManager().getFormattedPrice();
+            if (!adFree && price != null) {
+                btnPremiumBuy.setText(getString(R.string.settings_buy_button) + " — " + price);
+            } else {
+                btnPremiumBuy.setText(R.string.settings_buy_button);
+            }
+            btnPremiumBuy.setEnabled(!adFree && showRemove);
+            btnPremiumBuy.setVisibility((!adFree && showRemove) ? View.VISIBLE : View.GONE);
+        }
+        if (btnPremiumRestore != null) {
+            btnPremiumRestore.setVisibility(showRemove ? View.VISIBLE : View.GONE);
+        }
+
+        Button btnOdulluMola = findViewById(R.id.btn_odullu_mola);
+        if (btnOdulluMola != null) {
+            boolean offer = !adFree && AppRemoteConfig.getInstance(this).isRewardedEnabled();
+            btnOdulluMola.setVisibility(offer ? View.VISIBLE : View.GONE);
+            btnOdulluMola.setEnabled(!paused);
+            btnOdulluMola.setText(paused
+                    ? getString(R.string.ads_fab_break_active)
+                    : getString(R.string.settings_watch_button));
+        }
     }
 
     @Override
@@ -238,14 +295,18 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
                 R.string.dil_sec_tr
         });
 
-        setTextViewText(R.id.tv_oyver, R.string.uygulama_oyver);
         setTextViewText(R.id.tv_tema_sec, R.string.uygulama_tema_sec);
         setTextViewText(R.id.tv_dilsec, R.string.dil_sec);
-        setTextViewText(R.id.text_container, R.string.toolbar_baslik_default);
+        ToolbarHelper.bindPage(this, getString(R.string.toolbar_ayarlar));
 
-        Button btnOyver = findViewById(R.id.btn_oyver);
-        btnOyver.setText(getResources().getString(R.string.uygulama_oyver_butonu));
-        btnOyver.setOnClickListener(v -> showRateDialog());
+        View btnWidgets = findViewById(R.id.btn_settings_widgets);
+        if (btnWidgets != null) {
+            btnWidgets.setOnClickListener(v -> WidgetPinHelper.showPicker(this));
+        }
+        View btnRate = findViewById(R.id.btn_settings_rate);
+        if (btnRate != null) {
+            btnRate.setOnClickListener(v -> ReviewHelper.askFromButton(this));
+        }
     }
 
     private void setupThemeGroupLabels(int radioGroupId, int[] labelIds, int[] descriptionIds) {
@@ -304,32 +365,35 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         ThemeColors themeColors = themeManager.getThemeColors();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        TextView tvToolbarContainer = findViewById(R.id.text_container);
+        TextView tvToolbarTitle = findViewById(R.id.toolbar_title);
+        TextView tvToolbarSubtitle = findViewById(R.id.toolbar_subtitle);
 
         ConstraintLayout constraintLayout1 = findViewById(R.id.constraintlayout_1);
         LinearLayout linearLayout1 = findViewById(R.id.linearlayout_1);
-        LinearLayout linearLayout2 = findViewById(R.id.linearlayout_2);
         LinearLayout linearLayout3 = findViewById(R.id.linearlayout_3);
         LinearLayout linearLayout4 = findViewById(R.id.linearlayout_4);
-        LinearLayout linearLayoutPremium = findViewById(R.id.linearlayout_premium);
         LinearLayout linearLayoutPrivacy = findViewById(R.id.linearlayout_privacy);
-        TextView tvOyver = findViewById(R.id.tv_oyver);
+        LinearLayout engageCard = findViewById(R.id.card_settings_engage);
         TextView tvPrivacy = findViewById(R.id.tv_privacy);
         TextView tvTemaSec = findViewById(R.id.tv_tema_sec);
         TextView tvDilSec = findViewById(R.id.tv_dilsec);
-        Button btnOyver = findViewById(R.id.btn_oyver);
         Button btnPrivacy = findViewById(R.id.btn_privacy);
 
         toolbar.setBackgroundColor(themeColors.toolbarBackgroundColor);
-        tvToolbarContainer.setTextColor(themeColors.toolbarTitleTextColor);
+        if (tvToolbarTitle != null) {
+            tvToolbarTitle.setTextColor(themeColors.toolbarTitleTextColor);
+        }
+        if (tvToolbarSubtitle != null) {
+            tvToolbarSubtitle.setTextColor(
+                    androidx.core.content.ContextCompat.getColor(this, R.color.toolbar_subtitle_readable));
+        }
         constraintLayout1.setBackgroundColor(themeColors.activityBackgroundColor);
         linearLayout1.setBackgroundColor(themeColors.activityBackgroundColor);
-        linearLayout2.setBackgroundColor(themeColors.cardBackgroundColor);
+        if (engageCard != null) {
+            engageCard.setBackgroundColor(themeColors.cardBackgroundColor);
+        }
         linearLayout3.setBackgroundColor(themeColors.cardBackgroundColor);
         linearLayout4.setBackgroundColor(themeColors.cardBackgroundColor);
-        if (linearLayoutPremium != null) {
-            linearLayoutPremium.setBackgroundColor(themeColors.cardBackgroundColor);
-        }
         if (linearLayoutPrivacy != null) {
             linearLayoutPrivacy.setBackgroundColor(themeColors.cardBackgroundColor);
         }
@@ -340,9 +404,28 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
             btnPrivacy.setBackgroundColor(themeColors.toolbarBackgroundColor);
             btnPrivacy.setTextColor(themeColors.activityTextColor);
         }
-        if (tvPremiumTitle != null) {
-            tvPremiumTitle.setTextColor(themeColors.activityTextColor);
+        int textColor = themeColors.activityTextColor;
+        int iconColor = themeColors.cardTextColor != 0 ? themeColors.cardTextColor : textColor;
+        int[] engageTextIds = {
+                R.id.tv_settings_ads_section,
+                R.id.tv_settings_buy_hint,
+                R.id.tv_settings_watch_hint,
+                R.id.tv_settings_widgets_title,
+                R.id.tv_settings_widgets_summary,
+                R.id.tv_settings_rate_title,
+                R.id.tv_settings_rate_summary,
+                R.id.tv_premium_status
+        };
+        for (int id : engageTextIds) {
+            TextView tv = findViewById(id);
+            if (tv != null) {
+                tv.setTextColor(textColor);
+            }
         }
+        tintImage(R.id.icon_settings_widgets, iconColor);
+        tintImage(R.id.icon_settings_rate, iconColor);
+        tintImage(R.id.chevron_widgets, iconColor);
+        tintImage(R.id.chevron_rate, iconColor);
         if (tvPremiumStatus != null) {
             tvPremiumStatus.setTextColor(themeColors.activityTextColor);
         }
@@ -353,6 +436,11 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         if (btnPremiumRestore != null) {
             btnPremiumRestore.setBackgroundColor(themeColors.toolbarBackgroundColor);
             btnPremiumRestore.setTextColor(themeColors.activityTextColor);
+        }
+        Button btnOdulluMola = findViewById(R.id.btn_odullu_mola);
+        if (btnOdulluMola != null) {
+            btnOdulluMola.setBackgroundColor(themeColors.toolbarBackgroundColor);
+            btnOdulluMola.setTextColor(themeColors.activityTextColor);
         }
         TextView tvNotifTitle = findViewById(R.id.tv_notifications_title);
         TextView tvPrefAnn = findViewById(R.id.tv_pref_announcements);
@@ -374,13 +462,22 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         if (tvPrefHint != null) {
             tvPrefHint.setTextColor(themeColors.activityTextColor);
         }
-        tvOyver.setTextColor(themeColors.activityTextColor);
-        tvTemaSec.setTextColor(themeColors.activityTextColor);
-        tvDilSec.setTextColor(themeColors.activityTextColor);
-        btnOyver.setBackgroundColor(themeColors.toolbarBackgroundColor);
+        if (tvTemaSec != null) {
+            tvTemaSec.setTextColor(themeColors.activityTextColor);
+        }
+        if (tvDilSec != null) {
+            tvDilSec.setTextColor(themeColors.activityTextColor);
+        }
 
         applyRadioGroupColors(R.id.theme_group, themeColors);
         applyRadioGroupColors(R.id.language_group, themeColors);
+    }
+
+    private void tintImage(int id, int color) {
+        android.widget.ImageView iv = findViewById(id);
+        if (iv != null) {
+            iv.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
+        }
     }
 
     private void applyRadioGroupColors(int radioGroupId, ThemeColors themeColors) {
@@ -430,7 +527,11 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
                 if (!newLanguage.equals(localeManager.getLanguage())) {
                     localeManager.saveLanguage(newLanguage);
                     CrashlyticsKeys.refresh(Ayarlar.this);
-                    recreate();
+                    // Tüm ekranların yeni dile geçmesi için ana sayfadan başlat
+                    Intent intent = new Intent(Ayarlar.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
                 }
             });
         }
@@ -481,12 +582,7 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView toolbarTitle = findViewById(R.id.text_container);
-        if (toolbarTitle != null) {
-            toolbarTitle.setText(getResources().getString(R.string.toolbar_baslik_default));
-        } else {
-            Log.d("Ayarlar", "toolbarTitle BOŞ");
-        }
+        ToolbarHelper.bindPage(this, getString(R.string.toolbar_ayarlar));
     }
 
     private void setupButtons() {
@@ -502,7 +598,8 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
 
         Button btnPrivacy = findViewById(R.id.btn_privacy);
         if (btnPrivacy != null) {
-            btnPrivacy.setOnClickListener(v -> NtHelper.openWebPage(this, getString(R.string.privacy_policy_url)));
+            btnPrivacy.setOnClickListener(v -> NtHelper.openWebPage(this,
+                    AppRemoteConfig.getInstance(this).getPrivacyUrl(this)));
         }
     }
 
@@ -522,9 +619,8 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         builder.setMessage(getResources().getString(R.string.oylama_lutfen));
 
         builder.setPositiveButton(getResources().getString(R.string.oylama_oyla), (dialog, which) -> {
-            if (context instanceof Ayarlar) {
-                ((Ayarlar) context).openPlayStoreListing();
-            }
+            // Önce uygulama içi puan; olmazsa Play Store sayfası
+            InAppReviewHelper.requestReviewNow(Ayarlar.this, this::openPlayStoreListing);
         });
 
         builder.setNegativeButton(getResources().getString(R.string.oylama_vazgec), (dialog, which) -> dialog.dismiss());

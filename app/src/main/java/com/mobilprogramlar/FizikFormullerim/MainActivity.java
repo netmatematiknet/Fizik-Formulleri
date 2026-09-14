@@ -16,9 +16,9 @@ import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,12 +41,11 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private TextToSpeech tts;
     private String selectedLanguage;
     private boolean previousAdFree;
-    private UpdatePromptCoordinator updatePromptCoordinator;
+    private AdsFabController adsFabController;
     private final ActivityResultLauncher<String> notificationPermissionLauncher =
             NotificationPermissionHelper.register(this);
     private final ActivityResultLauncher<androidx.activity.result.IntentSenderRequest> appUpdateLauncher =
             registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), result -> {
-                // Play UI kapandı; zorunlu güncellemede resumeIfNeeded devam ettirir.
             });
 
     @Override
@@ -69,13 +68,11 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         setContentView(R.layout.activity_main);
         NtHelper.applySystemBarInsets(this);
 
-        InAppUpdateHelper updateHelper = new InAppUpdateHelper(this, appUpdateLauncher);
-        updatePromptCoordinator = new UpdatePromptCoordinator(this, updateHelper);
-
         AdConsentHelper.gatherConsentAndInitAds(this, () -> {
             AdHelper.loadInterstitialAd(this);
             AdHelper.showAdWithProbability(
                     this, AppRemoteConfig.getInstance(this).getInterstitialMainPercent());
+            RewardedAdHelper.preload(this);
         });
         NotificationPermissionHelper.requestIfNeeded(this, notificationPermissionLauncher);
 
@@ -85,11 +82,15 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         screenParams.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, screenParams);
 
-        previousAdFree = PremiumManager.getInstance(this).isAdFree();
+        previousAdFree = !AdGate.isAdEnabled(this);
 
         setupButtons(context);
         updateUIComponents(themeManager.getTheme());
         setupFormulaOfTheDay();
+        View fabRoot = findViewById(R.id.adsFabRoot);
+        if (fabRoot != null) {
+            adsFabController = AdsFabController.attach(this, fabRoot);
+        }
 
         NtHelper.setOnBackPressed(this, MainActivity.class);
 
@@ -98,13 +99,10 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         // Initialize TextToSpeech
         tts = new TextToSpeech(this, this); // TextToSpeech başlatıldı.
 
-        // Remote Config sonrası soft/zorunlu güncelleme kontrolü
-        AppRemoteConfig.getInstance(this).fetchAndActivate(
-                () -> runOnUiThread(() -> {
-                    if (!isFinishing() && updatePromptCoordinator != null) {
-                        updatePromptCoordinator.checkAfterRemoteConfig();
-                    }
-                }));
+        // Remote Config UI: bakim → guncelleme → kutlama → bilgi + serit/tanitim
+        android.view.ViewGroup seritHost = findViewById(R.id.serit_host);
+        android.view.ViewGroup tanitimHost = findViewById(R.id.tanitim_host);
+        RemoteUiCoordinator.runHomeFlow(this, appUpdateLauncher, seritHost, tanitimHost);
     }
 
     @Override
@@ -221,28 +219,24 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
     @Override
     protected void onResume() {
         super.onResume();
-        if (updatePromptCoordinator != null) {
-            updatePromptCoordinator.resumeIfNeeded();
+        UpdateHelper.completeFlexibleIfNeeded(this);
+        if (adsFabController != null) {
+            adsFabController.onResume();
         }
         if (mFirebaseAnalytics != null) {
             mFirebaseAnalytics.logEvent("onResume", null);
         }
-        boolean nowAdFree = PremiumManager.getInstance(this).isAdFree();
+        boolean nowAdFree = !AdGate.isAdEnabled(this);
         if (nowAdFree != previousAdFree) {
             previousAdFree = nowAdFree;
             AdHelper.destroyBannerAd();
             setupRecyclerView(localeManager.updateResources(this, localeManager.getLanguage()));
         }
-        refreshMainPremiumEntry();
         AdHelper.resumeBannerAd();
     }
 
     @Override
     protected void onDestroy() {
-        if (updatePromptCoordinator != null) {
-            updatePromptCoordinator.destroy();
-            updatePromptCoordinator = null;
-        }
         if (tts != null) {
             tts.stop();
             tts.shutdown(); // TextToSpeech durduruldu ve kapatıldı.
@@ -308,9 +302,8 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
         toolbar.setBackgroundColor(themeColor.toolbarBackgroundColor);
         tvToolbarTitle.setTextColor(themeColor.toolbarTitleTextColor);
-        tvToolbarSubtitle.setTextColor(themeColor.toolbarSubtitleTextColor);
+        ToolbarHelper.bindHome(this);
         constraintLayout3.setBackgroundColor(themeColor.activityBackgroundColor);
-        refreshMainPremiumEntry();
         applyFormulaOfDayTheme(themeColor);
     }
 
@@ -342,49 +335,29 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         TextView title = findViewById(R.id.tv_formula_of_day_title);
         TextView hint = findViewById(R.id.tv_formula_of_day_hint);
         if (card instanceof androidx.cardview.widget.CardView) {
-            ((androidx.cardview.widget.CardView) card).setCardBackgroundColor(themeColor.cardBackgroundColor);
+            ((androidx.cardview.widget.CardView) card).setCardBackgroundColor(
+                    ContextCompat.getColor(this, R.color.formula_card_bg));
         }
         if (label != null) {
-            label.setTextColor(themeColor.activityTextColor);
+            label.setTextColor(ContextCompat.getColor(this, R.color.metin));
         }
         if (title != null) {
-            title.setTextColor(themeColor.cardTextColor);
+            title.setTextColor(ContextCompat.getColor(this, R.color.metin));
         }
         if (hint != null) {
-            hint.setTextColor(themeColor.activityTextColor);
+            hint.setTextColor(ContextCompat.getColor(this, R.color.metin_ikinci));
         }
-    }
-
-    /** Ana sayfa altındaki reklamsız / premium bilgi sayfası girişi. */
-    private void refreshMainPremiumEntry() {
-        AppCompatButton btn = findViewById(R.id.btn_main_premium_entry);
-        if (btn == null) {
-            return;
-        }
-        ThemeColors c = themeManager.getThemeColors();
-        if (PremiumManager.getInstance(this).isAdFree()) {
-            btn.setVisibility(View.GONE);
-            return;
-        }
-        btn.setVisibility(View.VISIBLE);
-        btn.setText(R.string.main_premium_entry_button);
-        btn.setBackgroundColor(c.toolbarBackgroundColor);
-        btn.setTextColor(c.activityTextColor);
     }
 
     private void setupButtons(Context context) {
         ImageButton btnSettings = findViewById(R.id.btn_settings);
         ImageButton btnHome = findViewById(R.id.btn_home);
         ImageButton btnShare = findViewById(R.id.btn_share);
-        AppCompatButton btnPremiumEntry = findViewById(R.id.btn_main_premium_entry);
 
         setButtonClickListener(btnSettings, context, Ayarlar.class);
         setButtonClickListener(btnHome, context, MainActivity.class);
         if (btnShare != null) {
             btnShare.setOnClickListener(v -> NtHelper.shareText(this));
-        }
-        if (btnPremiumEntry != null) {
-            btnPremiumEntry.setOnClickListener(v -> NtHelper.startActivity(this, PremiumActivity.class));
         }
     }
 

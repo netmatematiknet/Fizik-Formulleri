@@ -27,20 +27,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_container"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/toolbar_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:gravity="center_vertical"
             android:maxLines="1"
             android:text="@string/toolbar_baslik_default"
             android:textSize="@dimen/toolbar_title_text"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/toolbar_subtitle"
+            app:layout_constraintEnd_toStartOf="@id/view_container"
+            app:layout_constraintStart_toEndOf="@id/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/toolbar_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/toolbar_ayarlar"
+            android:textSize="@dimen/toolbar_subtitle_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/view_container"
             app:layout_constraintStart_toEndOf="@id/logo"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar_title" />
+
+        <!-- Eski tek satır ID uyumu -->
+        <TextView
+            android:id="@+id/text_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/view_container"

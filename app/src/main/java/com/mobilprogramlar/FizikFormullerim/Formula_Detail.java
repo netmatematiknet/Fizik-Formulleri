@@ -67,20 +67,8 @@ public class Formula_Detail extends AppCompatActivity {
     private void setupToolbar(Context context) {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView toolbarTitle = findViewById(R.id.toolbar_title);
-        TextView toolbarSubtitle = findViewById(R.id.toolbar_subtitle);
-        if (toolbarTitle != null) {
-            toolbarTitle.setText(context.getResources().getString(R.string.toolbar_baslik_default));
-        } else {
-            Log.d("MainActivity", "toolbarTitle BOŞ ");
-        }
-        if (toolbarSubtitle != null) {
-            //toolbarSubtitle.setText(context.getResources().getString(R.string.toolbar_altbaslik_default));
-            toolbarSubtitle.setText(getIntent().getStringExtra("formula_title"));
-
-        } else {
-            Log.d("MainActivity", "toolbarSubtitle BOŞ ");
-        }
+        String title = getIntent().getStringExtra("formula_title");
+        ToolbarHelper.bindTopic(this, title);
     }
 
     // ViewPager ve TabLayout'ın kurulumunu yapan metod.
@@ -191,7 +179,8 @@ public class Formula_Detail extends AppCompatActivity {
         // Renklerin atanması
         toolbar.setBackgroundColor(themeColor.toolbarBackgroundColor);
         tvToolbarTitle.setTextColor(themeColor.toolbarTitleTextColor);
-        tvToolbarSubtitle.setTextColor(themeColor.toolbarSubtitleTextColor);
+        tvToolbarSubtitle.setTextColor(
+                androidx.core.content.ContextCompat.getColor(this, R.color.toolbar_subtitle_readable));
         constraintLayout3.setBackgroundColor(themeColor.activityBackgroundColor);
         tabLayout.setBackgroundColor(themeColor.cardBackgroundColor);
     }

@@ -418,4 +418,21 @@
 
 
 
+    <color name="beyaz">#FFFFFF</color>
+    <color name="colorPrimary">#7D2CF1</color>
+    <color name="colorPrimaryDark">#6200EE</color>
+    <color name="metin_ikinci">#444444</color>
+    <color name="metin">#1A1A1A</color>
+    <color name="kenar">#CFC4E8</color>
+    <color name="kart_arka">#F7F3FF</color>
+    <color name="fab_cta_orange">#F97316</color>
+    <color name="fab_disabled_bg">#A78BFA</color>
+    <color name="fab_disabled_text">#F5F3FF</color>
+    <!-- TrafiQ birebir FAB / CTA renkleri -->
+    <color name="trafiq_primary">#6D28D9</color>
+    <color name="trafiq_primary_variant">#5B21B6</color>
+    <color name="trafiq_cta_orange">#F97316</color>
+    <color name="trafiq_on_primary">#FFFFFF</color>
+    <color name="formula_card_bg">#EDE7F6</color>
+    <color name="toolbar_subtitle_readable">#F5F5F5</color>
 </resources>

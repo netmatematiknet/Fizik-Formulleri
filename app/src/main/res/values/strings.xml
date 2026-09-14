@@ -30,13 +30,14 @@
     <string name="toolbar_anasayfa">Ana Sayfa</string>
     <string name="toolbar_baslik_default">Fizik Formülleri</string>
     <string name="toolbar_baslik_uygulamalarimiz">Uygulamalarımız</string>
-    <string name="toolbar_altbaslik_default">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_default">mobilprogramlar.com</string>
+    <string name="toolbar_altbaslik_site">mobilprogramlar.com</string>
+    <string name="toolbar_altbaslik_1">mobilprogramlar.com</string>
     <string name="toolbar_baslik_1">YKS TYT Fizik Formülleri</string>
-    <string name="toolbar_altbaslik_1">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_2">mobilprogramlar.com</string>
     <string name="toolbar_baslik_2">Fizik Formülleri</string>
-    <string name="toolbar_altbaslik_2">www.OssMatematik.Com</string>
+    <string name="toolbar_altbaslik_3">mobilprogramlar.com</string>
     <string name="toolbar_baslik_3">Diğer Uygulamalarımız</string>
-    <string name="toolbar_altbaslik_3">www.OssMatematik.Com</string>
     <string name="paylas_button">Paylaş</string>
     <string name="paylas_baslik"><b>Fizik Formülleri</b>\n\n</string>
     <string name="paylas_mesaj">TYT fiziğindeki tüm Fizik Formülleri elinizin altında.\nYanınızda kitap taşımanıza gerek yok.\n\n</string>
@@ -127,6 +128,9 @@
     <string name="premium_purchase_cancelled">Satın alma iptal edildi.</string>
     <string name="premium_restored">Satın alımlar kontrol edildi.</string>
     <string name="main_premium_entry_button">Reklamsız sürüm</string>
+    <string name="home_cta_message">Widget ekle; beğendiysen Play\'de puan ver.</string>
+    <string name="home_cta_widget">Widget ekle</string>
+    <string name="home_cta_rate">Puan ver</string>
     <string name="premium_page_title">Reklamsız Premium</string>
     <string name="premium_page_headline">Reklamsız deneyim</string>
     <string name="premium_page_intro">Tek seferlik satın alma ile uygulamadaki tüm reklamları kaldırın; sadece formüllere odaklanın.</string>
@@ -141,6 +145,11 @@
     <string name="update_now">Şimdi Güncelle</string>
     <string name="update_later">Tamam</string>
     <string name="update_close">Kapat</string>
+    <string name="celebration_info_label">Kutlama</string>
+    <string name="celebration_default_title">Hayırlı bayramlar!</string>
+    <string name="celebration_default_message">Sevdiklerinizle sağlıklı, huzurlu günler dileriz.</string>
+    <string name="celebration_default_button">Teşekkürler</string>
+    <string name="celebration_close">Kapat</string>
 
     <string name="notifications_section_title">Bildirimler</string>
     <string name="pref_announcements">Duyurular (FCM)</string>
@@ -157,12 +166,21 @@
     <string name="formula_of_day_hint">Dokunarak aç</string>
     <string name="widget_formula_label">Günün Formülü</string>
     <string name="widget_formula_description">Ana ekranda günün fizik konusunu gösterir</string>
+    <string name="widget_section_title">Ana ekran widget</string>
+    <string name="widget_section_hint">Widget türünü seç; telefon onayından sonra ana ekrana eklenir.</string>
+    <string name="widget_add_button">Widget ekle</string>
+    <string name="widget_add_button_short">Widget</string>
+    <string name="widget_picker_title">Hangi widget eklensin?</string>
+    <string name="widget_pin_prompt">Ana ekrana eklemek için onaylayın</string>
+    <string name="widget_pin_unsupported">Bu cihazda otomatik ekleme yok. Ana ekranda uzun basıp Widget’lar → Fizik Formülleri deneyin.</string>
+    <string name="widget_pin_manual_hint">Ana ekranda boş yere uzun basın → Widget’lar → Fizik Formülleri → Günün Formülü</string>
 
 
     <!-- Kategori isimleri -->
         <string-array name="main_topics">
         <item>Fizik Formülleri</item>
         <item>Uygulamalarımız</item>
+        <item>Ayarlar</item>
     </string-array>
 
     <!-- Matematik kategorisine ait konular -->
@@ -378,4 +396,80 @@ Kolaydan zora, ilkokuldan üniversiteye her seviyeye uygun bilmeceler.</string>
     <string name="uygulama_baslik_06">Bilmece Bahçesi</string>
     <string name="uygulama_baslik_07">Üç İşlem Yarışması</string>
     <string name="uygulama_baslik_08">Tic Tac Toe</string>
+
+    <string name="guncelleme_simdi">Şimdi güncelle</string>
+    <string name="guncelleme_tamam">Tamam</string>
+    <string name="guncelleme_baslik_varsayilan">Fizik Formülleri yenilendi!</string>
+    <string name="guncelleme_mesaj_varsayilan">Yeni sürüm hazır. Daha iyi deneyim için hemen güncelleyin.</string>
+    <string name="kutlama_baslik_varsayilan">Bir mesajınız var</string>
+    <string name="kutlama_tamam">Tamam</string>
+    <string name="bilgi_baslik_varsayilan">Bilgilendirme</string>
+    <string name="bakim_baslik_varsayilan">Bakım çalışması</string>
+    <string name="bakim_mesaj_varsayilan">Uygulama kısa süre bakımda. Lütfen biraz sonra tekrar deneyin.</string>
+    <string name="bakim_cikis">Çıkış</string>
+    <string name="tanitim_baslik_varsayilan">Diğer uygulamamız</string>
+    <string name="tanitim_incele">İncele</string>
+    <string name="widget_dialog_baslik">Ana ekran widget</string>
+    <string name="widget_dialog_aciklama">Ana ekranına eklemek istediğin widget\'ı seç. EKLE\'ye basınca ekleme ekranı açılır.</string>
+    <string name="widget_ekle_kisa">EKLE</string>
+    <string name="iptal">İptal</string>
+    <string name="kapat">Kapat</string>
+    <string name="puan_ver">Puan ver</string>
+    <string name="puan_ver_kisa">PUAN VER</string>
+    <string name="puan_ver_dialog_baslik">Puan ver</string>
+    <string name="puan_ver_dialog_aciklama">Play Store\'da puan vererek destek olabilirsiniz. İsterseniz uygulama içi incelemeyi de deneyebilirsiniz.</string>
+    <string name="puan_ver_play">Play Store\'da puan ver</string>
+    <string name="puan_ver_play_alt">Mağaza sayfasında yıldız bırak</string>
+    <string name="puan_ver_inapp">Uygulama içi inceleme</string>
+    <string name="puan_ver_inapp_alt">Play\'in uygulama içi puan ekranı</string>
+    <string name="puan_ver_inceleme">Uygulama içi inceleme</string>
+    <string name="puan_ver_inceleme_alt">Play\'in uygulama içi puan ekranı</string>
+    <string name="puan_inceleme_play_gerekli">İnceleme için Play sürümü gerekir; mağaza açılıyor.</string>
+    <string name="puan_inceleme_yok">İnceleme açılamadı; Play Store açılıyor.</string>
+    <string name="puan_inceleme_bilgi">Teşekkürler! Play puan diyaloğu bazen gösterilmeyebilir.</string>
+    <string name="reklamlari_kaldir">Reklamları kaldır</string>
+    <string name="settings_rate_title">Uygulamaya puan ver</string>
+    <string name="settings_rate_summary">Play Store\'da yıldız bırak, bizi destekle</string>
+    <string name="settings_widgets_title">Widget\'lar</string>
+    <string name="settings_widgets_summary">Günün formülünü ana ekrana ekle</string>
+    <string name="settings_remove_ads_title">Reklamı kaldır</string>
+    <string name="settings_remove_ads_summary">Video izleyerek veya satın alarak reklamları kapat</string>
+    <string name="settings_more_section">Diğer</string>
+    <string name="settings_buy_hint">Tek seferlik ödeme ile ömür boyu reklamsız.</string>
+    <string name="settings_watch_hint_fmt">Kısa video izlersen %1$d saat reklamsız kalırsın.</string>
+    <string name="settings_watch_active_fmt">Reklamsız moladasın. Kalan: %1$s</string>
+    <string name="settings_buy_button">Tek seferlik satın al</string>
+    <string name="settings_watch_button">Reklam izle → geçici reklamsız</string>
+    <string name="settings_restore_button">Satın alımları geri yükle</string>
+    <string name="settings_ads_section">Reklam &amp; destek</string>
+    <string name="ads_fab_widget">Widget ekle</string>
+    <string name="ads_fab_rate">Puan ver</string>
+    <string name="reklamlar_kaldirildi">Reklamlar kaldırıldı</string>
+    <string name="reklamsiz_alindi">Reklamsız sürüm zaten aktif.</string>
+    <string name="odullu_mola_buton">Reklam izle → geçici reklamsız</string>
+    <string name="odullu_mola_onay_baslik">Reklamsız mola</string>
+    <string name="odullu_mola_onay_mesaj">Kısa bir reklam izlerseniz %1$d saat boyunca banner ve geçiş reklamı gösterilmez. İzlemek ister misiniz?</string>
+    <string name="odullu_mola_onay_izle">İzle</string>
+    <string name="odullu_mola_aktif">Ödüllü mola aktif</string>
+    <string name="odullu_kapali">Ödüllü mola şu an kapalı</string>
+    <string name="odullu_yukleniyor">Reklam yükleniyor, biraz sonra tekrar deneyin</string>
+    <string name="odullu_yuklenemedi">Reklam gösterilemedi</string>
+    <string name="odullu_mola_basarili">%1$d saat reklamsız mola başladı</string>
+    <string name="admob_rewarded_test_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_rewarded_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_app_open_test_id">ca-app-pub-3940256099942544/9257395921</string>
+    <string name="admob_app_open_id"></string>
+
+    <string name="ads_fab_cd">Reklamı kaldır</string>
+    <string name="ads_fab_break">Reklamı kaldır</string>
+    <string name="ads_fab_break_active">Moladasın</string>
+    <string name="ads_fab_buy">Satın al</string>
+    <string name="ads_fab_buy_owned">Satın alındı</string>
+    <string name="ads_fab_tip_buy_only">Tek seferlik Play ödemesi ile reklamlar kalıcı kapanır.</string>
+    <string name="ads_fab_tip_owned">Reklamlar bu cihazda kalıcı kapalı.</string>
+    <string name="ads_fab_break_desc_fmt">Kısa video izlersen %d saat reklamsız kalırsın.</string>
+    <string name="ads_fab_break_active_desc_fmt">Reklamsız moladasın. Kalan: %1$s</string>
+    <string name="ads_break_active_tip_fmt">Mola sürüyor. Kalan: %1$s</string>
+    <string name="ads_break_remaining_hm_fmt">%1$d sa %2$d dk</string>
+    <string name="ads_break_remaining_m_fmt">%1$d dk</string>
 </resources>

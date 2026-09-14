@@ -59,7 +59,13 @@ public class Formula_List extends AppCompatActivity {
         setupToolbar();
 
         AdHelper.loadInterstitialAd(this);
-        AdHelper.showAdWithProbability(this, AppRemoteConfig.getInstance(this).getInterstitialFormulaPercent());
+        int pct = AppRemoteConfig.getInstance(this).getInterstitialFormulaPercent();
+        String category = getIntent().getStringExtra("category");
+        if (CategoryHelper.isApplications(this, category)
+                || CategoryHelper.isApplicationsIndex(categoryIndex)) {
+            pct = AppRemoteConfig.getInstance(this).getInterstitialAppsPercent();
+        }
+        AdHelper.showAdWithProbability(this, pct);
 
         category = getIntent().getStringExtra("category");
         categoryIndex = getIntent().getIntExtra(EXTRA_CATEGORY_INDEX, -1);
@@ -156,7 +162,10 @@ public class Formula_List extends AppCompatActivity {
 
         toolbar.setBackgroundColor(themeColor.toolbarBackgroundColor);
         tvToolbarTitle.setTextColor(themeColor.toolbarTitleTextColor);
-        tvToolbarSubtitle.setTextColor(themeColor.toolbarSubtitleTextColor);
+        if (tvToolbarSubtitle != null) {
+            tvToolbarSubtitle.setTextColor(
+                    androidx.core.content.ContextCompat.getColor(this, R.color.toolbar_subtitle_readable));
+        }
         constraintLayout3.setBackgroundColor(themeColor.activityBackgroundColor);
     }
 
@@ -181,26 +190,14 @@ public class Formula_List extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        TextView toolbarTitle = findViewById(R.id.toolbar_title);
-        TextView toolbarSubtitle = findViewById(R.id.toolbar_subtitle);
-        if (toolbarTitle != null) {
-            String category = getIntent().getStringExtra("category");
-            if (CategoryHelper.isApplicationsIndex(categoryIndex)
-                    || CategoryHelper.isApplications(this, category)) {
-                toolbarTitle.setText(R.string.toolbar_baslik_uygulamalarimiz);
-            } else {
-                toolbarTitle.setText(R.string.toolbar_baslik_default);
-            }
+        String category = getIntent().getStringExtra("category");
+        if (CategoryHelper.isApplicationsIndex(categoryIndex)
+                || CategoryHelper.isApplications(this, category)) {
+            ToolbarHelper.bindTopic(this, getString(R.string.toolbar_baslik_uygulamalarimiz));
+        } else if (category != null && !category.trim().isEmpty()) {
+            ToolbarHelper.bindTopic(this, category);
         } else {
-            Log.d("Formula_List", "toolbarTitle BOŞ ");
-        }
-
-        if (toolbarSubtitle != null) {
-            //toolbarSubtitle.setText(getResources().getString(R.string.toolbar_altbaslik_default));
-            toolbarSubtitle.setText(getIntent().getStringExtra("category"));
-
-        } else {
-            Log.d("Formula_List", "toolbarSubtitle BOŞ ");
+            ToolbarHelper.bindTopic(this, getString(R.string.toolbar_baslik_1));
         }
     }
 }

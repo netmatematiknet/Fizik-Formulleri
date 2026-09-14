@@ -26,7 +26,7 @@ public final class InterstitialAdManager {
     private boolean loading;
 
     public void load(@NonNull Context context) {
-        if (PremiumManager.getInstance(context).isAdFree()) {
+        if (!AdGate.isAdEnabled(context)) {
             return;
         }
         if (!AppRemoteConfig.getInstance(context).areInterstitialsEnabled()) {
@@ -56,7 +56,7 @@ public final class InterstitialAdManager {
     }
 
     public void showIfReady(@NonNull Activity activity) {
-        if (PremiumManager.getInstance(activity).isAdFree()) {
+        if (!AdGate.isAdEnabled(activity)) {
             return;
         }
         if (interstitialAd == null) {
@@ -87,7 +87,7 @@ public final class InterstitialAdManager {
      * Olasılık isabetinde: hazırsa göster, değilse (ve zaten yüklenmiyorsa) yükle.
      */
     public void showWithProbability(@NonNull Activity activity, int probabilityPercent) {
-        if (PremiumManager.getInstance(activity).isAdFree()) {
+        if (!AdGate.isAdEnabled(activity)) {
             return;
         }
         if (!AppRemoteConfig.getInstance(activity).areInterstitialsEnabled()) {
