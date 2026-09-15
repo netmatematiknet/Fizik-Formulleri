@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_popup_beyaz"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,14 +13,14 @@
         android:fontFamily="@font/nunito"
         android:text="@string/widget_dialog_baslik"
         android:textColor="?attr/colorPrimary"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/nunito"
         android:text="@string/widget_dialog_aciklama"
         android:textColor="@color/metin_ikinci"
@@ -31,63 +31,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dialog_row"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="12dp">
 
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_icon_circle">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:contentDescription="@null"
-                android:src="@android:drawable/ic_menu_today"
-                app:tint="@color/beyaz" />
-        </FrameLayout>
-
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito"
-                android:text="@string/widget_formula_label"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_circle">
 
-            <TextView
-                android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@android:drawable/ic_menu_today"
+                    app:tint="@color/beyaz" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito"
-                android:text="@string/widget_formula_description"
-                android:textColor="@color/metin_ikinci"
-                android:textSize="12sp" />
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nunito"
+                    android:maxLines="2"
+                    android:text="@string/widget_formula_label"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nunito"
+                    android:maxLines="3"
+                    android:text="@string/widget_formula_description"
+                    android:textColor="@color/metin_ikinci"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_ekle_formula"
             style="@style/Widget.Material3.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:minWidth="0dp"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
             android:text="@string/widget_ekle_kisa"
             android:textAllCaps="true"
-            android:textSize="12sp"
+            android:textSize="13sp"
             app:backgroundTint="?attr/colorPrimary" />
     </LinearLayout>
 
@@ -97,64 +104,71 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_dialog_row"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="12dp"
         android:visibility="gone">
 
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_icon_circle">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:contentDescription="@null"
-                android:src="@android:drawable/btn_star_big_on"
-                app:tint="@color/beyaz" />
-        </FrameLayout>
-
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito"
-                android:text="@string/uygulama_oyver"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_circle">
 
-            <TextView
-                android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@android:drawable/btn_star_big_on"
+                    app:tint="@color/beyaz" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito"
-                android:text="@string/puan_ver_play_alt"
-                android:textColor="@color/metin_ikinci"
-                android:textSize="12sp" />
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nunito"
+                    android:maxLines="2"
+                    android:text="@string/uygulama_oyver"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nunito"
+                    android:maxLines="2"
+                    android:text="@string/puan_ver_play_alt"
+                    android:textColor="@color/metin_ikinci"
+                    android:textSize="12sp" />
+            </LinearLayout>
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_rate_from_widget"
             style="@style/Widget.Material3.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:minWidth="0dp"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
             android:text="@string/puan_ver_kisa"
             android:textAllCaps="true"
-            android:textSize="12sp"
+            android:textSize="13sp"
             app:backgroundTint="?attr/colorPrimary" />
     </LinearLayout>
 
@@ -163,7 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/nunito"
         android:padding="8dp"
         android:text="@string/iptal"

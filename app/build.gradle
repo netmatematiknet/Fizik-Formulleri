@@ -19,8 +19,8 @@ android {
         minSdkVersion 29
         targetSdkVersion 36
         // Play canlı — 2.5.0: Remote Config JSON standart (reklam_/kutlama_/…)
-        versionCode 14
-        versionName "2.2"
+        versionCode 17
+        versionName "2.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resConfigs "tr", "en"
     }

@@ -155,7 +155,7 @@ public class PremiumActivity extends AppCompatActivity implements BillingManager
             }
         }
         btnPurchase.setBackgroundColor(c.toolbarBackgroundColor);
-        btnPurchase.setTextColor(c.activityTextColor);
+        btnPurchase.setTextColor(DialogFit.contrastingOn(c.toolbarBackgroundColor));
         float d = getResources().getDisplayMetrics().density;
         GradientDrawable outline = new GradientDrawable();
         outline.setCornerRadius(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8f, getResources().getDisplayMetrics()));

@@ -117,13 +117,14 @@
     <string name="full_description">Full Description</string>
     <string name="ucretsiz">FREE</string>
 
-    <string name="premium_remove_ads_product_id" translatable="false">premium_remove_ads</string>
+    <string name="premium_remove_ads_product_id" translatable="false">remove_ads</string>
     <string name="premium_section_title">Ad-free Premium</string>
     <string name="premium_status_active">Active: Ads are off. Thank you!</string>
     <string name="premium_status_inactive">Remove all ads with a one-time purchase.</string>
     <string name="premium_buy_button">Buy ad-free version</string>
     <string name="premium_restore_button">Restore purchases</string>
     <string name="premium_billing_not_ready">Billing is not ready yet. Please try again shortly.</string>
+    <string name="premium_billing_unavailable">Google Play Billing is not available on this device. Use a real phone with Play Store (does not work on most emulators).</string>
     <string name="premium_product_unavailable">Product unavailable. Please update from Play Store.</string>
     <string name="premium_purchase_failed">Purchase could not be completed.</string>
     <string name="premium_purchase_cancelled">Purchase cancelled.</string>

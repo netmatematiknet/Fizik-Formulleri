@@ -36,11 +36,11 @@ public final class ReviewHelper {
             android.widget.TextView cancel = root.findViewById(R.id.btn_rate_iptal);
             if (play != null) {
                 play.setBackgroundTintList(android.content.res.ColorStateList.valueOf(tc.toolbarBackgroundColor));
-                play.setTextColor(tc.activityTextColor);
+                play.setTextColor(DialogFit.contrastingOn(tc.toolbarBackgroundColor));
             }
             if (inapp != null) {
                 inapp.setBackgroundTintList(android.content.res.ColorStateList.valueOf(tc.toolbarBackgroundColor));
-                inapp.setTextColor(tc.activityTextColor);
+                inapp.setTextColor(DialogFit.contrastingOn(tc.toolbarBackgroundColor));
             }
             if (cancel != null) {
                 cancel.setTextColor(tc.toolbarBackgroundColor);
@@ -63,6 +63,7 @@ public final class ReviewHelper {
         });
         root.findViewById(R.id.btn_rate_iptal).setOnClickListener(v -> dialog.dismiss());
         dialog.show();
+        DialogFit.apply(dialog);
     }
 
     private static void launchReview(@NonNull Activity activity, boolean fromButton) {

@@ -116,14 +116,18 @@
     <string name="ucretsiz">ÜCRETSİZ</string>
 
     <!-- Google Play: Yönetilen ürün kimliği (Play Console ile birebir aynı olmalı, çeviri yok) -->
-    <string name="premium_remove_ads_product_id" translatable="false">premium_remove_ads</string>
+    <string name="premium_remove_ads_product_id" translatable="false">remove_ads</string>
     <string name="premium_section_title">Reklamsız Premium</string>
     <string name="premium_status_active">Aktif: Reklamlar kapalı. Teşekkürler!</string>
     <string name="premium_status_inactive">Tek seferlik satın alma ile tüm reklamları kaldırın.</string>
     <string name="premium_buy_button">Reklamsız sürümü satın al</string>
     <string name="premium_restore_button">Satın alımları geri yükle</string>
     <string name="premium_billing_not_ready">Ödeme sistemi hazırlanıyor, lütfen biraz sonra tekrar deneyin.</string>
+    <string name="premium_billing_unavailable">Bu cihazda Google Play Faturalandırma yok. Satın alma için Play Store kurulu gerçek bir telefon kullanın (emülatörde çalışmaz).</string>
     <string name="premium_product_unavailable">Ürün şu an kullanılamıyor. Play Store\'dan güncellediğinizden emin olun.</string>
+    <string name="attribution_tag_empty" translatable="false"></string>
+    <string name="attribution_label_ads" translatable="false">Ads</string>
+    <string name="attribution_label_audio" translatable="false">Audio playback</string>
     <string name="premium_purchase_failed">Satın alma tamamlanamadı.</string>
     <string name="premium_purchase_cancelled">Satın alma iptal edildi.</string>
     <string name="premium_restored">Satın alımlar kontrol edildi.</string>

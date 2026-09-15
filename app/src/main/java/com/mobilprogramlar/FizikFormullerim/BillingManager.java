@@ -3,6 +3,9 @@ package com.mobilprogramlar.FizikFormullerim;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,18 +48,20 @@ public class BillingManager implements PurchasesUpdatedListener {
     private ProductDetails cachedProductDetails;
     @Nullable
     private Listener listener;
+    private volatile boolean billingUnavailable;
+    private volatile boolean connecting;
 
     public BillingManager(Context context) {
         appContext = context.getApplicationContext();
         productId = appContext.getString(R.string.premium_remove_ads_product_id);
         analytics = FirebaseAnalytics.getInstance(appContext);
+        // enableAutoServiceReconnection: Play'sız emülatörde sonsuz retry spam üretir
         billingClient = BillingClient.newBuilder(appContext)
                 .setListener(this)
                 .enablePendingPurchases(
                         PendingPurchasesParams.newBuilder()
                                 .enableOneTimeProducts()
                                 .build())
-                .enableAutoServiceReconnection()
                 .build();
     }
 
@@ -65,18 +70,29 @@ public class BillingManager implements PurchasesUpdatedListener {
     }
 
     public void connectAndSync() {
+        if (billingUnavailable || connecting || billingClient.isReady()) {
+            return;
+        }
+        connecting = true;
         billingClient.startConnection(new BillingClientStateListener() {
             @Override
             public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
-                if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
+                connecting = false;
+                int code = billingResult.getResponseCode();
+                if (code == BillingClient.BillingResponseCode.OK) {
+                    billingUnavailable = false;
                     queryPurchasesAndApply();
                     queryProductDetails();
+                    return;
+                }
+                if (code == BillingClient.BillingResponseCode.BILLING_UNAVAILABLE) {
+                    billingUnavailable = true;
                 }
             }
 
             @Override
             public void onBillingServiceDisconnected() {
-                // Yeniden bağlanma connectAndSync veya sonraki işlemde olur
+                connecting = false;
             }
         });
     }
@@ -84,6 +100,7 @@ public class BillingManager implements PurchasesUpdatedListener {
     /** Mevcut satın alımları Play'den okur; premium bayrağını günceller. */
     public void queryPurchasesAndApply() {
         if (!billingClient.isReady()) {
+            connectAndSync();
             return;
         }
         billingClient.queryPurchasesAsync(
@@ -126,7 +143,12 @@ public class BillingManager implements PurchasesUpdatedListener {
 
     /** Satın alma ekranını açar; önce ürün detayı yoksa yüklenir. */
     public void launchPurchaseFlow(@NonNull Activity activity) {
+        if (billingUnavailable) {
+            postMessage(appContext.getString(R.string.premium_billing_unavailable));
+            return;
+        }
         if (!billingClient.isReady()) {
+            connectAndSync();
             postMessage(appContext.getString(R.string.premium_billing_not_ready));
             return;
         }
@@ -254,7 +276,11 @@ public class BillingManager implements PurchasesUpdatedListener {
     private void postMessage(@NonNull String msg) {
         if (listener != null) {
             listener.onBillingMessage(msg);
+            return;
         }
+        // Ana ekran FAB satın almasında listener yoksa yine bildir
+        new Handler(Looper.getMainLooper()).post(() ->
+                Toast.makeText(appContext, msg, Toast.LENGTH_LONG).show());
     }
 
     @Nullable

@@ -1,5 +1,6 @@
 package com.mobilprogramlar.FizikFormullerim;
 
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.button.MaterialButton;
 
 /**
  * Temalı Remote Config diyalogları (kutlama / bilgi / bakım).
+ * Gövde metni her zaman koyu (açık mavi satır kutusu üzerinde beyaz yazı kullanılmaz).
  */
 public final class ThemedRemoteDialog {
 
@@ -63,16 +66,24 @@ public final class ThemedRemoteDialog {
             ThemeColors tc = new ThemeManager(activity).getThemeColors();
             TextView titleView = root.findViewById(R.id.tv_announce_title);
             TextView bodyView = root.findViewById(R.id.tv_announce_body);
+            int bodyColor = ContextCompat.getColor(activity, R.color.metin);
+            int titleColor = tc.toolbarBackgroundColor != 0
+                    ? tc.toolbarBackgroundColor
+                    : ContextCompat.getColor(activity, R.color.colorPrimaryDark);
             if (titleView != null) {
-                titleView.setTextColor(tc.toolbarBackgroundColor != 0
-                        ? tc.toolbarBackgroundColor : tc.activityTextColor);
+                titleView.setTextColor(titleColor);
             }
             if (bodyView != null) {
-                bodyView.setTextColor(tc.activityTextColor);
+                // Açık #E3F2FD kutu: tema activityTextColor (#fff) ASLA kullanılmaz
+                bodyView.setTextColor(bodyColor);
             }
-            btn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(tc.toolbarBackgroundColor));
-            btn.setTextColor(tc.activityTextColor);
+            int btnBg = tc.toolbarBackgroundColor != 0
+                    ? tc.toolbarBackgroundColor
+                    : ContextCompat.getColor(activity, R.color.colorPrimary);
+            btn.setBackgroundTintList(android.content.res.ColorStateList.valueOf(btnBg));
+            btn.setTextColor(DialogFit.contrastingOn(btnBg));
         } catch (Throwable ignored) {
+            btn.setTextColor(Color.WHITE);
         }
         ImageView icon = root.findViewById(R.id.iv_announce_icon);
         if (icon != null) {
@@ -106,5 +117,6 @@ public final class ThemedRemoteDialog {
             dialog.setOnCancelListener(d -> onCancel.run());
         }
         dialog.show();
+        DialogFit.apply(dialog);
     }
 }

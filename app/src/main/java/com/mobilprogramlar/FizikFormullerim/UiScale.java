@@ -23,10 +23,11 @@ public final class UiScale {
     public static Context wrap(@NonNull Context context) {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         float widthDp = dm.widthPixels / Math.max(0.01f, dm.density);
-        // Tabletlerde aşırı şişirmeyi engelle; sw* + max width yeterli
-        if (widthDp >= 600f) {
-            Configuration config = new Configuration(context.getResources().getConfiguration());
-            config.fontScale = 1.0f;
+        Configuration config = new Configuration(context.getResources().getConfiguration());
+        config.fontScale = 1.0f;
+        // Tablet / geniş ekran: density şişirme yok (sw* dimens büyütür).
+        // Dar telefon: sadece küçült — density ARTIRMAK ekranı “daraltır” ve kartları sağa taşırır.
+        if (widthDp >= 600f || widthDp >= DESIGN_WIDTH_DP) {
             return context.createConfigurationContext(config);
         }
         float scale = widthDp / DESIGN_WIDTH_DP;
@@ -35,8 +36,7 @@ public final class UiScale {
         } else if (scale > MAX) {
             scale = MAX;
         }
-        Configuration config = new Configuration(context.getResources().getConfiguration());
-        config.fontScale = 1.0f;
+        // scale burada her zaman ≤ 1
         config.densityDpi = Math.max(120, Math.round(dm.densityDpi * scale));
         return context.createConfigurationContext(config);
     }

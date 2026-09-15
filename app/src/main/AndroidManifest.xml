@@ -15,6 +15,17 @@
     <!-- Reklam ID'sine erişim sağlar. Google reklam hizmetleri tarafından kullanılır. -->
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
+    <!-- Google Play Billing (tek seferlik remove_ads). AAR da merge eder; açıkça bildiriyoruz. -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <!-- AppOps: reklam/ses SDK boş attributionTag uyarısını azaltır (API 31+) -->
+    <attribution
+        android:tag="@string/attribution_tag_empty"
+        android:label="@string/attribution_label_ads" />
+    <attribution
+        android:tag="audioPlayback"
+        android:label="@string/attribution_label_audio" />
+
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"

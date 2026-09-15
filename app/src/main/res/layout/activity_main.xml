@@ -111,7 +111,7 @@
                         android:layout_marginTop="2dp"
                         android:fontFamily="@font/nunito"
                         android:text="@string/formula_of_day_hint"
-                        android:textColor="@color/metin_ikinci"
+                        android:textColor="@color/metin"
                         android:textSize="13sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

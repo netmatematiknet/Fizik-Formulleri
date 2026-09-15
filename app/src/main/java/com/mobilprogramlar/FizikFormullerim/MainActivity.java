@@ -345,7 +345,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
             title.setTextColor(ContextCompat.getColor(this, R.color.metin));
         }
         if (hint != null) {
-            hint.setTextColor(ContextCompat.getColor(this, R.color.metin_ikinci));
+            hint.setTextColor(ContextCompat.getColor(this, R.color.metin));
         }
     }
 

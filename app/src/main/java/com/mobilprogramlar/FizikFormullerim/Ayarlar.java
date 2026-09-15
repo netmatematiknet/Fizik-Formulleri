@@ -402,7 +402,7 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         }
         if (btnPrivacy != null) {
             btnPrivacy.setBackgroundColor(themeColors.toolbarBackgroundColor);
-            btnPrivacy.setTextColor(themeColors.activityTextColor);
+            btnPrivacy.setTextColor(DialogFit.contrastingOn(themeColors.toolbarBackgroundColor));
         }
         int textColor = themeColors.activityTextColor;
         int iconColor = themeColors.cardTextColor != 0 ? themeColors.cardTextColor : textColor;
@@ -429,18 +429,19 @@ public class Ayarlar extends AppCompatActivity implements BillingManager.Listene
         if (tvPremiumStatus != null) {
             tvPremiumStatus.setTextColor(themeColors.activityTextColor);
         }
+        int onToolbar = DialogFit.contrastingOn(themeColors.toolbarBackgroundColor);
         if (btnPremiumBuy != null) {
             btnPremiumBuy.setBackgroundColor(themeColors.toolbarBackgroundColor);
-            btnPremiumBuy.setTextColor(themeColors.activityTextColor);
+            btnPremiumBuy.setTextColor(onToolbar);
         }
         if (btnPremiumRestore != null) {
             btnPremiumRestore.setBackgroundColor(themeColors.toolbarBackgroundColor);
-            btnPremiumRestore.setTextColor(themeColors.activityTextColor);
+            btnPremiumRestore.setTextColor(onToolbar);
         }
         Button btnOdulluMola = findViewById(R.id.btn_odullu_mola);
         if (btnOdulluMola != null) {
             btnOdulluMola.setBackgroundColor(themeColors.toolbarBackgroundColor);
-            btnOdulluMola.setTextColor(themeColors.activityTextColor);
+            btnOdulluMola.setTextColor(onToolbar);
         }
         TextView tvNotifTitle = findViewById(R.id.tv_notifications_title);
         TextView tvPrefAnn = findViewById(R.id.tv_pref_announcements);

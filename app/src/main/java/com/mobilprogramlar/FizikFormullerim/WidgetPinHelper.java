@@ -44,7 +44,26 @@ public final class WidgetPinHelper {
             });
         }
         root.findViewById(R.id.btn_widget_iptal).setOnClickListener(v -> dialog.dismiss());
+        try {
+            ThemeColors tc = new ThemeManager(activity).getThemeColors();
+            com.google.android.material.button.MaterialButton ekle = root.findViewById(R.id.btn_ekle_formula);
+            com.google.android.material.button.MaterialButton rate = root.findViewById(R.id.btn_rate_from_widget);
+            android.widget.TextView iptal = root.findViewById(R.id.btn_widget_iptal);
+            if (ekle != null) {
+                ekle.setBackgroundTintList(android.content.res.ColorStateList.valueOf(tc.toolbarBackgroundColor));
+                ekle.setTextColor(DialogFit.contrastingOn(tc.toolbarBackgroundColor));
+            }
+            if (rate != null) {
+                rate.setBackgroundTintList(android.content.res.ColorStateList.valueOf(tc.toolbarBackgroundColor));
+                rate.setTextColor(DialogFit.contrastingOn(tc.toolbarBackgroundColor));
+            }
+            if (iptal != null) {
+                iptal.setTextColor(tc.toolbarBackgroundColor);
+            }
+        } catch (Throwable ignored) {
+        }
         dialog.show();
+        DialogFit.apply(dialog);
     }
 
     public static void pin(@NonNull Activity activity, @NonNull Class<?> providerClass) {
